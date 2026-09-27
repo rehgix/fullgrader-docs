@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FastGrade · Ayuda</title>
+  <title>FullGrader · Ayuda</title>
   <style>
     :root {
       --accent: #4f46e5;
@@ -74,6 +74,11 @@
     .screenshot-row { display: flex; gap: 10px; overflow-x: auto; padding: 14px 0 6px; scrollbar-width: none; }
     .screenshot-row::-webkit-scrollbar { display: none; }
     .screenshot-row img { height: 260px; width: auto; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,.15); border: 1px solid var(--border); }
+    .social { text-align: center; padding: 4px 16px 44px; }
+    .social-title { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; }
+    .social-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .social-links a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .social-links ion-icon { font-size: 18px; color: var(--accent-text); }
   </style>
   <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.min.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
@@ -81,7 +86,7 @@
 <body>
 
 <div data-lang="es" class="visible">
-  <header><h1>FastGrade</h1><p>Guía de uso, paso a paso</p></header>
+  <header><h1>FullGrader</h1><p>Guía de uso, paso a paso</p></header>
   <div class="lang-bar">
     <button class="lang-btn" onclick="setLang('ca')">Català</button>
     <button class="lang-btn" onclick="setLang('en')">English</button>
@@ -98,7 +103,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>FastGrade corrige exámenes tipo test con la cámara del móvil. No hace falta saber de informática: si sabes hacer una foto con el móvil, sabes usar FastGrade.</p>
+        <p>FullGrader corrige exámenes tipo test con la cámara del móvil. No hace falta saber de informática: si sabes hacer una foto con el móvil, sabes usar FullGrader.</p>
         <h3 class="subhead">Cómo funciona, en 5 pasos</h3>
         <ol class="steps"><li><b>Crea tu clase.</b> En la pestaña <b>Clases</b>, crea el grupo y añade a tus alumnos. La app le da a cada alumno un número de 4 cifras, que es como su «carnet» en el examen.</li><li><b>Crea el examen.</b> En la pestaña <b>Plantillas</b>, indica cuántas preguntas tiene y marca cuál es la respuesta correcta de cada una.</li><li><b>Imprime las hojas de respuestas</b> desde esa misma plantilla. Los alumnos contestan rellenando las burbujas con bolígrafo.</li><li><b>Haz una foto de cada hoja</b> en la pestaña <b>Escanear</b>. La app lee las respuestas y pone la nota sola.</li><li><b>Mira las notas</b> en la pestaña <b>Resultados</b>: la nota de cada alumno, las estadísticas de la clase y un archivo para abrir en Excel.</li></ol>
         <div class="example"><div class="example-title"><ion-icon name="bulb"></ion-icon> ¿Qué es una «plantilla»?</div><p>Es tu examen dentro de la app. Guarda cuántas preguntas tiene, cuál es la respuesta buena de cada una y cómo quieres puntuarlo. La creas una vez y la puedes usar con todas tus clases.</p></div>
@@ -266,7 +271,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>Además de exámenes tipo test, FastGrade sirve para evaluar con <b>rúbricas</b>: trabajos, exposiciones orales, proyectos, cuadernos… En vez de que el alumno conteste preguntas, eres tú quien marca en la hoja, en cada criterio, el nivel de logro que ha alcanzado. La app lee la hoja y calcula la nota.</p>
+        <p>Además de exámenes tipo test, FullGrader sirve para evaluar con <b>rúbricas</b>: trabajos, exposiciones orales, proyectos, cuadernos… En vez de que el alumno conteste preguntas, eres tú quien marca en la hoja, en cada criterio, el nivel de logro que ha alcanzado. La app lee la hoja y calcula la nota.</p>
         <h3 class="subhead">Crear una rúbrica</h3>
         <ol class="steps"><li>En <b>Plantillas</b>, toca <b>Nueva plantilla</b> y escribe el título.</li><li>En <b>Tipo de plantilla</b>, elige <b>Rúbrica</b>.</li><li>En <b>Niveles de logro</b>, revisa los niveles y los puntos de cada uno. Vienen puestos Experto (4), Avanzado (3), Aprendiz (2), Novato (1) y Sin hacer (0), pero puedes cambiarles el nombre y los puntos, añadir niveles (hasta 8) o quitarlos (mínimo 2).</li><li>En <b>Criterios de la rúbrica</b>, escribe el nombre de cada criterio, por ejemplo «Expresión oral» o «Uso de fuentes». Puedes tener hasta 15.</li><li>Elige la <b>Nota máxima</b> y toca <b>Crear plantilla</b>.</li></ol>
         <h3 class="subhead">Importar una rúbrica desde Excel (por ejemplo, de Corubrics)</h3>
@@ -356,10 +361,17 @@
     </div>
 
   </main>
+  <footer class="social">
+    <p class="social-title">Síguenos en redes</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon>Instagram · @FullGrader</a>
+      <a href="https://x.com/FullGrader" target="_blank" rel="noopener"><ion-icon name="logo-x"></ion-icon>X (Twitter) · @FullGrader</a>
+    </div>
+  </footer>
 </div>
 
 <div data-lang="ca">
-  <header><h1>FastGrade</h1><p>Guia d’ús, pas a pas</p></header>
+  <header><h1>FullGrader</h1><p>Guia d’ús, pas a pas</p></header>
   <div class="lang-bar">
     <button class="lang-btn active" onclick="setLang('ca')">Català</button>
     <button class="lang-btn" onclick="setLang('en')">English</button>
@@ -376,7 +388,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>FastGrade corregeix exàmens tipus test amb la càmera del mòbil. No cal saber informàtica: si saps fer una foto amb el mòbil, saps fer servir FastGrade.</p>
+        <p>FullGrader corregeix exàmens tipus test amb la càmera del mòbil. No cal saber informàtica: si saps fer una foto amb el mòbil, saps fer servir FullGrader.</p>
         <h3 class="subhead">Com funciona, en 5 passos</h3>
         <ol class="steps"><li><b>Crea la teva classe.</b> A la pestanya <b>Classes</b>, crea el grup i afegeix-hi l’alumnat. L’app dona a cada alumne un número de 4 xifres, que és com el seu «carnet» a l’examen.</li><li><b>Crea l’examen.</b> A la pestanya <b>Plantilles</b>, indica quantes preguntes té i marca quina és la resposta correcta de cadascuna.</li><li><b>Imprimeix els fulls de respostes</b> des d’aquesta mateixa plantilla. L’alumnat respon omplint les bombolles amb bolígraf.</li><li><b>Fes una foto de cada full</b> a la pestanya <b>Escanejar</b>. L’app llegeix les respostes i posa la nota tota sola.</li><li><b>Consulta les notes</b> a la pestanya <b>Resultats</b>: la nota de cada alumne, les estadístiques de la classe i un fitxer per obrir amb l’Excel.</li></ol>
         <div class="example"><div class="example-title"><ion-icon name="bulb"></ion-icon> Què és una «plantilla»?</div><p>És el teu examen dins de l’app. Guarda quantes preguntes té, quina és la resposta bona de cadascuna i com el vols puntuar. La crees una vegada i la pots fer servir amb totes les teves classes.</p></div>
@@ -542,7 +554,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>A més d’exàmens tipus test, FastGrade serveix per avaluar amb <b>rúbriques</b>: treballs, exposicions orals, projectes, llibretes… En comptes que l’alumne contesti preguntes, ets tu qui marca al full, a cada criteri, el nivell d’assoliment que ha assolit. L’app llegeix el full i calcula la nota.</p>
+        <p>A més d’exàmens tipus test, FullGrader serveix per avaluar amb <b>rúbriques</b>: treballs, exposicions orals, projectes, llibretes… En comptes que l’alumne contesti preguntes, ets tu qui marca al full, a cada criteri, el nivell d’assoliment que ha assolit. L’app llegeix el full i calcula la nota.</p>
         <h3 class="subhead">Crear una rúbrica</h3>
         <ol class="steps"><li>A <b>Plantilles</b>, toca <b>Nova plantilla</b> i escriu el títol.</li><li>A <b>Tipus de plantilla</b>, tria <b>Rúbrica</b>.</li><li>A <b>Nivells d’assoliment</b>, revisa els nivells i els punts de cadascun. Vénen posats Expert (4), Avançat (3), Aprenent (2), Novell (1) i Sense fer (0), però els pots canviar el nom i els punts, afegir-hi nivells (fins a 8) o treure’n (mínim 2).</li><li>A <b>Criteris de la rúbrica</b>, escriu el nom de cada criteri, per exemple «Expressió oral» o «Ús de fonts». En pots tenir fins a 15.</li><li>Tria la <b>Nota màxima</b> i toca <b>Crea la plantilla</b>.</li></ol>
         <h3 class="subhead">Importar una rúbrica des d’Excel (per exemple, de Corubrics)</h3>
@@ -630,10 +642,17 @@
     </div>
 
   </main>
+  <footer class="social">
+    <p class="social-title">Segueix-nos a les xarxes</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon>Instagram · @FullGrader</a>
+      <a href="https://x.com/FullGrader" target="_blank" rel="noopener"><ion-icon name="logo-x"></ion-icon>X (Twitter) · @FullGrader</a>
+    </div>
+  </footer>
 </div>
 
 <div data-lang="en">
-  <header><h1>FastGrade</h1><p>Step-by-step user guide</p></header>
+  <header><h1>FullGrader</h1><p>Step-by-step user guide</p></header>
   <div class="lang-bar">
     <button class="lang-btn" onclick="setLang('ca')">Català</button>
     <button class="lang-btn active" onclick="setLang('en')">English</button>
@@ -650,7 +669,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>FastGrade grades multiple-choice tests with your phone’s camera. You don’t need any tech skills: if you can take a photo with your phone, you can use FastGrade.</p>
+        <p>FullGrader grades multiple-choice tests with your phone’s camera. You don’t need any tech skills: if you can take a photo with your phone, you can use FullGrader.</p>
         <h3 class="subhead">How it works, in 5 steps</h3>
         <ol class="steps"><li><b>Create your class.</b> In the <b>Classes</b> tab, create the group and add your students. The app gives each student a 4-digit number, which works like their “ID card” on the test.</li><li><b>Create the test.</b> In the <b>Templates</b> tab, say how many questions it has and mark the correct answer for each one.</li><li><b>Print the answer sheets</b> from that same template. Students answer by filling in the bubbles with a pen.</li><li><b>Take a photo of each sheet</b> in the <b>Scan</b> tab. The app reads the answers and works out the grade on its own.</li><li><b>Check the grades</b> in the <b>Results</b> tab: each student’s grade, class statistics and a file you can open in Excel.</li></ol>
         <div class="example"><div class="example-title"><ion-icon name="bulb"></ion-icon> What is a “template”?</div><p>It’s your test inside the app. It stores how many questions it has, which answer is right for each one and how you want it graded. You create it once and can use it with all your classes.</p></div>
@@ -816,7 +835,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>Besides multiple-choice tests, FastGrade can grade with <b>rubrics</b>: assignments, oral presentations, projects, notebooks… Instead of the student answering questions, you mark on the sheet, for each criterion, the achievement level the student reached. The app reads the sheet and works out the grade.</p>
+        <p>Besides multiple-choice tests, FullGrader can grade with <b>rubrics</b>: assignments, oral presentations, projects, notebooks… Instead of the student answering questions, you mark on the sheet, for each criterion, the achievement level the student reached. The app reads the sheet and works out the grade.</p>
         <h3 class="subhead">Create a rubric</h3>
         <ol class="steps"><li>In <b>Templates</b>, tap <b>New template</b> and type the title.</li><li>In <b>Template type</b>, choose <b>Rubric</b>.</li><li>In <b>Achievement levels</b>, check the levels and the points for each one. They come set to Expert (4), Advanced (3), Apprentice (2), Novice (1) and Not done (0), but you can rename them, change their points, add levels (up to 8) or remove them (at least 2).</li><li>In <b>Rubric criteria</b>, type the name of each criterion, for example “Oral expression” or “Use of sources”. You can have up to 15.</li><li>Choose the <b>Maximum grade</b> and tap <b>Create template</b>.</li></ol>
         <h3 class="subhead">Import a rubric from Excel (for example, from Corubrics)</h3>
@@ -904,10 +923,17 @@
     </div>
 
   </main>
+  <footer class="social">
+    <p class="social-title">Follow us</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon>Instagram · @FullGrader</a>
+      <a href="https://x.com/FullGrader" target="_blank" rel="noopener"><ion-icon name="logo-x"></ion-icon>X (Twitter) · @FullGrader</a>
+    </div>
+  </footer>
 </div>
 
 <div data-lang="eu">
-  <header><h1>FastGrade</h1><p>Erabiltzeko gida, urratsez urrats</p></header>
+  <header><h1>FullGrader</h1><p>Erabiltzeko gida, urratsez urrats</p></header>
   <div class="lang-bar">
     <button class="lang-btn" onclick="setLang('ca')">Català</button>
     <button class="lang-btn" onclick="setLang('en')">English</button>
@@ -924,7 +950,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>FastGradek test motako azterketak zuzentzen ditu mugikorraren kamerarekin. Ez duzu informatika jakin behar: mugikorrarekin argazki bat ateratzen badakizu, FastGrade erabiltzen badakizu.</p>
+        <p>FullGrader-ek test motako azterketak zuzentzen ditu mugikorraren kamerarekin. Ez duzu informatika jakin behar: mugikorrarekin argazki bat ateratzen badakizu, FullGrader erabiltzen badakizu.</p>
         <h3 class="subhead">Nola funtzionatzen duen, 5 urratsetan</h3>
         <ol class="steps"><li><b>Sortu zure ikasgela.</b> <b>Ikasgelak</b> fitxan, sortu taldea eta gehitu ikasleak. Aplikazioak 4 zenbakiko kode bat ematen dio ikasle bakoitzari, azterketako «NANa» balitz bezala.</li><li><b>Sortu azterketa.</b> <b>Ereduak</b> fitxan, adierazi zenbat galdera dituen eta markatu galdera bakoitzaren erantzun zuzena.</li><li><b>Inprimatu erantzun-orriak</b> eredu beretik. Ikasleek boligrafoz betetzen dituzte burbuilak.</li><li><b>Atera argazki bat orri bakoitzari</b> <b>Eskaneatu</b> fitxan. Aplikazioak erantzunak irakurtzen ditu eta nota bera jartzen du.</li><li><b>Ikusi notak</b> <b>Emaitzak</b> fitxan: ikasle bakoitzaren nota, ikasgelaren estatistikak eta Excelen irekitzeko fitxategi bat.</li></ol>
         <div class="example"><div class="example-title"><ion-icon name="bulb"></ion-icon> Zer da «eredu» bat?</div><p>Zure azterketa da, aplikazioaren barruan. Zenbat galdera dituen, galdera bakoitzaren erantzun zuzena zein den eta nola puntuatu nahi duzun gordetzen du. Behin sortzen duzu, eta zure ikasgela guztiekin erabil dezakezu.</p></div>
@@ -1090,7 +1116,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>Test motako azterketez gain, FastGrade <b>errubrikekin</b> ebaluatzeko ere balio du: lanak, ahozko aurkezpenak, proiektuak, koadernoak… Ikasleak galderei erantzun beharrean, zuk markatzen duzu orrian, irizpide bakoitzean, ikasleak lortu duen maila. Aplikazioak orria irakurri eta nota kalkulatzen du.</p>
+        <p>Test motako azterketez gain, FullGrader <b>errubrikekin</b> ebaluatzeko ere balio du: lanak, ahozko aurkezpenak, proiektuak, koadernoak… Ikasleak galderei erantzun beharrean, zuk markatzen duzu orrian, irizpide bakoitzean, ikasleak lortu duen maila. Aplikazioak orria irakurri eta nota kalkulatzen du.</p>
         <h3 class="subhead">Errubrika bat sortu</h3>
         <ol class="steps"><li><b>Ereduak</b> fitxan, sakatu <b>Eredu berria</b> eta idatzi izenburua.</li><li><b>Txantiloi mota</b> atalean, aukeratu <b>Errubrika</b>.</li><li><b>Lorpen-mailak</b> atalean, berrikusi mailak eta bakoitzaren puntuak. Aditu (4), Aurreratua (3), Ikaslea (2), Hasiberria (1) eta Egin gabe (0) datoz jarrita, baina izena eta puntuak alda ditzakezu, mailak gehitu (8 arte) edo kendu (gutxienez 2).</li><li><b>Errubrikaren irizpideak</b> atalean, idatzi irizpide bakoitzaren izena, adibidez «Ahozko adierazpena» edo «Iturrien erabilera». 15 arte izan ditzakezu.</li><li>Aukeratu <b>Gehieneko nota</b> eta sakatu <b>Eredua sortu</b>.</li></ol>
         <h3 class="subhead">Errubrika bat Excel-etik inportatu (adibidez, Corubrics-etik)</h3>
@@ -1178,10 +1204,17 @@
     </div>
 
   </main>
+  <footer class="social">
+    <p class="social-title">Jarrai gaitzazu sare sozialetan</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon>Instagram · @FullGrader</a>
+      <a href="https://x.com/FullGrader" target="_blank" rel="noopener"><ion-icon name="logo-x"></ion-icon>X (Twitter) · @FullGrader</a>
+    </div>
+  </footer>
 </div>
 
 <div data-lang="gl">
-  <header><h1>FastGrade</h1><p>Guía de uso, paso a paso</p></header>
+  <header><h1>FullGrader</h1><p>Guía de uso, paso a paso</p></header>
   <div class="lang-bar">
     <button class="lang-btn" onclick="setLang('ca')">Català</button>
     <button class="lang-btn" onclick="setLang('en')">English</button>
@@ -1198,7 +1231,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>FastGrade corrixe exames tipo test coa cámara do móbil. Non fai falta saber de informática: se sabes facer unha foto co móbil, sabes usar FastGrade.</p>
+        <p>FullGrader corrixe exames tipo test coa cámara do móbil. Non fai falta saber de informática: se sabes facer unha foto co móbil, sabes usar FullGrader.</p>
         <h3 class="subhead">Como funciona, en 5 pasos</h3>
         <ol class="steps"><li><b>Crea a túa clase.</b> Na lapela <b>Clases</b>, crea o grupo e engade o teu alumnado. A app dálle a cada alumno/a un número de 4 cifras, que é como o seu «carné» no exame.</li><li><b>Crea o exame.</b> Na lapela <b>Modelos</b>, indica cantas preguntas ten e marca cal é a resposta correcta de cada unha.</li><li><b>Imprime as follas de respostas</b> desde ese mesmo modelo. O alumnado contesta enchendo as burbullas con bolígrafo.</li><li><b>Fai unha foto de cada folla</b> na lapela <b>Escanear</b>. A app le as respostas e pon a nota soa.</li><li><b>Consulta as notas</b> na lapela <b>Resultados</b>: a nota de cada alumno/a, as estatísticas da clase e un ficheiro para abrir co Excel.</li></ol>
         <div class="example"><div class="example-title"><ion-icon name="bulb"></ion-icon> Que é un «modelo»?</div><p>É o teu exame dentro da app. Garda cantas preguntas ten, cal é a resposta boa de cada unha e como o queres puntuar. Créalo unha vez e podes usalo con todas as túas clases.</p></div>
@@ -1364,7 +1397,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <p>Ademais de exames tipo test, FastGrade serve para avaliar con <b>rúbricas</b>: traballos, exposicións orais, proxectos, cadernos… En vez de que o alumnado conteste preguntas, es ti quen marca na folla, en cada criterio, o nivel de logro que acadou. A app le a folla e calcula a nota.</p>
+        <p>Ademais de exames tipo test, FullGrader serve para avaliar con <b>rúbricas</b>: traballos, exposicións orais, proxectos, cadernos… En vez de que o alumnado conteste preguntas, es ti quen marca na folla, en cada criterio, o nivel de logro que acadou. A app le a folla e calcula a nota.</p>
         <h3 class="subhead">Crear unha rúbrica</h3>
         <ol class="steps"><li>En <b>Modelos</b>, toca <b>Novo modelo</b> e escribe o título.</li><li>En <b>Tipo de modelo</b>, escolle <b>Rúbrica</b>.</li><li>En <b>Niveis de logro</b>, revisa os niveis e os puntos de cada un. Veñen postos Experto (4), Avanzado (3), Aprendiz (2), Novato (1) e Sen facer (0), pero podes cambiarlles o nome e os puntos, engadir niveis (ata 8) ou quitalos (mínimo 2).</li><li>En <b>Criterios da rúbrica</b>, escribe o nome de cada criterio, por exemplo «Expresión oral» ou «Uso de fontes». Podes ter ata 15.</li><li>Escolle a <b>Nota máxima</b> e toca <b>Crear modelo</b>.</li></ol>
         <h3 class="subhead">Importar unha rúbrica desde Excel (por exemplo, de Corubrics)</h3>
@@ -1452,11 +1485,18 @@
     </div>
 
   </main>
+  <footer class="social">
+    <p class="social-title">Síguenos nas redes</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon>Instagram · @FullGrader</a>
+      <a href="https://x.com/FullGrader" target="_blank" rel="noopener"><ion-icon name="logo-x"></ion-icon>X (Twitter) · @FullGrader</a>
+    </div>
+  </footer>
 </div>
 
 
 <script>
-var TITLES = {"es": "FastGrade · Ayuda", "ca": "FastGrade · Ajuda", "en": "FastGrade · Help", "eu": "FastGrade · Laguntza", "gl": "FastGrade · Axuda"};
+var TITLES = {"es": "FullGrader · Ayuda", "ca": "FullGrader · Ajuda", "en": "FullGrader · Help", "eu": "FullGrader · Laguntza", "gl": "FullGrader · Axuda"};
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(function (el) { el.classList.remove('visible'); });
   document.querySelector('[data-lang="' + lang + '"]').classList.add('visible');
