@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of use · FullGrader</title>
+<meta name="description" content="Terms of use for FullGrader and FullGrader Premium.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f6f9;
+    --text: #1a1a1f;
+    --muted: #5a5a68;
+    --accent: #4F46E5;
+    --border: #e3e3ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121218;
+      --surface: #1c1c24;
+      --text: #f0f0f4;
+      --muted: #a0a0b0;
+      --accent: #8b85f0;
+      --border: #2c2c38;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 16px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  header { padding: 40px 0 8px; }
+  .app-name {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+  .lang-switch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 24px;
+  }
+  .lang-btn {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -.02em; }
+  .updated { color: var(--muted); font-size: 15px; margin: 0 0 32px; }
+  h2 {
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 44px 0 12px;
+    letter-spacing: -.01em;
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--accent); }
+  .lead {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 0 0 8px;
+  }
+  .lead p { margin: 0; }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="app-name">FullGrader</p>
+  <nav class="lang-switch" id="langSwitch" aria-label="Idioma / Language">
+    <button type="button" class="lang-btn" data-lang="es">Español</button>
+    <button type="button" class="lang-btn" data-lang="ca">Català</button>
+    <button type="button" class="lang-btn" data-lang="gl">Galego</button>
+    <button type="button" class="lang-btn" data-lang="eu">Euskara</button>
+    <button type="button" class="lang-btn" data-lang="en">English</button>
+  </nav>
+  <h1 id="pTitle"></h1>
+  <p class="updated" id="pUpdated"></p>
+</header>
+
+<div class="lead">
+  <p id="pLead"></p>
+</div>
+
+<div id="pBody"></div>
+
+<footer id="pFooter"></footer>
+
+</main>
+
+<script>
+  var DATA = {"es": {"label": "Español", "title": "Condiciones de uso", "updated": "Última actualización: 8 de octubre de 2026", "lead": "<strong>Estas condiciones explican cómo funciona FullGrader y su suscripción opcional, FullGrader Premium.</strong> Al usar la app aceptas lo que sigue. Si no estás de acuerdo, puedes dejar de usarla y desinstalarla en cualquier momento.", "body": "<h2>Qué es FullGrader</h2><p>FullGrader es una herramienta para profesores: ayuda a preparar hojas de examen tipo test y rúbricas, y a corregirlas con la cámara del móvil. Todo se guarda en tu dispositivo, tal y como explica la <a href=\"../privacy/\">política de privacidad</a>.</p><h2>Versión gratuita y FullGrader Premium</h2><p>La versión gratuita permite guardar hasta <strong>80 evaluaciones nuevas al mes</strong> (tests y rúbricas). El contador se reinicia el día 1 de cada mes. Al llegar al límite puedes seguir viendo resultados, exportar y hacer copias de seguridad; solo se bloquea guardar hojas escaneadas nuevas.</p><p><strong>FullGrader Premium</strong> elimina ese límite y desbloquea la conexión con Google Classroom (importar alumnos iniciando sesión con Google y enviar notas). Importar la lista de alumnos desde Excel o CSV sigue siendo gratis.</p><h2>Suscripción, precio y renovación</h2><p>Premium es una suscripción <strong>anual con renovación automática</strong>, con <strong>7 días de prueba gratuita</strong> para quien no la haya usado antes. El precio, en la moneda de tu país, lo muestra Google Play antes de confirmar la compra.</p><p>El pago se carga a tu cuenta de Google Play al terminar la prueba y se renueva cada año salvo que canceles al menos 24 horas antes de que acabe el periodo en curso. Puedes cancelar cuando quieras en Google Play (Menú → Pagos y suscripciones → Suscripciones → FullGrader). Si cancelas, conservas Premium hasta el final del periodo ya pagado.</p><h2>Reembolsos</h2><p>Las compras las procesa Google Play, que gestiona los reembolsos según sus propias normas. Puedes pedirlos desde tu historial de pedidos de Google Play. FullGrader no tiene acceso a tus datos de pago.</p><h2>Tus datos y tu responsabilidad</h2><p>Los datos que introduces (clases, alumnos, notas, fotos) son tuyos y se quedan en tu dispositivo. Eres responsable de usarlos conforme a las normas de protección de datos que se apliquen a ti y a tu centro, y de hacer copias de seguridad: si pierdes o reinstalas el dispositivo sin copia, la información no se puede recuperar.</p><h2>Revisa siempre las notas</h2><p>La lectura automática de las hojas puede cometer errores (marcas poco claras, mala luz, papel arrugado…). FullGrader es una ayuda: antes de dar una nota por definitiva, revisa el resultado. La decisión final sobre la calificación es siempre del profesor.</p><h2>Uso aceptable</h2><p>Usa la app solo para fines lícitos y para tu actividad docente. No intentes saltarte los límites de la versión gratuita, ni alterar, copiar o revender la aplicación.</p><h2>Sin garantías y límite de responsabilidad</h2><p>FullGrader se ofrece «tal cual». Hacemos lo posible por que funcione bien, pero no garantizamos que esté libre de errores ni disponible sin interrupciones. En la medida que permita la ley, no respondemos de pérdidas de datos ni de perjuicios derivados del uso de la app, y nuestra responsabilidad, si la hubiera, se limita al importe pagado por Premium en los últimos 12 meses. Esto no afecta a los derechos que la ley te reconozca como consumidor.</p><h2>Cambios en estas condiciones</h2><p>Podemos actualizar estas condiciones. Cuando haya cambios, se modificará la fecha de arriba y, si son importantes, se avisará en la app. Los cambios de precio nunca se aplican a un periodo ya pagado.</p><h2>Contacto</h2><p>Para cualquier duda, escribe a <a href=\"mailto:regixstudio.dev@gmail.com\">regixstudio.dev@gmail.com</a>.</p>", "footer": "© 2026 FullGrader. Todos los derechos reservados."}, "ca": {"label": "Català", "title": "Condicions d'ús", "updated": "Última actualització: 8 d'octubre de 2026", "lead": "<strong>Aquestes condicions expliquen com funciona FullGrader i la seva subscripció opcional, FullGrader Premium.</strong> En usar l'app acceptes el que segueix. Si no hi estàs d'acord, pots deixar d'usar-la i desinstal·lar-la en qualsevol moment.", "body": "<h2>Què és FullGrader</h2><p>FullGrader és una eina per a professors: ajuda a preparar fulls d'examen tipus test i rúbriques, i a corregir-los amb la càmera del mòbil. Tot es desa al teu dispositiu, tal com explica la <a href=\"../privacy/\">política de privacitat</a>.</p><h2>Versió gratuïta i FullGrader Premium</h2><p>La versió gratuïta permet desar fins a <strong>80 avaluacions noves al mes</strong> (tests i rúbriques). El comptador es reinicia l'1 de cada mes. En arribar al límit pots seguir veient resultats, exportar i fer còpies de seguretat; només es bloqueja desar fulls escanejats nous.</p><p><strong>FullGrader Premium</strong> elimina aquest límit i desbloqueja la connexió amb Google Classroom (importar alumnes iniciant sessió amb Google i enviar notes). Importar la llista d'alumnes des d'Excel o CSV continua sent gratis.</p><h2>Subscripció, preu i renovació</h2><p>Premium és una subscripció <strong>anual amb renovació automàtica</strong>, amb <strong>7 dies de prova gratuïta</strong> per a qui no l'hagi usat abans. El preu, en la moneda del teu país, el mostra Google Play abans de confirmar la compra.</p><p>El pagament es carrega al teu compte de Google Play en acabar la prova i es renova cada any tret que cancel·lis almenys 24 hores abans que acabi el període en curs. Pots cancel·lar quan vulguis a Google Play (Menú → Pagaments i subscripcions → Subscripcions → FullGrader). Si cancel·les, conserves Premium fins al final del període ja pagat.</p><h2>Reemborsaments</h2><p>Les compres les processa Google Play, que gestiona els reemborsaments segons les seves pròpies normes. Pots demanar-los des de l'historial de comandes de Google Play. FullGrader no té accés a les teves dades de pagament.</p><h2>Les teves dades i la teva responsabilitat</h2><p>Les dades que introdueixes (classes, alumnes, notes, fotos) són teves i es queden al teu dispositiu. Ets responsable d'usar-les d'acord amb les normes de protecció de dades que t'afectin a tu i al teu centre, i de fer còpies de seguretat: si perds o reinstal·les el dispositiu sense còpia, la informació no es pot recuperar.</p><h2>Revisa sempre les notes</h2><p>La lectura automàtica dels fulls pot cometre errors (marques poc clares, mala llum, paper arrugat…). FullGrader és una ajuda: abans de donar una nota per definitiva, revisa el resultat. La decisió final sobre la qualificació és sempre del professor.</p><h2>Ús acceptable</h2><p>Usa l'app només per a fins lícits i per a la teva activitat docent. No intentis saltar-te els límits de la versió gratuïta, ni alterar, copiar o revendre l'aplicació.</p><h2>Sense garanties i límit de responsabilitat</h2><p>FullGrader s'ofereix «tal qual». Fem tot el possible perquè funcioni bé, però no garantim que estigui lliure d'errors ni disponible sense interrupcions. En la mesura que permeti la llei, no responem de pèrdues de dades ni de perjudicis derivats de l'ús de l'app, i la nostra responsabilitat, si n'hi hagués, es limita a l'import pagat per Premium en els darrers 12 mesos. Això no afecta els drets que la llei et reconegui com a consumidor.</p><h2>Canvis en aquestes condicions</h2><p>Podem actualitzar aquestes condicions. Quan hi hagi canvis, es modificarà la data de dalt i, si són importants, s'avisarà a l'app. Els canvis de preu mai s'apliquen a un període ja pagat.</p><h2>Contacte</h2><p>Per a qualsevol dubte, escriu a <a href=\"mailto:regixstudio.dev@gmail.com\">regixstudio.dev@gmail.com</a>.</p>", "footer": "© 2026 FullGrader. Tots els drets reservats."}, "gl": {"label": "Galego", "title": "Condicións de uso", "updated": "Última actualización: 8 de outubro de 2026", "lead": "<strong>Estas condicións explican como funciona FullGrader e a súa subscrición opcional, FullGrader Premium.</strong> Ao usar a app aceptas o que segue. Se non estás de acordo, podes deixar de usala e desinstalala en calquera momento.", "body": "<h2>Que é FullGrader</h2><p>FullGrader é unha ferramenta para profesores: axuda a preparar follas de exame tipo test e rúbricas, e a corrixilas coa cámara do móbil. Todo se garda no teu dispositivo, tal e como explica a <a href=\"../privacy/\">política de privacidade</a>.</p><h2>Versión gratuíta e FullGrader Premium</h2><p>A versión gratuíta permite gardar ata <strong>80 avaliacións novas ao mes</strong> (tests e rúbricas). O contador reiníciase o día 1 de cada mes. Ao chegar ao límite podes seguir vendo resultados, exportar e facer copias de seguranza; só se bloquea gardar follas dixitalizadas novas.</p><p><strong>FullGrader Premium</strong> elimina ese límite e desbloquea a conexión con Google Classroom (importar alumnado iniciando sesión con Google e enviar notas). Importar a lista de alumnado desde Excel ou CSV segue sendo gratis.</p><h2>Subscrición, prezo e renovación</h2><p>Premium é unha subscrición <strong>anual con renovación automática</strong>, con <strong>7 días de proba gratuíta</strong> para quen non a usase antes. O prezo, na moeda do teu país, móstrao Google Play antes de confirmar a compra.</p><p>O pagamento cárgase na túa conta de Google Play ao rematar a proba e renóvase cada ano salvo que canceles polo menos 24 horas antes de que remate o período en curso. Podes cancelar cando queiras en Google Play (Menú → Pagamentos e subscricións → Subscricións → FullGrader). Se cancelas, conservas Premium ata o final do período xa pagado.</p><h2>Reembolsos</h2><p>As compras procésaas Google Play, que xestiona os reembolsos segundo as súas propias normas. Podes pedilos desde o historial de pedidos de Google Play. FullGrader non ten acceso aos teus datos de pagamento.</p><h2>Os teus datos e a túa responsabilidade</h2><p>Os datos que introduces (clases, alumnado, notas, fotos) son teus e quedan no teu dispositivo. Es responsable de usalos conforme ás normas de protección de datos que che apliquen a ti e ao teu centro, e de facer copias de seguranza: se perdes ou reinstalas o dispositivo sen copia, a información non se pode recuperar.</p><h2>Revisa sempre as notas</h2><p>A lectura automática das follas pode cometer erros (marcas pouco claras, mala luz, papel engurrado…). FullGrader é unha axuda: antes de dar unha nota por definitiva, revisa o resultado. A decisión final sobre a cualificación é sempre do profesor.</p><h2>Uso aceptable</h2><p>Usa a app só para fins lícitos e para a túa actividade docente. Non intentes saltar os límites da versión gratuíta, nin alterar, copiar ou revender a aplicación.</p><h2>Sen garantías e límite de responsabilidade</h2><p>FullGrader ofrécese «tal cal». Facemos o posible para que funcione ben, pero non garantimos que estea libre de erros nin dispoñible sen interrupcións. Na medida que permita a lei, non respondemos de perdas de datos nin de prexuízos derivados do uso da app, e a nosa responsabilidade, se a houbese, limítase ao importe pagado por Premium nos últimos 12 meses. Isto non afecta aos dereitos que a lei che recoñeza como consumidor.</p><h2>Cambios nestas condicións</h2><p>Podemos actualizar estas condicións. Cando haxa cambios, modificarase a data de arriba e, se son importantes, avisarase na app. Os cambios de prezo nunca se aplican a un período xa pagado.</p><h2>Contacto</h2><p>Para calquera dúbida, escribe a <a href=\"mailto:regixstudio.dev@gmail.com\">regixstudio.dev@gmail.com</a>.</p>", "footer": "© 2026 FullGrader. Todos os dereitos reservados."}, "eu": {"label": "Euskara", "title": "Erabilera baldintzak", "updated": "Azken eguneratzea: 2026ko urriaren 8a", "lead": "<strong>Baldintza hauek FullGrader nola funtzionatzen duen eta haren aukerako harpidetza, FullGrader Premium, azaltzen dute.</strong> Aplikazioa erabiltzean, jarraian dagoena onartzen duzu. Ados ez bazaude, edozein unetan utzi eta desinstalatu dezakezu.", "body": "<h2>Zer da FullGrader</h2><p>FullGrader irakasleentzako tresna bat da: test motako azterketa-orriak eta errubrikak prestatzen eta mugikorraren kamerarekin zuzentzen laguntzen du. Dena zure gailuan gordetzen da, <a href=\"../privacy/\">pribatutasun-politikan</a> azaltzen den bezala.</p><h2>Doako bertsioa eta FullGrader Premium</h2><p>Doako bertsioak hilean <strong>80 ebaluazio berri</strong> arte gordetzen uzten du (testak eta errubrikak). Kontagailua hilabete bakoitzaren 1ean berrezartzen da. Mugara iristean emaitzak ikusten, esportatzen eta segurtasun-kopiak egiten jarraitu dezakezu; eskaneatutako orri berriak gordetzea soilik blokeatzen da.</p><p><strong>FullGrader Premium</strong>-ek muga hori kentzen du eta Google Classroom-ekiko konexioa desblokeatzen du (ikasleak Google-rekin saioa hasita inportatu eta notak bidali). Ikasleen zerrenda Excel edo CSV fitxategi batetik inportatzea doakoa izaten jarraitzen du.</p><h2>Harpidetza, prezioa eta berritzea</h2><p>Premium <strong>urteko harpidetza</strong> da, <strong>berritze automatikoarekin</strong>, eta <strong>7 eguneko doako proba</strong> du lehen aldiz erabiltzen duenarentzat. Prezioa, zure herrialdeko monetan, Google Play-k erakusten du erosketa baieztatu aurretik.</p><p>Ordainketa zure Google Play kontuan kargatzen da proba amaitzean eta urtero berritzen da, indarrean dagoen aldia amaitu baino 24 ordu lehenago gutxienez ezeztatzen ez baduzu. Nahi duzunean ezeztatu dezakezu Google Play-n (Menua → Ordainketak eta harpidetzak → Harpidetzak → FullGrader). Ezeztatzen baduzu, Premium duzu ordaindutako aldia amaitu arte.</p><h2>Itzulketak</h2><p>Erosketak Google Play-k prozesatzen ditu, eta berak kudeatzen ditu itzulketak bere arauen arabera. Google Play-ko eskaera-historialetik eska ditzakezu. FullGraderrek ez du zure ordainketa-daturik eskuratzen.</p><h2>Zure datuak eta zure erantzukizuna</h2><p>Sartzen dituzun datuak (klaseak, ikasleak, notak, argazkiak) zureak dira eta zure gailuan geratzen dira. Zuri eta zure ikastetxeari aplikatzen zaizkien datu-babeserako arauen arabera erabiltzeko eta segurtasun-kopiak egiteko erantzulea zara: gailua galdu edo berrinstalatzen baduzu kopiarik gabe, informazioa ezin da berreskuratu.</p><h2>Berrikusi beti notak</h2><p>Orrien irakurketa automatikoak akatsak izan ditzake (marka argi gabeak, argi txarra, paper zimurtua…). FullGrader laguntza bat da: nota behin betikotzat jo aurretik, berrikusi emaitza. Kalifikazioari buruzko azken erabakia beti irakaslearena da.</p><h2>Erabilera onargarria</h2><p>Erabili aplikazioa helburu legezkoetarako eta zure irakaskuntza-jardueraren barruan soilik. Ez saiatu doako bertsioaren mugak saihesten, ez aplikazioa aldatzen, kopiatzen edo birsaltzen.</p><h2>Bermerik gabe eta erantzukizun-muga</h2><p>FullGrader «dagoen bezala» eskaintzen da. Ondo funtzionatzeko ahalegin guztia egiten dugu, baina ez dugu bermatzen akatsik gabekoa izango denik, ezta etenik gabe eskuragarri egongo denik ere. Legeak onartzen duen neurrian, ez gara datu-galeren edo aplikazioaren erabileratik eratorritako kalteen erantzule, eta gure erantzukizuna, egonez gero, azken 12 hilabeteetan Premium-erako ordaindutako zenbatekora mugatzen da. Horrek ez ditu kaltetzen legeak kontsumitzaile gisa aitortzen dizkizun eskubideak.</p><h2>Baldintza hauen aldaketak</h2><p>Baldintza hauek eguneratu ditzakegu. Aldaketak daudenean goiko data aldatuko da, eta garrantzitsuak badira aplikazioan jakinaraziko da. Prezio-aldaketak ez zaizkio inoiz ordaindutako aldi bati aplikatzen.</p><h2>Kontaktua</h2><p>Edozein zalantzarako, idatzi helbide honetara: <a href=\"mailto:regixstudio.dev@gmail.com\">regixstudio.dev@gmail.com</a>.</p>", "footer": "© 2026 FullGrader. Eskubide guztiak erreserbatuta."}, "en": {"label": "English", "title": "Terms of use", "updated": "Last updated: October 8, 2026", "lead": "<strong>These terms explain how FullGrader and its optional subscription, FullGrader Premium, work.</strong> By using the app you accept what follows. If you do not agree, you can stop using it and uninstall it at any time.", "body": "<h2>What FullGrader is</h2><p>FullGrader is a tool for teachers: it helps prepare multiple-choice answer sheets and rubrics, and grade them with the phone camera. Everything is stored on your device, as explained in the <a href=\"../privacy/\">privacy policy</a>.</p><h2>Free version and FullGrader Premium</h2><p>The free version lets you save up to <strong>80 new evaluations per month</strong> (tests and rubrics). The counter resets on the 1st of each month. When you reach the limit you can still view results, export and make backups; only saving new scanned sheets is blocked.</p><p><strong>FullGrader Premium</strong> removes that limit and unlocks the Google Classroom connection (importing students by signing in with Google, and sending grades). Importing your student list from Excel or CSV remains free.</p><h2>Subscription, price and renewal</h2><p>Premium is an <strong>annual subscription that renews automatically</strong>, with a <strong>7-day free trial</strong> for anyone who has not used it before. The price, in your country's currency, is shown by Google Play before you confirm the purchase.</p><p>Payment is charged to your Google Play account when the trial ends and renews every year unless you cancel at least 24 hours before the current period ends. You can cancel at any time in Google Play (Menu → Payments &amp; subscriptions → Subscriptions → FullGrader). If you cancel, you keep Premium until the end of the period you have already paid for.</p><h2>Refunds</h2><p>Purchases are processed by Google Play, which handles refunds under its own rules. You can request one from your Google Play order history. FullGrader has no access to your payment details.</p><h2>Your data and your responsibility</h2><p>The data you enter (classes, students, grades, photos) is yours and stays on your device. You are responsible for using it in line with the data protection rules that apply to you and your school, and for making backups: if you lose or reinstall your device without a backup, the information cannot be recovered.</p><h2>Always check the grades</h2><p>Automatic reading of the sheets can make mistakes (unclear marks, poor lighting, creased paper…). FullGrader is an aid: review the result before treating a grade as final. The final decision on a grade is always the teacher's.</p><h2>Acceptable use</h2><p>Use the app only for lawful purposes and for your teaching work. Do not try to get around the free-version limits, or to alter, copy or resell the app.</p><h2>No warranty and limit of liability</h2><p>FullGrader is provided \"as is\". We do our best to make it work well, but we do not guarantee that it is error-free or always available. To the extent the law allows, we are not liable for data loss or damages arising from using the app, and our liability, if any, is limited to the amount paid for Premium in the last 12 months. This does not affect the rights you have as a consumer under the law.</p><h2>Changes to these terms</h2><p>We may update these terms. When they change, the date above will be updated and, if the changes are important, you will be told in the app. Price changes never apply to a period you have already paid for.</p><h2>Contact</h2><p>If you have any questions, write to <a href=\"mailto:regixstudio.dev@gmail.com\">regixstudio.dev@gmail.com</a>.</p>", "footer": "© 2026 FullGrader. All rights reserved."}};
+  var ORDER = ["es", "ca", "gl", "eu", "en"];
+
+  function pickInitialLang() {
+    var params = new URLSearchParams(window.location.search);
+    var fromUrl = params.get('lang');
+    if (fromUrl && DATA[fromUrl]) return fromUrl;
+    try {
+      var saved = localStorage.getItem('fullgrader-terms-lang');
+      if (saved && DATA[saved]) return saved;
+    } catch (e) {}
+    var nav = (navigator.language || 'es').toLowerCase();
+    for (var i = 0; i < ORDER.length; i++) {
+      if (nav.indexOf(ORDER[i]) === 0) return ORDER[i];
+    }
+    return 'es';
+  }
+
+  function render(lang) {
+    var d = DATA[lang];
+    if (!d) return;
+    document.documentElement.lang = lang;
+    document.title = d.title + ' · FullGrader';
+    document.getElementById('pTitle').textContent = d.title;
+    document.getElementById('pUpdated').textContent = d.updated;
+    document.getElementById('pLead').innerHTML = d.lead;
+    document.getElementById('pBody').innerHTML = d.body;
+    document.getElementById('pFooter').innerHTML = '<p>' + d.footer + '</p>';
+    var btns = document.querySelectorAll('.lang-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('active', btns[i].getAttribute('data-lang') === lang);
+    }
+    try { localStorage.setItem('fullgrader-terms-lang', lang); } catch (e) {}
+  }
+
+  document.getElementById('langSwitch').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('.lang-btn');
+    if (!btn) return;
+    render(btn.getAttribute('data-lang'));
+  });
+
+  render(pickInitialLang());
+</script>
+
+</body>
+</html>
