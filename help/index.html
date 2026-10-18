@@ -13,8 +13,8 @@
       --accent: #4F46E5;
       --accent-text: #4F46E5;
       --accent-soft: #eef2ff;
-      --bg: #f6f6f9;
-      --surface: #ffffff;
+      --bg: #ffffff;
+      --surface: #fbfbfe;
       --text: #1a1a1f;
       --muted: #5a5a68;
       --border: #e3e3ec;
@@ -30,11 +30,11 @@
         --accent: #8f88ff;
         --accent-text: #a5a0ff;
         --accent-soft: #1e1b4b;
-        --bg: #121218;
-        --surface: #1c1c24;
+        --bg: #0f0e1f;
+        --surface: #17162e;
         --text: #f0f0f4;
         --muted: #a0a0b0;
-        --border: #2c2c38;
+        --border: #2a2946;
         --example-bg: #2a2110;
         --example-border: #a16207;
         --example-text: #fcd34d;
@@ -48,7 +48,7 @@
 
     /* Barra fija de arriba: marca + idiomas (siempre visibles) */
 
-    main { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; overflow-x: clip; }
+    main { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; }
     .hero.band { margin-bottom: 24px; }
 
     /* Índice */
@@ -107,7 +107,17 @@
     .social-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
     .social-links a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
 
-  </style>
+  
+    /* Pantallas grandes: índice fijo a la izquierda y apartados a la derecha */
+    @media (min-width: 900px) {
+      [data-lang] > main { max-width: 1040px; padding: 0 20px 40px; display: grid; grid-template-columns: 230px minmax(0, 1fr); column-gap: 48px; align-items: start; }
+      [data-lang] > main > * { grid-column: 2; }
+      [data-lang] > main > .hero { grid-column: 1 / -1; }
+      [data-lang] > main > .toc { grid-column: 1; grid-row: 2 / span 40; position: sticky; top: 76px; background: transparent; border: 0; border-radius: 0; padding: 0; max-height: calc(100vh - 96px); overflow: auto; }
+      .toc ol { columns: 1; }
+      .toc a { color: var(--muted); }
+    }
+</style>
   <link rel="stylesheet" href="../topbar.css">
   <link rel="stylesheet" href="../site.css">
 </head>

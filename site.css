@@ -1,16 +1,76 @@
-/* Piezas comunes de diseño (mismo aire que la portada) */
-:root { --s-wash: #f3f2ff; --s-ink: #17163a; --s-muted: #5d5c78; --s-accent: #4f46e5; }
-@media (prefers-color-scheme: dark) { :root { --s-wash: #17162e; --s-ink: #f2f1ff; --s-muted: #a4a3c0; --s-accent: #a5a0ff; } }
+/* Sistema de diseño común de fullgrader.app (mismo aire que la portada).
+   Lo cargan todas las páginas menos la portada, que lleva su propio estilo. */
+:root {
+  --s-paper: #ffffff;
+  --s-wash: #f3f2ff;
+  --s-ink: #17163a;
+  --s-text: #23223f;
+  --s-muted: #5d5c78;
+  --s-accent: #4f46e5;
+  --s-line: #e4e3f2;
+  --s-phone: #12112a;
+  --s-dark: #17163a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --s-paper: #0f0e1f;
+    --s-wash: #17162e;
+    --s-ink: #f2f1ff;
+    --s-text: #e6e5f5;
+    --s-muted: #a4a3c0;
+    --s-accent: #a5a0ff;
+    --s-line: #2a2946;
+    --s-phone: #000;
+    --s-dark: #1d1c3b;
+  }
+}
 
-/* Cabecera de cada página: franja lavanda a todo el ancho, titular grande */
-.band { position: relative; background: var(--s-wash); box-shadow: 0 0 0 100vmax var(--s-wash); clip-path: inset(0 -100vmax); padding: 52px 0 40px; margin-bottom: 36px; }
-.band h1 { font-size: clamp(32px, 4.6vw, 48px); line-height: 1.06; letter-spacing: -.032em; font-weight: 800; color: var(--s-ink); margin: 0; text-wrap: balance; }
-.band .kicker { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: var(--s-accent); letter-spacing: 0; text-transform: none; }
-.band .sub { margin: 14px 0 0; font-size: 18px; color: var(--s-muted); max-width: 46ch; }
+/* Cabecera de página: franja lavanda a todo el ancho */
+.band { position: relative; background: var(--s-wash); box-shadow: 0 0 0 100vmax var(--s-wash); clip-path: inset(0 -100vmax); padding: 56px 0 44px; margin-bottom: 40px; }
+.band h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; color: var(--s-ink); margin: 0; text-wrap: balance; }
+.band .kicker { margin: 0 0 12px; font-size: 15px; font-weight: 700; color: var(--s-accent); }
+.band .sub { margin: 16px 0 0; font-size: 19px; line-height: 1.55; color: var(--s-muted); max-width: 46ch; }
 .band .sub:empty { display: none; }
+.band .sub a { color: var(--s-accent); }
 
-/* Titulares de apartado, con el mismo peso que la portada */
-.prose h2 { font-size: clamp(21px, 2.4vw, 25px); line-height: 1.2; letter-spacing: -.02em; font-weight: 800; color: var(--s-ink); }
+/* Cabecera con imagen a la derecha (Premium) */
+.band.split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-bottom: 0; }
+.band.split .stage { align-self: end; }
+.stage { position: relative; display: flex; justify-content: center; }
+.phone { position: relative; width: min(290px, 74vw); border-radius: 40px 40px 0 0; background: var(--s-phone); padding: 11px 11px 0; box-shadow: 0 30px 60px -24px rgba(40, 30, 120, .5); }
+.phone img { display: block; width: 100%; height: auto; border-radius: 30px 30px 0 0; aspect-ratio: 540 / 760; object-fit: cover; object-position: top; background: #f6f6fb; }
+
+/* Titulares de apartado */
+.prose h2, .s-h2 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; letter-spacing: -.025em; font-weight: 800; color: var(--s-ink); }
 .prose h3 { color: var(--s-ink); }
 
-@media (max-width: 600px) { .band { padding: 36px 0 28px; margin-bottom: 28px; } .band .sub { font-size: 16.5px; } }
+/* Franja oscura (un solo uso por página) */
+.darkband { background: var(--s-dark); box-shadow: 0 0 0 100vmax var(--s-dark); clip-path: inset(0 -100vmax); color: #e7e6fb; padding: 52px 0; margin: 56px 0 0; }
+.darkband h2, .darkband h3 { color: #fff; margin: 0 0 10px; }
+.darkband p { margin: 0; color: #cfcdf0; font-size: 17.5px; max-width: 62ch; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; background: var(--s-accent); color: #fff !important; font-weight: 700; text-decoration: none; font-size: 16px; }
+.btn:hover { filter: brightness(1.07); }
+.btn.ghost { background: transparent; color: var(--s-ink) !important; box-shadow: inset 0 0 0 2px var(--s-line); }
+
+/* Índice lateral (privacidad, condiciones y tutorial en pantallas grandes) */
+.aside-toc { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 96px); overflow: auto; padding-right: 8px; }
+.aside-toc p { margin: 0 0 10px; font-weight: 800; font-size: 15px; color: var(--s-ink); }
+.aside-toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--s-line); }
+.aside-toc a { display: block; padding: 6px 0 6px 14px; margin-left: -2px; border-left: 2px solid transparent; color: var(--s-muted); text-decoration: none; font-size: 14.5px; line-height: 1.35; }
+.aside-toc a:hover, .aside-toc a.on { color: var(--s-accent); border-left-color: var(--s-accent); }
+
+a:focus-visible, summary:focus-visible, .btn:focus-visible { outline: 3px solid var(--s-accent); outline-offset: 3px; border-radius: 8px; }
+
+@media (max-width: 860px) {
+  .band.split { grid-template-columns: 1fr; gap: 28px; }
+  .aside-toc { display: none; }
+}
+@media (max-width: 600px) {
+  .band { padding: 40px 0 30px; margin-bottom: 30px; }
+  .band .sub { font-size: 17px; }
+  .darkband { padding: 40px 0; }
+}
+html { scroll-padding-top: 76px; }
+@media (prefers-color-scheme: dark) { .btn { color: #17163a !important; } }
