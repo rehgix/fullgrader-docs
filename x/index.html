@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Copia de la portada para contar las visitas que llegan desde este enlace. Se regenera a partir de index.html. -->
+<base href="/">
+<link rel="canonical" href="https://fullgrader.app/">
+<meta name="robots" content="noindex, follow">
+<meta name="google-site-verification" content="2IF2tc4lpiZpyHavqlvCVm6vh7wjcTjzBhodV1yGQMA" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FullGrader · Corrige exámenes tipo test con la cámara del móvil</title>
+<meta name="description" content="FullGrader es la app para docentes que corrige exámenes tipo test con la cámara del móvil. Tus datos se guardan solo en tu dispositivo.">
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f6f9;
+    --text: #1a1a1f;
+    --muted: #5a5a68;
+    --accent: #4F46E5;
+    --border: #e3e3ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121218;
+      --surface: #1c1c24;
+      --text: #f0f0f4;
+      --muted: #a0a0b0;
+      --accent: #8b85f0;
+      --border: #2c2c38;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 0 16px 80px; }
+  .hero { text-align: center; padding: 36px 0 24px; }
+  .hero-icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(79,70,229,.25); }
+  h1 { font-size: 40px; line-height: 1.15; margin: 20px 0 8px; letter-spacing: -.02em; }
+  .tagline { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 560px; }
+  h2 { font-size: 22px; margin: 40px 0 12px; }
+  ul { padding-left: 22px; margin: 0; }
+  li { margin: 8px 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 4px 22px 18px; margin-top: 32px;
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 999px;
+    font-weight: 600; text-decoration: none;
+    background: var(--accent); color: #fff;
+  }
+  .play-badge { display: inline-flex; }
+  /* Insignia oficial de Google Play (archivos en badges/, del paquete de
+     Google). Normas: no modificarla, altura mínima 28 px y un espacio libre
+     alrededor de 1/4 de su altura (aquí 52 px de alto -> 13 px). */
+  .play-badge { margin: 14px; }
+  .play-badge img { height: 56px; width: auto; display: block; }
+  .cta { display: flex; justify-content: center; margin-top: 18px; }
+  .cta-bottom { margin-top: 40px; }
+  .sublinks { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; color: var(--muted); }
+  .sublinks a { color: var(--accent); font-weight: 600; text-decoration: none; padding: 6px 2px; }
+  .sublinks a:hover { text-decoration: underline; }
+  .legal { font-size: 12px; opacity: .8; }
+  .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
+  footer a { color: var(--accent); }
+  p { margin: 10px 0; }
+</style>
+<link rel="stylesheet" href="topbar.css">
+</head>
+<body data-page="home" data-root="">
+<div class="topbar">
+  <div class="topbar-row">
+    <a class="brand" href="/" data-back><img src="icon.png" alt="" width="28" height="28"><span class="brand-name">FullGrader</span></a>
+    <label class="tb-seg tb-lang"><span data-pageword>Inicio</span><span class="tb-arrow" aria-hidden="true"></span><select id="pageSelect" aria-label="Páginas"></select></label>
+    <label class="tb-seg tb-lang"><span data-langword>Idioma</span><span class="tb-arrow" aria-hidden="true"></span><select id="langSelect" aria-label="Idioma"><option value="es">Español</option><option value="ca">Català</option><option value="gl">Galego</option><option value="eu">Euskara</option><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português</option></select></label>
+  </div>
+</div>
+<main>
+  <section class="hero">
+    <img class="hero-icon" src="icon.png" alt="FullGrader">
+    <h1>FullGrader</h1>
+    <p class="tagline" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</p>
+    <div class="cta"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+    <nav class="sublinks">
+      <a href="help/" data-i="help">Tutorial</a>
+      <span aria-hidden="true">·</span>
+      <a href="premium/" data-nav="premium">Premium</a>
+      <span aria-hidden="true">·</span>
+      <a href="faq/" data-nav="faq">Preguntas frecuentes</a>
+    </nav>
+  </section>
+
+  <h2 data-i="whatTitle">Qué hace la app</h2>
+  <ul>
+    <li data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</li>
+    <li data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</li>
+    <li data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</li>
+    <li data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</li>
+    <li data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</li>
+  </ul>
+
+  <div class="card">
+    <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
+    <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
+    <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
+  </div>
+
+  <h2 data-i="dataTitle">Tus datos son tuyos</h2>
+  <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+
+  <div class="cta cta-bottom"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+  <nav class="sublinks">
+    <a href="contact/" data-nav="contact">Contacto</a>
+    <span aria-hidden="true">·</span>
+    <a href="privacy/" data-nav="privacy">Privacidad</a>
+    <span aria-hidden="true">·</span>
+    <a href="terms/" data-nav="terms">Condiciones</a>
+  </nav>
+
+  <footer>
+    <p data-i="langs">Disponible en castellano, català, galego, euskara y English.</p>
+    <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
+    <p>Instagram <a href="https://www.instagram.com/fullgrader">@FullGrader</a> · X <a href="https://x.com/FullGrader">@FullGrader</a></p>
+  </footer>
+</main>
+
+<script src="topbar.js"></script>
+<script>
+(function () {
+  var T = {
+    es: {
+      gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
+      getPlay: 'Descárgala en Google Play',
+      title: 'FullGrader · Corrige exámenes tipo test con la cámara del móvil',
+      tagline: 'Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.',
+      help: 'Tutorial', privacy: 'Política de privacidad',
+      whatTitle: 'Qué hace la app',
+      f1: 'Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.',
+      f2: 'Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.',
+      f3: 'Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.',
+      f4: 'Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.',
+      f5: 'Evalúa también con rúbricas y exporta los resultados a Excel.',
+      gcTitle: 'Conexión opcional con Google Classroom',
+      gc1: 'Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.',
+      gc2: 'Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.',
+      dataTitle: 'Tus datos son tuyos',
+      data1: 'Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.',
+      privacyFull: 'Leer la política de privacidad',
+      langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.'
+    },
+    ca: {
+      gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
+      getPlay: 'Descarrega-la a Google Play',
+      title: 'FullGrader · Corregeix exàmens tipus test amb la càmera del mòbil',
+      tagline: 'Corregeix exàmens tipus test amb la càmera del mòbil, en segons i sense servidors.',
+      help: 'Tutorial', privacy: 'Política de privadesa',
+      whatTitle: 'Què fa l’app',
+      f1: 'Crea la plantilla del teu examen: preguntes, opcions, respostes correctes, penalització i nota màxima.',
+      f2: 'Genera i imprimeix el full de respostes en PDF, amb el nom i el logotip del teu centre.',
+      f3: 'Fes una foto a cada full: l’app llegeix les marques, calcula la nota i et deixa revisar-la abans de desar-la.',
+      f4: 'Consulta resultats per examen, per grup i per alumne, amb estadístiques per pregunta i progrés per criteri.',
+      f5: 'Avalua també amb rúbriques i exporta els resultats a Excel.',
+      gcTitle: 'Connexió opcional amb Google Classroom',
+      gc1: 'Si ho demanes tu, FullGrader pot importar la llista d’alumnes d’una classe de Classroom i enviar les notes d’un examen com a esborrany. Per això demana a Google aquests permisos: veure els teus cursos, veure les llistes d’alumnes i crear una tasca amb notes.',
+      gc2: 'Només s’utilitzen per a aquestes dues accions. Les dades que arriben de Google no surten del teu mòbil, no es desen en cap servidor ni es comparteixen amb ningú. L’ús que fa FullGrader de la informació rebuda de les API de Google compleix la Política de dades d’usuari dels serveis d’API de Google, inclosos els requisits d’ús limitat.',
+      dataTitle: 'Les teves dades són teves',
+      data1: 'Alumnes, notes i fotos es desen únicament al teu dispositiu. FullGrader no té comptes d’usuari ni publicitat. Pots desar còpies de seguretat xifrades amb contrasenya i bloquejar l’app amb empremta, reconeixement facial o PIN.',
+      privacyFull: 'Llegir la política de privadesa',
+      langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès.'
+    },
+    gl: {
+      gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
+      getPlay: 'Descárgaa en Google Play',
+      title: 'FullGrader · Corrixe exames tipo test coa cámara do móbil',
+      tagline: 'Corrixe exames tipo test coa cámara do móbil, en segundos e sen servidores.',
+      help: 'Titorial', privacy: 'Política de privacidade',
+      whatTitle: 'Que fai a app',
+      f1: 'Crea o modelo do teu exame: preguntas, opcións, respostas correctas, penalización e nota máxima.',
+      f2: 'Xera e imprime a folla de respostas en PDF, co nome e o logotipo do teu centro.',
+      f3: 'Fai unha foto a cada folla: a app le as marcas, calcula a nota e déixache revisala antes de gardala.',
+      f4: 'Consulta resultados por exame, por grupo e por alumno, con estatísticas por pregunta e progreso por criterio.',
+      f5: 'Avalía tamén con rúbricas e exporta os resultados a Excel.',
+      gcTitle: 'Conexión opcional con Google Classroom',
+      gc1: 'Se ti o pides, FullGrader pode importar a lista de alumnos dunha clase de Classroom e enviar as notas dun exame como borrador. Para iso pide a Google estes permisos: ver os teus cursos, ver as listas de alumnos e crear unha tarefa con notas.',
+      gc2: 'Só se usan para esas dúas accións. Os datos que chegan de Google non saen do teu móbil, non se gardan en ningún servidor nin se comparten con ninguén. O uso que fai FullGrader da información recibida das API de Google cumpre a Política de datos de usuario dos servizos de API de Google, incluídos os requisitos de uso limitado.',
+      dataTitle: 'Os teus datos son teus',
+      data1: 'Alumnos, notas e fotos gárdanse unicamente no teu dispositivo. FullGrader non ten contas de usuario nin publicidade. Podes gardar copias de seguridade cifradas con contrasinal e bloquear a app con pegada, recoñecemento facial ou PIN.',
+      privacyFull: 'Ler a política de privacidade',
+      langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués.'
+    },
+    eu: {
+      gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
+      getPlay: 'Deskargatu Google Play-n',
+      title: 'FullGrader · Zuzendu test motako azterketak telefonoaren kamerarekin',
+      tagline: 'Zuzendu test motako azterketak telefonoaren kamerarekin, segundo gutxitan eta zerbitzaririk gabe.',
+      help: 'Tutoriala', privacy: 'Pribatutasun-politika',
+      whatTitle: 'Zer egiten du aplikazioak',
+      f1: 'Sortu zure azterketaren txantiloia: galderak, aukerak, erantzun zuzenak, zigorra eta gehieneko nota.',
+      f2: 'Sortu eta inprimatu erantzun-orria PDF formatuan, zure ikastetxearen izena eta logotipoarekin.',
+      f3: 'Atera argazki bat orri bakoitzari: aplikazioak markak irakurtzen ditu, nota kalkulatzen du eta gorde aurretik berrikusten uzten dizu.',
+      f4: 'Kontsultatu emaitzak azterketaka, taldeka eta ikasleka, galdera bakoitzeko estatistikekin eta irizpideen araberako aurrerapenarekin.',
+      f5: 'Ebaluatu errubrikekin ere, eta esportatu emaitzak Excelera.',
+      gcTitle: 'Google Classroom-ekin aukerako konexioa',
+      gc1: 'Zuk eskatuta, FullGrader-ek Classroom-eko talde bateko ikasleen zerrenda inporta dezake eta azterketa baten notak zirriborro gisa bidali. Horretarako, Googleri baimen hauek eskatzen dizkio: zure ikastaroak ikustea, ikasleen zerrendak ikustea eta notak dituen zeregin bat sortzea.',
+      gc2: 'Bi ekintza horietarako soilik erabiltzen dira. Googletik datozen datuak ez dira zure telefonotik ateratzen, ez dira inongo zerbitzarietan gordetzen eta ez dira inorekin partekatzen. FullGrader-ek Google API-etatik jasotako informazioarekin egiten duen erabilerak Google API Zerbitzuen Erabiltzaile Datuen Politika betetzen du, erabilera mugatuaren betekizunak barne.',
+      dataTitle: 'Zure datuak zureak dira',
+      data1: 'Ikasleak, notak eta argazkiak zure gailuan soilik gordetzen dira. FullGrader-ek ez du erabiltzaile-konturik ez publizitaterik. Pasahitzarekin zifratutako babeskopiak gorde ditzakezu eta aplikazioa hatz-markarekin, aurpegi-ezagutzarekin edo PINarekin blokeatu.',
+      privacyFull: 'Irakurri pribatutasun-politika',
+      langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez.'
+    },
+    en: {
+      gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
+      getPlay: 'Get it on Google Play',
+      title: 'FullGrader · Grade multiple-choice tests with your phone camera',
+      tagline: 'Grade multiple-choice tests with your phone camera, in seconds and with no servers.',
+      help: 'Tutorial', privacy: 'Privacy policy',
+      whatTitle: 'What the app does',
+      f1: 'Build your test template: questions, options, correct answers, penalty and maximum grade.',
+      f2: 'Generate and print the answer sheet as a PDF, with your school’s name and logo.',
+      f3: 'Take a photo of each sheet: the app reads the marks, works out the grade and lets you check it before saving.',
+      f4: 'See results by test, by class and by student, with per-question statistics and progress by criterion.',
+      f5: 'Assess with rubrics too, and export the results to Excel.',
+      gcTitle: 'Optional connection with Google Classroom',
+      gc1: 'Only when you ask, FullGrader can import the student list of a Classroom class and send a test’s grades as drafts. To do so it asks Google for these permissions: view your courses, view class rosters, and create an assignment with grades.',
+      gc2: 'They are used only for those two actions. Data received from Google never leaves your phone, is not stored on any server and is not shared with anyone. FullGrader’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.',
+      dataTitle: 'Your data is yours',
+      data1: 'Students, grades and photos are stored only on your device. FullGrader has no user accounts and no ads. You can save backups encrypted with a password and lock the app with fingerprint, face recognition or a PIN.',
+      privacyFull: 'Read the privacy policy',
+      langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese.'
+    },
+    de: {
+      gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
+      getPlay: 'Jetzt bei Google Play',
+      title: 'FullGrader · Multiple-Choice-Prüfungen mit der Handykamera korrigieren',
+      tagline: 'Korrigiere Multiple-Choice-Prüfungen mit der Handykamera – in Sekunden und ohne Server.',
+      help: 'Anleitung',
+      privacy: 'Datenschutzerklärung',
+      whatTitle: 'Was die App kann',
+      f1: 'Erstelle die Vorlage deiner Prüfung: Fragen, Optionen, richtige Antworten, Abzug für falsche Antworten und Höchstnote.',
+      f2: 'Erzeuge und drucke den Antwortbogen als PDF, mit dem Namen und dem Logo deiner Schule.',
+      f3: 'Fotografiere jeden Bogen: Die App liest die Markierungen, berechnet die Note und lässt dich sie vor dem Speichern überprüfen.',
+      f4: 'Sieh dir die Ergebnisse nach Prüfung, Klasse und Person an, mit Statistiken pro Frage und Fortschritt nach Kriterium.',
+      f5: 'Bewerte auch mit Bewertungsrastern und exportiere die Ergebnisse nach Excel.',
+      gcTitle: 'Optionale Verbindung zu Google Classroom',
+      gc1: 'Nur wenn du es möchtest, kann FullGrader die Teilnehmerliste eines Classroom-Kurses importieren und die Noten einer Prüfung als Entwurf senden. Dafür bittet die App Google um folgende Berechtigungen: deine Kurse ansehen, die Teilnehmerlisten ansehen und eine Aufgabe mit Noten erstellen.',
+      gc2: 'Sie werden ausschließlich für diese beiden Aktionen verwendet. Die von Google empfangenen Daten verlassen dein Handy nicht, werden auf keinem Server gespeichert und an niemanden weitergegeben. Die Nutzung der über Google-APIs erhaltenen Informationen durch FullGrader entspricht der Richtlinie zu Nutzerdaten für Google API-Dienste, einschließlich der Anforderungen zur eingeschränkten Nutzung (Limited Use).',
+      dataTitle: 'Deine Daten gehören dir',
+      data1: 'Schülerinnen und Schüler, Noten und Fotos werden ausschließlich auf deinem Gerät gespeichert. FullGrader hat weder Benutzerkonten noch Werbung. Du kannst passwortgeschützte, verschlüsselte Sicherungen speichern und die App per Fingerabdruck, Gesichtserkennung oder PIN sperren.',
+      privacyFull: 'Datenschutzerklärung lesen',
+      langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch.'
+    },
+    fr: {
+      gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
+      getPlay: 'Disponible sur Google Play',
+      title: 'FullGrader · Corrigez vos QCM avec l’appareil photo de votre téléphone',
+      tagline: 'Corrigez vos QCM avec l’appareil photo de votre téléphone, en quelques secondes et sans serveurs.',
+      help: 'Tutoriel',
+      privacy: 'Politique de confidentialité',
+      whatTitle: 'Ce que fait l’application',
+      f1: 'Créez le modèle de votre examen : questions, options, bonnes réponses, pénalité et note maximale.',
+      f2: 'Générez et imprimez la feuille de réponses en PDF, avec le nom et le logo de votre établissement.',
+      f3: 'Prenez chaque feuille en photo : l’application lit les marques, calcule la note et vous laisse la vérifier avant de l’enregistrer.',
+      f4: 'Consultez les résultats par examen, par classe et par élève, avec des statistiques par question et le progrès par critère.',
+      f5: 'Évaluez aussi avec des grilles d’évaluation et exportez les résultats vers Excel.',
+      gcTitle: 'Connexion facultative à Google Classroom',
+      gc1: 'Si vous le demandez, FullGrader peut importer la liste des élèves d’une classe Classroom et envoyer les notes d’un examen en brouillon. Pour cela, il demande à Google les autorisations suivantes : voir vos cours, voir les listes d’élèves et créer un devoir avec des notes.',
+      gc2: 'Elles ne servent qu’à ces deux actions. Les données reçues de Google ne quittent pas votre téléphone, ne sont enregistrées sur aucun serveur et ne sont partagées avec personne. L’utilisation par FullGrader des informations reçues des API Google respecte le Règlement sur les données utilisateur des services d’API Google, y compris les exigences relatives à l’utilisation limitée.',
+      dataTitle: 'Vos données vous appartiennent',
+      data1: 'Les élèves, les notes et les photos sont enregistrés uniquement sur votre appareil. FullGrader n’a ni comptes utilisateur ni publicité. Vous pouvez enregistrer des sauvegardes chiffrées par mot de passe et verrouiller l’application par empreinte digitale, reconnaissance faciale ou code PIN.',
+      privacyFull: 'Lire la politique de confidentialité',
+      langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais.'
+    },
+    it: {
+      gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
+      getPlay: 'Disponibile su Google Play',
+      title: 'FullGrader · Correggi i test a risposta multipla con la fotocamera del telefono',
+      tagline: 'Correggi i test a risposta multipla con la fotocamera del telefono, in pochi secondi e senza server.',
+      help: 'Tutorial',
+      privacy: 'Informativa sulla privacy',
+      whatTitle: 'Cosa fa l’app',
+      f1: 'Crea il modello della tua verifica: domande, opzioni, risposte corrette, penalità e voto massimo.',
+      f2: 'Genera e stampa il foglio delle risposte in PDF, con il nome e il logo della tua scuola.',
+      f3: 'Fai una foto a ogni foglio: l’app legge i segni, calcola il voto e ti permette di controllarlo prima di salvarlo.',
+      f4: 'Consulta i risultati per verifica, per classe e per studente, con statistiche per domanda e progressi per criterio.',
+      f5: 'Valuta anche con le rubriche ed esporta i risultati in Excel.',
+      gcTitle: 'Connessione facoltativa a Google Classroom',
+      gc1: 'Solo se lo richiedi tu, FullGrader può importare l’elenco degli studenti di un corso di Classroom e inviare i voti di una verifica come bozza. A tal fine chiede a Google queste autorizzazioni: vedere i tuoi corsi, vedere gli elenchi degli studenti e creare un compito con i voti.',
+      gc2: 'Vengono utilizzate solo per queste due azioni. I dati ricevuti da Google non escono dal tuo telefono, non vengono salvati su alcun server né condivisi con nessuno. L’uso che FullGrader fa delle informazioni ricevute dalle API di Google è conforme alle Norme sui dati utente dei servizi API di Google, inclusi i requisiti di utilizzo limitato.',
+      dataTitle: 'I tuoi dati sono tuoi',
+      data1: 'Studenti, voti e foto vengono salvati esclusivamente sul tuo dispositivo. FullGrader non ha account utente né pubblicità. Puoi salvare backup crittografati con una password e bloccare l’app con l’impronta digitale, il riconoscimento facciale o un PIN.',
+      privacyFull: 'Leggi l’informativa sulla privacy',
+      langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese.'
+    },
+    pt: {
+      gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
+      getPlay: 'Disponível no Google Play',
+      title: 'FullGrader · Corrija testes de escolha múltipla com a câmara do telemóvel',
+      tagline: 'Corrija testes de escolha múltipla com a câmara do telemóvel, em segundos e sem servidores.',
+      help: 'Tutorial',
+      privacy: 'Política de privacidade',
+      whatTitle: 'O que faz a aplicação',
+      f1: 'Crie o modelo do seu teste: perguntas, opções, respostas certas, penalização e nota máxima.',
+      f2: 'Gere e imprima a folha de respostas em PDF, com o nome e o logótipo da sua escola.',
+      f3: 'Tire uma fotografia a cada folha: a aplicação lê as marcas, calcula a nota e deixa-o revê-la antes de a guardar.',
+      f4: 'Consulte os resultados por teste, por turma e por aluno, com estatísticas por pergunta e progresso por critério.',
+      f5: 'Avalie também com rubricas e exporte os resultados para Excel.',
+      gcTitle: 'Ligação opcional ao Google Classroom',
+      gc1: 'Se o pedir, o FullGrader pode importar a lista de alunos de uma turma do Classroom e enviar as notas de um teste como rascunho. Para isso, pede à Google estas autorizações: ver os seus cursos, ver as listas de alunos e criar um trabalho com notas.',
+      gc2: 'São utilizadas apenas para essas duas ações. Os dados que chegam da Google não saem do seu telemóvel, não são guardados em nenhum servidor nem partilhados com ninguém. A utilização que o FullGrader faz das informações recebidas das API da Google cumpre a Política de Dados do Utilizador dos Serviços de API da Google, incluindo os requisitos de utilização limitada.',
+      dataTitle: 'Os seus dados são seus',
+      data1: 'Alunos, notas e fotografias são guardados apenas no seu dispositivo. O FullGrader não tem contas de utilizador nem publicidade. Pode guardar cópias de segurança encriptadas com palavra-passe e bloquear a aplicação com impressão digital, reconhecimento facial ou PIN.',
+      privacyFull: 'Ler a política de privacidade',
+      langs: 'Disponível em espanhol, catalão, galego, basco, inglês, alemão, francês, italiano e português.'
+    }
+  };
+  var KEY = 'fullgrader-home-lang';
+  function pick() {
+    try { var s = localStorage.getItem(KEY); if (s && T[s]) return s; } catch (e) {}
+    var l = (navigator.language || 'es').slice(0, 2).toLowerCase();
+    return T[l] ? l : 'es';
+  }
+  function render(lang) {
+    var d = T[lang];
+    document.documentElement.lang = lang;
+    document.title = d.title;
+    document.querySelectorAll('[data-i]').forEach(function (el) {
+      var v = d[el.getAttribute('data-i')];
+      if (v) el.textContent = v;
+    });
+    var BADGE = { es: 'Spanish', ca: 'Catalan', gl: 'Galician', eu: 'Basque', en: 'English', de: 'German', fr: 'French', it: 'Italian', pt: 'Portuguese-Portugal' };
+    document.querySelectorAll('img[data-badge]').forEach(function (img) {
+      img.src = 'badges/GetItOnGooglePlay_Badge_Web_color_' + BADGE[lang] + '.svg';
+      img.alt = d.getPlay;
+    });
+    FGBar.sync(lang);
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  FGBar.onChange(render);
+  render(pick());
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecd0814faef9474b99f98e1efa2c1651"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
