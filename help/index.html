@@ -44,7 +44,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
     /* Barra fija de arriba: marca + idiomas (siempre visibles) */
 
@@ -94,7 +94,7 @@
     [data-lang].visible { display: block; }
 
     /* Capturas */
-    .screenshot-row { display: flex; gap: 12px; overflow-x: auto; padding: 16px 2px 8px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+    .screenshot-row { display: flex; justify-content: safe center; gap: 12px; overflow-x: auto; padding: 16px 2px 8px; scroll-snap-type: x proximity; scrollbar-width: thin; }
     .screenshot-row img { height: 400px; width: auto; aspect-ratio: 540 / 1169; border-radius: 18px; flex-shrink: 0; scroll-snap-align: start; cursor: zoom-in; background: var(--bg); box-shadow: 0 4px 16px rgba(20,20,40,.12); border: 1px solid var(--border); }
     @media (max-width: 480px) { .screenshot-row img { height: 360px; } }
 

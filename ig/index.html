@@ -15,68 +15,109 @@
 <link rel="icon" href="icon.png">
 <style>
   :root {
-    --bg: #ffffff;
-    --surface: #f6f6f9;
-    --text: #1a1a1f;
-    --muted: #5a5a68;
-    --accent: #4F46E5;
-    --border: #e3e3ec;
+    --paper: #ffffff;
+    --wash: #f3f2ff;
+    --ink: #17163a;
+    --text: #23223f;
+    --muted: #5d5c78;
+    --accent: #4f46e5;
+    --accent-deep: #3730a3;
+    --line: #e4e3f2;
+    --ok: #16a34a;
+    --ko: #e5484d;
+    --phone: #12112a;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121218;
-      --surface: #1c1c24;
-      --text: #f0f0f4;
-      --muted: #a0a0b0;
-      --accent: #8b85f0;
-      --border: #2c2c38;
+      --paper: #0f0e1f;
+      --wash: #17162e;
+      --ink: #f2f1ff;
+      --text: #e6e5f5;
+      --muted: #a4a3c0;
+      --accent: #8f88ff;
+      --accent-deep: #c7c3ff;
+      --line: #2a2946;
+      --phone: #000;
     }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background: var(--paper); color: var(--text);
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 720px; margin: 0 auto; padding: 0 16px 80px; }
-  .hero { text-align: center; padding: 36px 0 24px; }
-  .hero-icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(79,70,229,.25); }
-  h1 { font-size: 40px; line-height: 1.15; margin: 20px 0 8px; letter-spacing: -.02em; }
-  .tagline { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 560px; }
-  h2 { font-size: 22px; margin: 40px 0 12px; }
-  ul { padding-left: 22px; margin: 0; }
-  li { margin: 8px 0; }
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 4px 22px 18px; margin-top: 32px;
-  }
-  .links { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
-  .btn {
-    display: inline-block; padding: 12px 20px; border-radius: 999px;
-    font-weight: 600; text-decoration: none;
-    background: var(--accent); color: #fff;
-  }
-  .play-badge { display: inline-flex; }
-  /* Insignia oficial de Google Play (archivos en badges/, del paquete de
-     Google). Normas: no modificarla, altura mínima 28 px y un espacio libre
-     alrededor de 1/4 de su altura (aquí 52 px de alto -> 13 px). */
-  .play-badge { margin: 14px; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  main { overflow-x: clip; }
+
+  /* Portada: titular grande a un lado, la hoja corregida en el móvil al otro */
+  .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding: 64px 0 72px; }
+  .hero h1 { font-size: clamp(36px, 5.2vw, 60px); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; color: var(--ink); margin: 0; text-wrap: balance; }
+  .hero .lead { font-size: 19px; color: var(--muted); margin: 22px 0 0; max-width: 34ch; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin-top: 28px; }
+  .play-badge { display: inline-block; padding: 14px; margin: -14px; line-height: 0; }
   .play-badge img { height: 56px; width: auto; display: block; }
-  .cta { display: flex; justify-content: center; margin-top: 18px; }
-  .cta-bottom { margin-top: 40px; }
-  .sublinks { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; color: var(--muted); }
-  .sublinks a { color: var(--accent); font-weight: 600; text-decoration: none; padding: 6px 2px; }
-  .sublinks a:hover { text-decoration: underline; }
-  .legal { font-size: 12px; opacity: .8; }
-  .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-  footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
-  footer a { color: var(--accent); }
-  p { margin: 10px 0; }
+  .textlinks { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 18px; font-weight: 600; font-size: 15.5px; }
+  .textlinks a { text-decoration: none; }
+  .textlinks a:hover { text-decoration: underline; }
+
+  .stage { position: relative; display: flex; justify-content: center; }
+  .stage::before { content: ''; position: absolute; inset: 6% 0 2% 10%; border-radius: 44px; background: var(--wash); transform: rotate(-4deg); }
+  .phone { position: relative; width: min(300px, 78vw); border-radius: 42px; background: var(--phone); padding: 11px; box-shadow: 0 30px 60px -20px rgba(40, 30, 120, .45); }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 32px; aspect-ratio: 540 / 1168; background: #f6f6fb; }
+  .grade { position: absolute; right: -6px; top: 22%; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 16px; padding: 10px 14px; font-weight: 800; font-size: 26px; letter-spacing: -.02em; box-shadow: 0 12px 28px -12px rgba(40, 30, 120, .35); display: flex; align-items: center; gap: 10px; }
+  .grade i { width: 14px; height: 14px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
+
+  /* Cómo funciona: tres pasos (es una secuencia real) */
+  .how { background: var(--wash); padding: 72px 0 80px; }
+  h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.12; letter-spacing: -.025em; font-weight: 800; color: var(--ink); margin: 0 0 36px; text-wrap: balance; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
+  .steps li { counter-increment: step; display: flex; flex-direction: column; }
+  .shot { display: block; width: 100%; max-width: 250px; margin: 0 auto 22px; border-radius: 26px; border: 8px solid var(--phone); background: var(--phone); height: auto; aspect-ratio: 540 / 1000; object-fit: cover; object-position: top; }
+  .steps p { margin: 0; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+  .steps p::before { content: counter(step); width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 16px; display: grid; place-items: center; margin-top: 1px; }
+  .more { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .more p { margin: 0; color: var(--muted); }
+
+  /* Privacidad: el único bloque oscuro de la página */
+  .privacy { background: var(--ink); color: #e7e6fb; padding: 76px 0; }
+  @media (prefers-color-scheme: dark) { .privacy { background: #1d1c3b; } }
+  .privacy .wrap { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: start; max-width: 860px; }
+  .privacy h2 { color: #fff; margin-bottom: 14px; }
+  .privacy p { margin: 0; font-size: 18px; color: #cfcdf0; }
+  .lock { width: 64px; height: 64px; border-radius: 18px; background: rgba(255, 255, 255, .08); display: grid; place-items: center; }
+
+  /* Classroom: texto sencillo, sin caja */
+  .classroom { padding: 72px 0 24px; }
+  .classroom .wrap { max-width: 760px; }
+  .classroom h2 { font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 14px; }
+  .classroom p { color: var(--muted); margin: 0 0 12px; font-size: 16px; }
+
+  .closing { text-align: center; padding: 56px 0 24px; }
+  .closing .actions { justify-content: center; }
+  .closing .textlinks { justify-content: center; }
+
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 36px 20px 56px; }
+  footer p { margin: 6px 0; }
+  .legal { font-size: 12px; opacity: .85; }
+
+  a:focus-visible, .play-badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 44px; padding: 40px 0 56px; text-align: center; }
+    .hero .lead { margin-left: auto; margin-right: auto; }
+    .actions, .textlinks { justify-content: center; }
+    .grade { right: 0; top: 18%; font-size: 22px; }
+    .steps { grid-template-columns: 1fr; gap: 28px; max-width: 460px; margin: 0 auto; }
+    .steps li { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; }
+    .shot { max-width: none; margin: 0; border-width: 5px; border-radius: 18px; }
+    .steps p { grid-template-columns: 1fr; gap: 8px; }
+    .how h2 { text-align: center; }
+    .more { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .privacy .wrap { grid-template-columns: 1fr; gap: 20px; }
+  }
+  @media (max-width: 480px) { body { font-size: 16px; } .hero .lead { font-size: 17.5px; } }
 </style>
 <link rel="stylesheet" href="topbar.css">
 </head>
@@ -89,59 +130,77 @@
   </div>
 </div>
 <main>
-  <section class="hero">
-    <img class="hero-icon" src="icon.png" alt="FullGrader">
-    <h1>FullGrader</h1>
-    <p class="tagline" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</p>
-    <div class="cta"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
-    <nav class="sublinks">
-      <a href="help/" data-i="help">Tutorial</a>
-      <span aria-hidden="true">·</span>
-      <a href="premium/" data-nav="premium">Premium</a>
-      <span aria-hidden="true">·</span>
-      <a href="faq/" data-nav="faq">Preguntas frecuentes</a>
-    </nav>
+  <section class="wrap hero">
+    <div>
+      <h1 data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</h1>
+      <p class="lead" data-i="lead"></p>
+      <div class="actions"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+      <nav class="textlinks">
+        <a href="help/" data-i="help">Tutorial</a>
+        <a href="premium/" data-nav="premium">Premium</a>
+        <a href="faq/" data-nav="faq">Preguntas frecuentes</a>
+      </nav>
+    </div>
+    <div class="stage">
+      <div class="phone"><img data-shot="hoja-corregida" src="help/img/es/hoja-corregida.jpg" alt="" width="540" height="1168"></div>
+      <div class="grade" aria-hidden="true"><i></i>8.50</div>
+    </div>
   </section>
 
-  <h2 data-i="whatTitle">Qué hace la app</h2>
-  <ul>
-    <li data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</li>
-    <li data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</li>
-    <li data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</li>
-    <li data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</li>
-    <li data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</li>
-  </ul>
+  <section class="how">
+    <div class="wrap">
+      <h2 data-i="whatTitle">Qué hace la app</h2>
+      <ol class="steps">
+        <li><img class="shot" data-shot="plantilla-datos" src="help/img/es/plantilla-datos.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</p></li>
+        <li><img class="shot" data-shot="imprimir" src="help/img/es/imprimir.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</p></li>
+        <li><img class="shot" data-shot="escanear" src="help/img/es/escanear.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</p></li>
+      </ol>
+      <div class="more">
+        <p data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</p>
+        <p data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
-    <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
-    <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
-  </div>
+  <section class="privacy">
+    <div class="wrap">
+      <div class="lock" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
+      <div>
+        <h2 data-i="dataTitle">Tus datos son tuyos</h2>
+        <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2 data-i="dataTitle">Tus datos son tuyos</h2>
-  <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+  <section class="classroom">
+    <div class="wrap">
+      <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
+      <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
+      <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
+    </div>
+  </section>
 
-  <div class="cta cta-bottom"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
-  <nav class="sublinks">
-    <a href="contact/" data-nav="contact">Contacto</a>
-    <span aria-hidden="true">·</span>
-    <a href="privacy/" data-nav="privacy">Privacidad</a>
-    <span aria-hidden="true">·</span>
-    <a href="terms/" data-nav="terms">Condiciones</a>
-  </nav>
-
-  <footer>
-    <p data-i="langs">Disponible en castellano, català, galego, euskara y English.</p>
-    <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
-    <p>Instagram <a href="https://www.instagram.com/fullgrader">@FullGrader</a> · X <a href="https://x.com/FullGrader">@FullGrader</a></p>
-  </footer>
+  <section class="closing">
+    <div class="actions"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+    <nav class="textlinks">
+      <a href="contact/" data-nav="contact">Contacto</a>
+      <a href="privacy/" data-nav="privacy">Privacidad</a>
+      <a href="terms/" data-nav="terms">Condiciones</a>
+    </nav>
+  </section>
 </main>
+<footer>
+  <p data-i="langs">Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.</p>
+  <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
+  <p>Instagram <a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener">@FullGrader</a> · X <a href="https://x.com/FullGrader" target="_blank" rel="noopener">@FullGrader</a></p>
+</footer>
 
 <script src="topbar.js"></script>
 <script>
 (function () {
   var T = {
     es: {
+      lead: 'Hecha para docentes. Los datos de tu alumnado nunca salen de tu móvil.',
       gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgala en Google Play',
       title: 'FullGrader · Corrige exámenes tipo test con la cámara del móvil',
@@ -162,6 +221,7 @@
       langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.'
     },
     ca: {
+      lead: 'Feta per a docents. Les dades del teu alumnat no surten mai del teu mòbil.',
       gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
       getPlay: 'Descarrega-la a Google Play',
       title: 'FullGrader · Corregeix exàmens tipus test amb la càmera del mòbil',
@@ -182,6 +242,7 @@
       langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès.'
     },
     gl: {
+      lead: 'Feita para docentes. Os datos do teu alumnado nunca saen do teu móbil.',
       gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgaa en Google Play',
       title: 'FullGrader · Corrixe exames tipo test coa cámara do móbil',
@@ -202,6 +263,7 @@
       langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués.'
     },
     eu: {
+      lead: 'Irakasleentzat egina. Zure ikasleen datuak ez dira inoiz zure mugikorretik ateratzen.',
       gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
       getPlay: 'Deskargatu Google Play-n',
       title: 'FullGrader · Zuzendu test motako azterketak telefonoaren kamerarekin',
@@ -222,6 +284,7 @@
       langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez.'
     },
     en: {
+      lead: 'Made for teachers. Your students’ data never leaves your phone.',
       gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
       getPlay: 'Get it on Google Play',
       title: 'FullGrader · Grade multiple-choice tests with your phone camera',
@@ -242,6 +305,7 @@
       langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese.'
     },
     de: {
+      lead: 'Für Lehrkräfte gemacht. Die Daten deiner Schüler/innen verlassen nie dein Handy.',
       gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
       getPlay: 'Jetzt bei Google Play',
       title: 'FullGrader · Multiple-Choice-Prüfungen mit der Handykamera korrigieren',
@@ -263,6 +327,7 @@
       langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch.'
     },
     fr: {
+      lead: 'Conçue pour les enseignants. Les données de vos élèves ne quittent jamais votre téléphone.',
       gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
       getPlay: 'Disponible sur Google Play',
       title: 'FullGrader · Corrigez vos QCM avec l’appareil photo de votre téléphone',
@@ -284,6 +349,7 @@
       langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais.'
     },
     it: {
+      lead: 'Pensata per i docenti. I dati dei tuoi studenti non lasciano mai il tuo telefono.',
       gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
       getPlay: 'Disponibile su Google Play',
       title: 'FullGrader · Correggi i test a risposta multipla con la fotocamera del telefono',
@@ -305,6 +371,7 @@
       langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese.'
     },
     pt: {
+      lead: 'Feita para professores. Os dados dos seus alunos nunca saem do seu telemóvel.',
       gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
       getPlay: 'Disponível no Google Play',
       title: 'FullGrader · Corrija testes de escolha múltipla com a câmara do telemóvel',
@@ -341,6 +408,9 @@
       if (v) el.textContent = v;
     });
     var BADGE = { es: 'Spanish', ca: 'Catalan', gl: 'Galician', eu: 'Basque', en: 'English', de: 'German', fr: 'French', it: 'Italian', pt: 'Portuguese-Portugal' };
+    document.querySelectorAll('img[data-shot]').forEach(function (img) {
+      img.src = 'help/img/' + lang + '/' + img.getAttribute('data-shot') + '.jpg';
+    });
     document.querySelectorAll('img[data-badge]').forEach(function (img) {
       img.src = 'badges/GetItOnGooglePlay_Badge_Web_color_' + BADGE[lang] + '.svg';
       img.alt = d.getPlay;
