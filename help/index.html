@@ -27,7 +27,7 @@
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --accent: #8b85f0;
+        --accent: #8f88ff;
         --accent-text: #a5a0ff;
         --accent-soft: #1e1b4b;
         --bg: #121218;
@@ -48,13 +48,12 @@
 
     /* Barra fija de arriba: marca + idiomas (siempre visibles) */
 
-    main { max-width: 720px; margin: 0 auto; padding: 8px 16px 40px; }
-    .hero { padding: 28px 2px 18px; }
-    .hero h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.02em; }
+    main { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; overflow-x: clip; }
+    .hero.band { margin-bottom: 24px; }
 
     /* Índice */
     .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px 10px; margin-bottom: 18px; }
-    .toc-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 6px; }
+    .toc-title { font-size: 17px; font-weight: 800; letter-spacing: -.01em; color: var(--text); margin-bottom: 8px; }
     .toc ol { list-style: none; counter-reset: toc; columns: 2; column-gap: 18px; }
     .toc li { counter-increment: toc; break-inside: avoid; }
     .toc a { display: flex; gap: 8px; padding: 5px 0; font-size: 14.5px; color: var(--text); text-decoration: none; line-height: 1.35; }
@@ -110,6 +109,7 @@
 
   </style>
   <link rel="stylesheet" href="../topbar.css">
+  <link rel="stylesheet" href="../site.css">
 </head>
 <body data-page="help" data-root="../">
 <div class="topbar">
@@ -123,7 +123,7 @@
 
 <div data-lang="es" class="visible">
   <main>
-    <section class="hero"><h1>Guía de uso, paso a paso</h1></section>
+    <section class="hero band"><h1>Guía de uso, paso a paso</h1></section>
     <nav class="toc" aria-label="Contenido"><p class="toc-title">Contenido</p><ol><li><a href="#es-s1">Empieza aquí</a></li><li><a href="#es-s2">Inicio</a></li><li><a href="#es-s3">Clases</a></li><li><a href="#es-s4">Plantillas: crear el examen</a></li><li><a href="#es-s5">Preguntas que valen más que otras</a></li><li><a href="#es-s6">Más de una respuesta correcta</a></li><li><a href="#es-s7">Preguntas de Verdadero/Falso</a></li><li><a href="#es-s8">Criterios de evaluación (CE)</a></li><li><a href="#es-s9">Varios modelos del examen (A, B, C, D)</a></li><li><a href="#es-s10">Rúbricas: evaluar por niveles de logro</a></li><li><a href="#es-s11">Escanear: corregir las hojas</a></li><li><a href="#es-s12">Resultados: notas y estadísticas</a></li><li><a href="#es-s13">Ajustes</a></li><li><a href="#es-s14">Si algo no funciona</a></li></ol></nav>
 
     <div class="section" id="es-s1">
@@ -424,7 +424,7 @@
 
 <div data-lang="ca">
   <main>
-    <section class="hero"><h1>Guia d’ús, pas a pas</h1></section>
+    <section class="hero band"><h1>Guia d’ús, pas a pas</h1></section>
     <nav class="toc" aria-label="Contingut"><p class="toc-title">Contingut</p><ol><li><a href="#ca-s1">Comença aquí</a></li><li><a href="#ca-s2">Inici</a></li><li><a href="#ca-s3">Classes</a></li><li><a href="#ca-s4">Plantilles: crear l’examen</a></li><li><a href="#ca-s5">Preguntes que valen més que d’altres</a></li><li><a href="#ca-s6">Més d’una resposta correcta</a></li><li><a href="#ca-s7">Preguntes de Vertader/Fals</a></li><li><a href="#ca-s8">Criteris d’avaluació (CA)</a></li><li><a href="#ca-s9">Diversos models de l’examen (A, B, C, D)</a></li><li><a href="#ca-s10">Rúbriques: avaluar per nivells d’assoliment</a></li><li><a href="#ca-s11">Escanejar: corregir els fulls</a></li><li><a href="#ca-s12">Resultats: notes i estadístiques</a></li><li><a href="#ca-s13">Ajustos</a></li><li><a href="#ca-s14">Si alguna cosa no funciona</a></li></ol></nav>
 
     <div class="section" id="ca-s1">
@@ -725,7 +725,7 @@
 
 <div data-lang="gl">
   <main>
-    <section class="hero"><h1>Guía de uso, paso a paso</h1></section>
+    <section class="hero band"><h1>Guía de uso, paso a paso</h1></section>
     <nav class="toc" aria-label="Contido"><p class="toc-title">Contido</p><ol><li><a href="#gl-s1">Comeza aquí</a></li><li><a href="#gl-s2">Inicio</a></li><li><a href="#gl-s3">Clases</a></li><li><a href="#gl-s4">Modelos: crear o exame</a></li><li><a href="#gl-s5">Preguntas que valen máis ca outras</a></li><li><a href="#gl-s6">Máis dunha resposta correcta</a></li><li><a href="#gl-s7">Preguntas de Verdadeiro/Falso</a></li><li><a href="#gl-s8">Criterios de avaliación (CA)</a></li><li><a href="#gl-s9">Varias versións do exame (A, B, C, D)</a></li><li><a href="#gl-s10">Rúbricas: avaliar por niveis de logro</a></li><li><a href="#gl-s11">Escanear: corrixir as follas</a></li><li><a href="#gl-s12">Resultados: notas e estatísticas</a></li><li><a href="#gl-s13">Axustes</a></li><li><a href="#gl-s14">Se algo non funciona</a></li></ol></nav>
 
     <div class="section" id="gl-s1">
@@ -1026,7 +1026,7 @@
 
 <div data-lang="eu">
   <main>
-    <section class="hero"><h1>Erabiltzeko gida, urratsez urrats</h1></section>
+    <section class="hero band"><h1>Erabiltzeko gida, urratsez urrats</h1></section>
     <nav class="toc" aria-label="Edukia"><p class="toc-title">Edukia</p><ol><li><a href="#eu-s1">Hasi hemen</a></li><li><a href="#eu-s2">Hasiera</a></li><li><a href="#eu-s3">Ikasgelak</a></li><li><a href="#eu-s4">Ereduak: azterketa sortu</a></li><li><a href="#eu-s5">Besteek baino gehiago balio duten galderak</a></li><li><a href="#eu-s6">Erantzun zuzen bat baino gehiago</a></li><li><a href="#eu-s7">Egia/Gezurra galderak</a></li><li><a href="#eu-s8">Ebaluazio-irizpideak (EI)</a></li><li><a href="#eu-s9">Azterketaren hainbat bertsio (A, B, C, D)</a></li><li><a href="#eu-s10">Errubrikak: lorpen-mailen bidez ebaluatu</a></li><li><a href="#eu-s11">Eskaneatu: orriak zuzendu</a></li><li><a href="#eu-s12">Emaitzak: notak eta estatistikak</a></li><li><a href="#eu-s13">Ezarpenak</a></li><li><a href="#eu-s14">Zerbaitek funtzionatzen ez badu</a></li></ol></nav>
 
     <div class="section" id="eu-s1">
@@ -1327,7 +1327,7 @@
 
 <div data-lang="en">
   <main>
-    <section class="hero"><h1>Step-by-step user guide</h1></section>
+    <section class="hero band"><h1>Step-by-step user guide</h1></section>
     <nav class="toc" aria-label="Contents"><p class="toc-title">Contents</p><ol><li><a href="#en-s1">Start here</a></li><li><a href="#en-s2">Home</a></li><li><a href="#en-s3">Classes</a></li><li><a href="#en-s4">Templates: create the test</a></li><li><a href="#en-s5">Questions worth more than others</a></li><li><a href="#en-s6">More than one correct answer</a></li><li><a href="#en-s7">True/False questions</a></li><li><a href="#en-s8">Assessment criteria</a></li><li><a href="#en-s9">Several versions of the test (A, B, C, D)</a></li><li><a href="#en-s10">Rubrics: grading by achievement levels</a></li><li><a href="#en-s11">Scan: grade the sheets</a></li><li><a href="#en-s12">Results: grades and statistics</a></li><li><a href="#en-s13">Settings</a></li><li><a href="#en-s14">If something isn’t working</a></li></ol></nav>
 
     <div class="section" id="en-s1">
@@ -1628,7 +1628,7 @@
 
 <div data-lang="de">
   <main>
-    <section class="hero"><h1>Anleitung, Schritt für Schritt</h1></section>
+    <section class="hero band"><h1>Anleitung, Schritt für Schritt</h1></section>
     <nav class="toc" aria-label="Inhalt"><p class="toc-title">Inhalt</p><ol><li><a href="#de-s1">Hier geht’s los</a></li><li><a href="#de-s2">Start</a></li><li><a href="#de-s3">Klassen</a></li><li><a href="#de-s4">Vorlagen: die Prüfung erstellen</a></li><li><a href="#de-s5">Fragen, die mehr zählen als andere</a></li><li><a href="#de-s6">Mehr als eine richtige Antwort</a></li><li><a href="#de-s7">Wahr/Falsch-Fragen</a></li><li><a href="#de-s8">Bewertungskriterien</a></li><li><a href="#de-s9">Mehrere Versionen der Prüfung (A, B, C, D)</a></li><li><a href="#de-s10">Bewertungsraster: nach Leistungsstufen bewerten</a></li><li><a href="#de-s11">Scannen: die Bögen korrigieren</a></li><li><a href="#de-s12">Ergebnisse: Noten und Statistiken</a></li><li><a href="#de-s13">Einstellungen</a></li><li><a href="#de-s14">Wenn etwas nicht klappt</a></li></ol></nav>
 
     <div class="section" id="de-s1">
@@ -1929,7 +1929,7 @@
 
 <div data-lang="fr">
   <main>
-    <section class="hero"><h1>Guide d’utilisation, pas à pas</h1></section>
+    <section class="hero band"><h1>Guide d’utilisation, pas à pas</h1></section>
     <nav class="toc" aria-label="Sommaire"><p class="toc-title">Sommaire</p><ol><li><a href="#fr-s1">Commencez ici</a></li><li><a href="#fr-s2">Accueil</a></li><li><a href="#fr-s3">Classes</a></li><li><a href="#fr-s4">Modèles : créer l’examen</a></li><li><a href="#fr-s5">Des questions qui valent plus que d’autres</a></li><li><a href="#fr-s6">Plusieurs bonnes réponses</a></li><li><a href="#fr-s7">Questions Vrai/Faux</a></li><li><a href="#fr-s8">Critères d’évaluation</a></li><li><a href="#fr-s9">Plusieurs versions de l’examen (A, B, C, D)</a></li><li><a href="#fr-s10">Grilles d’évaluation : évaluer par niveaux de maîtrise</a></li><li><a href="#fr-s11">Scanner : corriger les feuilles</a></li><li><a href="#fr-s12">Résultats : notes et statistiques</a></li><li><a href="#fr-s13">Réglages</a></li><li><a href="#fr-s14">Si quelque chose ne fonctionne pas</a></li></ol></nav>
 
     <div class="section" id="fr-s1">
@@ -2230,7 +2230,7 @@
 
 <div data-lang="it">
   <main>
-    <section class="hero"><h1>Guida all’uso, passo dopo passo</h1></section>
+    <section class="hero band"><h1>Guida all’uso, passo dopo passo</h1></section>
     <nav class="toc" aria-label="Indice"><p class="toc-title">Indice</p><ol><li><a href="#it-s1">Inizia da qui</a></li><li><a href="#it-s2">Home</a></li><li><a href="#it-s3">Classi</a></li><li><a href="#it-s4">Modelli: creare la verifica</a></li><li><a href="#it-s5">Domande che valgono più di altre</a></li><li><a href="#it-s6">Più di una risposta corretta</a></li><li><a href="#it-s7">Domande Vero/Falso</a></li><li><a href="#it-s8">Criteri di valutazione (CV)</a></li><li><a href="#it-s9">Più versioni della verifica (A, B, C, D)</a></li><li><a href="#it-s10">Rubriche: valutare per livelli di padronanza</a></li><li><a href="#it-s11">Scansiona: correggere i fogli</a></li><li><a href="#it-s12">Risultati: voti e statistiche</a></li><li><a href="#it-s13">Impostazioni</a></li><li><a href="#it-s14">Se qualcosa non funziona</a></li></ol></nav>
 
     <div class="section" id="it-s1">
@@ -2531,7 +2531,7 @@
 
 <div data-lang="pt">
   <main>
-    <section class="hero"><h1>Guia de utilização, passo a passo</h1></section>
+    <section class="hero band"><h1>Guia de utilização, passo a passo</h1></section>
     <nav class="toc" aria-label="Índice"><p class="toc-title">Índice</p><ol><li><a href="#pt-s1">Comece aqui</a></li><li><a href="#pt-s2">Início</a></li><li><a href="#pt-s3">Turmas</a></li><li><a href="#pt-s4">Modelos: criar o teste</a></li><li><a href="#pt-s5">Perguntas que valem mais do que outras</a></li><li><a href="#pt-s6">Mais de uma resposta certa</a></li><li><a href="#pt-s7">Perguntas de Verdadeiro/Falso</a></li><li><a href="#pt-s8">Critérios de avaliação (CA)</a></li><li><a href="#pt-s9">Várias versões do teste (A, B, C, D)</a></li><li><a href="#pt-s10">Rubricas: avaliar por níveis de desempenho</a></li><li><a href="#pt-s11">Digitalizar: corrigir as folhas</a></li><li><a href="#pt-s12">Resultados: notas e estatísticas</a></li><li><a href="#pt-s13">Definições</a></li><li><a href="#pt-s14">Se algo não funcionar</a></li></ol></nav>
 
     <div class="section" id="pt-s1">

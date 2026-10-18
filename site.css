@@ -1,0 +1,16 @@
+/* Piezas comunes de diseño (mismo aire que la portada) */
+:root { --s-wash: #f3f2ff; --s-ink: #17163a; --s-muted: #5d5c78; --s-accent: #4f46e5; }
+@media (prefers-color-scheme: dark) { :root { --s-wash: #17162e; --s-ink: #f2f1ff; --s-muted: #a4a3c0; --s-accent: #a5a0ff; } }
+
+/* Cabecera de cada página: franja lavanda a todo el ancho, titular grande */
+.band { position: relative; background: var(--s-wash); box-shadow: 0 0 0 100vmax var(--s-wash); clip-path: inset(0 -100vmax); padding: 52px 0 40px; margin-bottom: 36px; }
+.band h1 { font-size: clamp(32px, 4.6vw, 48px); line-height: 1.06; letter-spacing: -.032em; font-weight: 800; color: var(--s-ink); margin: 0; text-wrap: balance; }
+.band .kicker { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: var(--s-accent); letter-spacing: 0; text-transform: none; }
+.band .sub { margin: 14px 0 0; font-size: 18px; color: var(--s-muted); max-width: 46ch; }
+.band .sub:empty { display: none; }
+
+/* Titulares de apartado, con el mismo peso que la portada */
+.prose h2 { font-size: clamp(21px, 2.4vw, 25px); line-height: 1.2; letter-spacing: -.02em; font-weight: 800; color: var(--s-ink); }
+.prose h3 { color: var(--s-ink); }
+
+@media (max-width: 600px) { .band { padding: 36px 0 28px; margin-bottom: 28px; } .band .sub { font-size: 16.5px; } }
