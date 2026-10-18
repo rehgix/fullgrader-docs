@@ -73,7 +73,7 @@
     ion-icon.tip-icon { font-size: 16px; vertical-align: middle; margin-right: 4px; }
     .screenshot-row { display: flex; gap: 10px; overflow-x: auto; padding: 14px 0 6px; scrollbar-width: none; }
     .screenshot-row::-webkit-scrollbar { display: none; }
-    .screenshot-row img { height: 260px; width: auto; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,.15); border: 1px solid var(--border); }
+    .screenshot-row img { height: 380px; cursor: zoom-in; width: auto; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,.15); border: 1px solid var(--border); }
     .social { text-align: center; padding: 4px 16px 44px; }
     .social-title { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; }
     .social-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
@@ -121,6 +121,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/inicio.jpg" alt="Inicio" loading="lazy"></div>
         <p>Es la primera pantalla que ves al abrir la app. De un vistazo te dice qué tienes pendiente.</p>
         <div class="feature"><div class="feature-title">Escanear examen</div><p>El botón grande de arriba. Te lleva directamente a la cámara para corregir.</p></div>
         <div class="feature"><div class="feature-title">Pendiente de corregir</div><p>Exámenes que has empezado a corregir pero en los que aún faltan alumnos por escanear. Tócalo para ir a ese examen.</p></div>
@@ -134,7 +135,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-clases.jpg" alt="Lista de clases" loading="lazy"><img src="img/es-clase-detalle.jpg" alt="Alumnos de una clase" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/es/clases.jpg" alt="Clases" loading="lazy"><img src="img/es/clase-detalle.jpg" alt="Clases" loading="lazy"></div>
         <p>Aquí están tus grupos y sus alumnos. Cada alumno tiene un <b>código de 4 cifras</b>: lo escribe en la hoja del examen para que la app sepa de quién es.</p>
         <h3 class="subhead">Crear una clase y añadir alumnos</h3>
         <ol class="steps"><li>Toca <b>Nueva clase</b> y escribe su nombre (por ejemplo, «3.º ESO A»).</li><li>Toca la clase para entrar.</li><li>Toca <b>Añadir alumno</b> y escribe el nombre y los apellidos. El código de 4 cifras se pone solo.</li><li>Si ya tienes la lista en un Excel, toca <b>Importar alumnos (Excel/CSV)</b> y elige el archivo. La app encuentra sola los nombres y apellidos: no hace falta escribirlos uno a uno.</li></ol>
@@ -155,7 +156,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-plantillas.jpg" alt="Lista de plantillas" loading="lazy"><img src="img/es-plantilla-datos.jpg" alt="Datos del examen" loading="lazy"><img src="img/es-plantilla-formato.jpg" alt="Formato y notas" loading="lazy"><img src="img/es-plantilla-imprimir.jpg" alt="Imprimir hojas" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/es/plantillas.jpg" alt="Plantillas: crear el examen" loading="lazy"><img src="img/es/plantilla-datos.jpg" alt="Plantillas: crear el examen" loading="lazy"><img src="img/es/plantilla-formato.jpg" alt="Plantillas: crear el examen" loading="lazy"><img src="img/es/imprimir.jpg" alt="Plantillas: crear el examen" loading="lazy"></div>
         <p>La plantilla es tu examen dentro de la app. Toca una plantilla de la lista para abrirla y cambiar lo que quieras. Con los tres puntos (…), o manteniéndola pulsada, también puedes <b>duplicarla</b> (para hacer un examen parecido sin empezar de cero) o <b>eliminarla</b>. Desde ese mismo menú puedes ir a <b>Imprimir hojas</b>.</p>
         <h3 class="subhead">Crear un examen, paso a paso</h3>
         <ol class="steps"><li>En la pestaña <b>Plantillas</b>, toca <b>Nueva plantilla</b>.</li><li>Escribe el <b>título</b> y, si quieres, la asignatura y el curso. Salen impresos arriba de la hoja. También puedes añadir el <b>logo de tu centro</b>.</li><li>Elige el <b>idioma de la hoja</b>: es el idioma de los textos impresos, no el de la app. Toca el campo y se abre una ruleta con los 9 idiomas disponibles; al principio sale el idioma de la app.</li><li>Escribe el <b>número de preguntas</b> y elige cuántas <b>opciones de respuesta</b> tiene cada una (de 2 a 5). Si todas las preguntas son de verdadero o falso, elige <b>V/F</b>.</li><li>Decide si los errores <b>restan</b> y si las preguntas en blanco también restan. Si no quieres complicarte, deja la penalización en 0: así los errores no restan nada.</li><li>Elige la <b>nota máxima</b>. Normalmente, 10.</li><li>En <b>Respuestas correctas</b>, toca en cada pregunta la letra buena.</li><li>Toca <b>Crear plantilla</b>. Si estás cambiando una plantilla que ya existía, el botón se llama <b>Guardar cambios</b>. Al crearla, la app te lleva directamente a la página <b>Imprimir hojas</b>.</li></ol>
@@ -176,6 +177,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/plantilla-puntos.jpg" alt="Preguntas que valen más que otras" loading="lazy"></div>
         <p>Normalmente todas las preguntas valen lo mismo. Si quieres que alguna cuente más (por ejemplo, porque es más difícil), puedes darle más puntos.</p>
         <h3 class="subhead">Cómo se hace</h3>
         <ol class="steps"><li>Abre la plantilla.</li><li>En <b>Puntuación por pregunta</b>, elige <b>Personalizada</b>.</li><li>En la lista de <b>Respuestas correctas</b>, al lado de cada pregunta aparecen los botones <b>−</b> y <b>+</b>. Úsalos para indicar cuántos puntos vale esa pregunta.</li><li>Encima de la lista verás el <b>total de puntos</b> del examen.</li><li>Toca <b>Guardar cambios</b>.</li></ol>
@@ -190,6 +192,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/plantilla-respuestas.jpg" alt="Más de una respuesta correcta" loading="lazy"></div>
         <p>A veces una pregunta tiene dos respuestas válidas, o te das cuenta después del examen de que estaba mal planteada y otra opción también debería valer. Puedes marcar varias letras como correctas en la misma pregunta.</p>
         <h3 class="subhead">Cómo se hace</h3>
         <ol class="steps"><li>Abre la plantilla.</li><li>En <b>Respuestas correctas</b>, toca todas las letras que den por buena esa pregunta. Si vuelves a tocar una letra marcada, se desmarca.</li><li>Toca <b>Guardar cambios</b>.</li></ol>
@@ -205,6 +208,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/plantilla-vf.jpg" alt="Preguntas de Verdadero/Falso" loading="lazy"></div>
         <p>Puedes hacer un examen entero de verdadero o falso, o mezclar preguntas de verdadero o falso con preguntas normales de opciones (A, B, C, D) en el mismo examen.</p>
         <h3 class="subhead">Todo el examen de Verdadero/Falso</h3>
         <ol class="steps"><li>Abre la plantilla (o crea una nueva).</li><li>En <b>Opciones de respuesta</b>, toca <b>V/F</b>.</li><li>En <b>Respuestas correctas</b>, marca en cada pregunta si la buena es la <b>V</b> (verdadero) o la <b>F</b> (falso).</li><li>Toca <b>Guardar cambios</b>.</li></ol>
@@ -224,6 +228,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/plantilla-criterios.jpg" alt="Criterios de evaluación (CE)" loading="lazy"><img src="img/es/progreso.jpg" alt="Criterios de evaluación (CE)" loading="lazy"></div>
         <p>Si en tu programación trabajas con criterios de evaluación, resultados de aprendizaje o competencias, puedes indicar qué criterio evalúa cada pregunta. Así la app te dice, para cada alumno, qué parte de cada criterio domina. Por ejemplo: «Marta: CE 2.1 → 90 %, CE 2.3 → 40 %».</p>
         <h3 class="subhead">1. Crea los criterios</h3>
         <ol class="steps"><li>Abre la plantilla.</li><li>En la sección <b>Criterios de evaluación</b>, toca <b>+ Añadir criterio</b>.</li><li>Escribe un nombre corto, tal como aparece en tu programación (por ejemplo, «CE 2.1»).</li><li>Repite con cada criterio que evalúe el examen.</li></ol>
@@ -253,6 +258,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/plantilla-modelos.jpg" alt="Varios modelos del examen (A, B, C, D)" loading="lazy"></div>
         <p>Para que no se copien, puedes repartir versiones distintas del mismo examen: el modelo A, el B, etc., con las preguntas en otro orden y las respuestas cambiadas de sitio. La app corrige cada hoja con su modelo.</p>
         <h3 class="subhead">Cómo funciona en el aula</h3>
         <p>Todas las hojas de respuestas se imprimen iguales. Cada alumno marca en su hoja, en la casilla del modelo, qué modelo le ha tocado (A, B, C o D). Al escanear, la app lee esa casilla y usa las respuestas correctas de ese modelo.</p>
@@ -276,6 +282,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/rubrica.jpg" alt="Rúbricas: evaluar por niveles de logro" loading="lazy"></div>
         <p>Además de exámenes tipo test, FullGrader sirve para evaluar con <b>rúbricas</b>: trabajos, exposiciones orales, proyectos, cuadernos… En vez de que el alumno conteste preguntas, eres tú quien marca en la hoja, en cada criterio, el nivel de logro que ha alcanzado. La app lee la hoja y calcula la nota.</p>
         <h3 class="subhead">Crear una rúbrica</h3>
         <ol class="steps"><li>En <b>Plantillas</b>, toca <b>Nueva plantilla</b> y escribe el título.</li><li>En <b>Tipo de plantilla</b>, elige <b>Rúbrica</b>.</li><li>En <b>Niveles de logro</b>, revisa los niveles y los puntos de cada uno. Vienen puestos Experto (4), Avanzado (3), Aprendiz (2), Novato (1) y Sin hacer (0), pero puedes cambiarles el nombre y los puntos, añadir niveles (hasta 8) o quitarlos (mínimo 2).</li><li>En <b>Criterios de la rúbrica</b>, escribe el nombre de cada criterio, por ejemplo «Expresión oral» o «Uso de fuentes». Puedes tener hasta 15.</li><li>Elige la <b>Nota máxima</b> y toca <b>Crear plantilla</b>.</li></ol>
@@ -299,7 +306,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-escanear.jpg" alt="Pantalla de escanear" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/es/escanear-clase.jpg" alt="Escanear: corregir las hojas" loading="lazy"><img src="img/es/escanear.jpg" alt="Escanear: corregir las hojas" loading="lazy"><img src="img/es/hoja-corregida.jpg" alt="Escanear: corregir las hojas" loading="lazy"></div>
         <h3 class="subhead">Cómo corregir</h3>
         <ol class="steps"><li>Ve a la pestaña <b>Escanear</b>.</li><li>Elige la <b>clase</b> y después la <b>plantilla</b> (el examen).</li><li>Comprueba que arriba esté elegido el <b>tamaño de hoja</b> correcto: <b>1 examen por folio</b> o <b>2 exámenes por folio</b>, según cómo hayas impreso la hoja.</li><li>Pon la hoja sobre la mesa y encájala dentro del marco blanco de la pantalla.</li><li>Toca el botón redondo grande para hacer la foto. Si no ha salido bien, toca <b>Repetir</b>; si está bien, toca <b>Usar esta foto</b>.</li><li>Revisa lo que ha leído la app y toca <b>Aceptar</b> para guardarlo. Ya puedes pasar a la siguiente hoja.</li></ol>
         <h3 class="subhead">La pantalla de revisión</h3>
@@ -320,7 +327,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-resultados.jpg" alt="Estadísticas de un examen" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/es/resultados.jpg" alt="Resultados: notas y estadísticas" loading="lazy"></div>
         <p>Aquí están todos los exámenes corregidos, agrupados por clase. Toca una clase para ver sus exámenes y toca un examen para ver todo el detalle.</p>
         <div class="feature"><div class="feature-title">Borrar los exámenes de una clase</div><p>Desliza la clase hacia la izquierda. Se borran sus exámenes corregidos, pero la clase y los alumnos se quedan.</p></div>
         <div class="feature"><div class="feature-title">Progreso por criterio</div><p>Dentro de una clase, arriba del todo, verás cómo evoluciona cada alumno en cada criterio de evaluación a lo largo de todos los exámenes. Se explica en el apartado «Criterios de evaluación (CE)».</p></div>
@@ -344,6 +351,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/es/ajustes.jpg" alt="Ajustes" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Dónde están los Ajustes</div><p>En la pantalla de <b>Inicio</b>, toca el botón morado <b>Ajustes</b>, arriba a la derecha. La barra de abajo tiene las cinco secciones del día a día (Inicio, Clases, Escanear, Plantillas y Resultados), con <b>Escanear</b> como botón redondo grande en el centro.</p></div>
         <div class="feature"><div class="feature-title">Apariencia</div><p>Elige cómo quieres ver la app: <b>Claro</b> (fondo blanco), <b>Oscuro</b> (fondo negro, más cómodo de noche) o <b>Automático</b> (cambia solo, igual que tu móvil).</p></div>
         <div class="feature"><div class="feature-title">Idioma</div><p>El idioma de la app. «Automático» usa el de tu móvil.</p></div>
@@ -419,6 +427,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/inicio.jpg" alt="Inici" loading="lazy"></div>
         <p>És la primera pantalla que veus en obrir l’app. D’un cop d’ull et diu què tens pendent.</p>
         <div class="feature"><div class="feature-title">Escaneja un examen</div><p>El botó gran de dalt. Et porta directament a la càmera per corregir.</p></div>
         <div class="feature"><div class="feature-title">Pendent de corregir</div><p>Exàmens que has començat a corregir però en què encara falten alumnes per escanejar. Toca’n un per anar a aquell examen.</p></div>
@@ -432,6 +441,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/clases.jpg" alt="Classes" loading="lazy"><img src="img/ca/clase-detalle.jpg" alt="Classes" loading="lazy"></div>
         <p>Aquí hi ha els teus grups i el seu alumnat. Cada alumne té un <b>codi de 4 xifres</b>: l’escriu al full de l’examen perquè l’app sàpiga de qui és.</p>
         <h3 class="subhead">Crear una classe i afegir-hi alumnes</h3>
         <ol class="steps"><li>Toca <b>Nova classe</b> i escriu-ne el nom (per exemple, «3r ESO A»).</li><li>Toca la classe per entrar-hi.</li><li>Toca <b>Afegeix un alumne</b> i escriu-ne el nom i els cognoms. El codi de 4 xifres s’hi posa sol.</li><li>Si ja tens la llista en un Excel, toca <b>Importa l’alumnat (Excel/CSV)</b> i tria el fitxer. L’app troba tota sola els noms i els cognoms: no cal escriure’ls un per un.</li></ol>
@@ -452,6 +462,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantillas.jpg" alt="Plantilles: crear l’examen" loading="lazy"><img src="img/ca/plantilla-datos.jpg" alt="Plantilles: crear l’examen" loading="lazy"><img src="img/ca/plantilla-formato.jpg" alt="Plantilles: crear l’examen" loading="lazy"><img src="img/ca/imprimir.jpg" alt="Plantilles: crear l’examen" loading="lazy"></div>
         <p>La plantilla és el teu examen dins de l’app. Toca una plantilla de la llista per obrir-la i canviar el que vulguis. Amb els tres punts (…), o mantenint-la premuda, també la pots <b>duplicar</b> (per fer un examen semblant sense començar de zero) o <b>eliminar</b>. Des d’aquest mateix menú pots anar a <b>Imprimeix els fulls</b>.</p>
         <h3 class="subhead">Crear un examen, pas a pas</h3>
         <ol class="steps"><li>A la pestanya <b>Plantilles</b>, toca <b>Nova plantilla</b>.</li><li>Escriu el <b>títol</b> i, si vols, l’assignatura i el curs. Surten impresos a dalt del full. També hi pots afegir el <b>logotip del centre</b>.</li><li>Tria l’<b>idioma del full</b>: és l’idioma dels textos impresos, no el de l’app. Toca el camp i s’obre una ruleta amb els 9 idiomes disponibles; al principi hi surt l’idioma de l’app.</li><li>Escriu el <b>nombre de preguntes</b> i tria quantes <b>opcions de resposta</b> té cadascuna (de 2 a 5). Si totes les preguntes són de vertader o fals, tria <b>V/F</b>.</li><li>Decideix si els errors <b>resten</b> i si les preguntes en blanc també resten. Si no et vols complicar, deixa la penalització a 0: així els errors no resten res.</li><li>Tria la <b>nota màxima</b>. Normalment, 10.</li><li>A <b>Respostes correctes</b>, toca a cada pregunta la lletra bona.</li><li>Toca <b>Crea la plantilla</b>. Si estàs canviant una plantilla que ja existia, el botó es diu <b>Desa els canvis</b>. En crear-la, l’app et porta directament a la pàgina <b>Impressió dels fulls</b>.</li></ol>
@@ -472,6 +483,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantilla-puntos.jpg" alt="Preguntes que valen més que d’altres" loading="lazy"></div>
         <p>Normalment totes les preguntes valen el mateix. Si vols que alguna compti més (per exemple, perquè és més difícil), li pots donar més punts.</p>
         <h3 class="subhead">Com es fa</h3>
         <ol class="steps"><li>Obre la plantilla.</li><li>A <b>Puntuació per pregunta</b>, tria <b>Personalitzada</b>.</li><li>A la llista de <b>Respostes correctes</b>, al costat de cada pregunta apareixen els botons <b>−</b> i <b>+</b>. Fes-los servir per indicar quants punts val aquella pregunta.</li><li>A sobre de la llista veuràs el <b>total de punts</b> de l’examen.</li><li>Toca <b>Desa els canvis</b>.</li></ol>
@@ -486,6 +498,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantilla-respuestas.jpg" alt="Més d’una resposta correcta" loading="lazy"></div>
         <p>De vegades una pregunta té dues respostes vàlides, o t’adones després de l’examen que estava mal plantejada i que una altra opció també hauria de valer. Pots marcar diverses lletres com a correctes en la mateixa pregunta.</p>
         <h3 class="subhead">Com es fa</h3>
         <ol class="steps"><li>Obre la plantilla.</li><li>A <b>Respostes correctes</b>, toca totes les lletres que donin per bona aquella pregunta. Si tornes a tocar una lletra marcada, es desmarca.</li><li>Toca <b>Desa els canvis</b>.</li></ol>
@@ -501,6 +514,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantilla-vf.jpg" alt="Preguntes de Vertader/Fals" loading="lazy"></div>
         <p>Pots fer un examen sencer de vertader o fals, o barrejar preguntes de vertader o fals amb preguntes normals d’opcions (A, B, C, D) al mateix examen.</p>
         <h3 class="subhead">Tot l’examen de Vertader/Fals</h3>
         <ol class="steps"><li>Obre la plantilla (o crea’n una de nova).</li><li>A <b>Opcions de resposta</b>, toca <b>V/F</b>.</li><li>A <b>Respostes correctes</b>, marca a cada pregunta si la bona és la <b>V</b> (vertader) o la <b>F</b> (fals).</li><li>Toca <b>Desa els canvis</b>.</li></ol>
@@ -520,6 +534,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantilla-criterios.jpg" alt="Criteris d’avaluació (CA)" loading="lazy"><img src="img/ca/progreso.jpg" alt="Criteris d’avaluació (CA)" loading="lazy"></div>
         <p>Si a la teva programació treballes amb criteris d’avaluació, resultats d’aprenentatge o competències, pots indicar quin criteri avalua cada pregunta. Així l’app et diu, per a cada alumne, quina part de cada criteri domina. Per exemple: «Marta: CA 2.1 → 90 %, CA 2.3 → 40 %».</p>
         <h3 class="subhead">1. Crea els criteris</h3>
         <ol class="steps"><li>Obre la plantilla.</li><li>A la secció <b>Criteris d’avaluació</b>, toca <b>+ Afegeix un criteri</b>.</li><li>Escriu un nom curt, tal com apareix a la teva programació (per exemple, «CA 2.1»).</li><li>Repeteix-ho amb cada criteri que avaluï l’examen.</li></ol>
@@ -549,6 +564,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/plantilla-modelos.jpg" alt="Diversos models de l’examen (A, B, C, D)" loading="lazy"></div>
         <p>Perquè no es copiïn, pots repartir versions diferents del mateix examen: el model A, el B, etc., amb les preguntes en un altre ordre i les respostes canviades de lloc. L’app corregeix cada full amb el seu model.</p>
         <h3 class="subhead">Com funciona a l’aula</h3>
         <p>Tots els fulls de respostes s’imprimeixen iguals. Cada alumne marca al seu full, a la casella del model, quin model li ha tocat (A, B, C o D). En escanejar, l’app llegeix aquesta casella i fa servir les respostes correctes d’aquell model.</p>
@@ -572,6 +588,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/rubrica.jpg" alt="Rúbriques: avaluar per nivells d’assoliment" loading="lazy"></div>
         <p>A més d’exàmens tipus test, FullGrader serveix per avaluar amb <b>rúbriques</b>: treballs, exposicions orals, projectes, llibretes… En comptes que l’alumne contesti preguntes, ets tu qui marca al full, a cada criteri, el nivell d’assoliment que ha assolit. L’app llegeix el full i calcula la nota.</p>
         <h3 class="subhead">Crear una rúbrica</h3>
         <ol class="steps"><li>A <b>Plantilles</b>, toca <b>Nova plantilla</b> i escriu el títol.</li><li>A <b>Tipus de plantilla</b>, tria <b>Rúbrica</b>.</li><li>A <b>Nivells d’assoliment</b>, revisa els nivells i els punts de cadascun. Vénen posats Expert (4), Avançat (3), Aprenent (2), Novell (1) i Sense fer (0), però els pots canviar el nom i els punts, afegir-hi nivells (fins a 8) o treure’n (mínim 2).</li><li>A <b>Criteris de la rúbrica</b>, escriu el nom de cada criteri, per exemple «Expressió oral» o «Ús de fonts». En pots tenir fins a 15.</li><li>Tria la <b>Nota màxima</b> i toca <b>Crea la plantilla</b>.</li></ol>
@@ -595,6 +612,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/escanear-clase.jpg" alt="Escanejar: corregir els fulls" loading="lazy"><img src="img/ca/escanear.jpg" alt="Escanejar: corregir els fulls" loading="lazy"><img src="img/ca/hoja-corregida.jpg" alt="Escanejar: corregir els fulls" loading="lazy"></div>
         <h3 class="subhead">Com corregir</h3>
         <ol class="steps"><li>Ves a la pestanya <b>Escanejar</b>.</li><li>Tria la <b>classe</b> i després la <b>plantilla</b> (l’examen).</li><li>Comprova que a dalt hi hagi triada la <b>mida del paper</b> correcta: <b>1 examen per foli</b> o <b>2 exàmens per foli</b>, segons com hagis imprès el full.</li><li>Posa el full sobre la taula i encaixa’l dins del marc blanc de la pantalla.</li><li>Toca el botó rodó gran per fer la foto. Si no ha sortit bé, toca <b>Repeteix</b>; si està bé, toca <b>Fes servir aquesta foto</b>.</li><li>Revisa el que ha llegit l’app i toca <b>Accepta</b> per desar-ho. Ja pots passar al full següent.</li></ol>
         <h3 class="subhead">La pantalla de revisió</h3>
@@ -615,6 +633,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/resultados.jpg" alt="Resultats: notes i estadístiques" loading="lazy"></div>
         <p>Aquí hi ha tots els exàmens corregits, agrupats per classe. Toca una classe per veure’n els exàmens i toca un examen per veure’n tot el detall.</p>
         <div class="feature"><div class="feature-title">Eliminar els exàmens d’una classe</div><p>Llisca la classe cap a l’esquerra. S’eliminen els seus exàmens corregits, però la classe i l’alumnat es mantenen.</p></div>
         <div class="feature"><div class="feature-title">Progrés per criteri</div><p>Dins d’una classe, a dalt de tot, veuràs com evoluciona cada alumne en cada criteri d’avaluació al llarg de tots els exàmens. S’explica a l’apartat «Criteris d’avaluació (CE)».</p></div>
@@ -638,6 +657,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/ca/ajustes.jpg" alt="Ajustos" loading="lazy"></div>
         <div class="feature"><div class="feature-title">On són els Ajustos</div><p>A la pantalla d'<b>Inici</b>, toca el botó morat <b>Ajustos</b>, a dalt a la dreta. La barra de baix té les cinc seccions del dia a dia (Inici, Classes, Escanejar, Plantilles i Resultats), amb <b>Escanejar</b> com a botó rodó gran al centre.</p></div>
         <div class="feature"><div class="feature-title">Aparença</div><p>Tria com vols veure l’app: <b>Clar</b> (fons blanc), <b>Fosc</b> (fons negre, més còmode de nit) o <b>Automàtic</b> (canvia sol, igual que el teu mòbil).</p></div>
         <div class="feature"><div class="feature-title">Idioma</div><p>L’idioma de l’app. «Automàtic» fa servir el del teu mòbil.</p></div>
@@ -713,6 +733,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/inicio.jpg" alt="Inicio" loading="lazy"></div>
         <p>É a primeira pantalla que ves ao abrir a app. Dunha ollada díche que tes pendente.</p>
         <div class="feature"><div class="feature-title">Escanear exame</div><p>O botón grande de arriba. Lévate directamente á cámara para corrixir.</p></div>
         <div class="feature"><div class="feature-title">Pendente de corrixir</div><p>Exames que empezaches a corrixir pero nos que aínda faltan alumnos/as por escanear. Tócao para ir a ese exame.</p></div>
@@ -726,6 +747,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/clases.jpg" alt="Clases" loading="lazy"><img src="img/gl/clase-detalle.jpg" alt="Clases" loading="lazy"></div>
         <p>Aquí están os teus grupos e o seu alumnado. Cada alumno/a ten un <b>código de 4 cifras</b>: escríbeo na folla do exame para que a app saiba de quen é.</p>
         <h3 class="subhead">Crear unha clase e engadir alumnado</h3>
         <ol class="steps"><li>Toca <b>Nova clase</b> e escribe o seu nome (por exemplo, «3.º ESO A»).</li><li>Toca a clase para entrar.</li><li>Toca <b>Engadir alumno/a</b> e escribe o nome e os apelidos. O código de 4 cifras ponse só.</li><li>Se xa tes a lista nun Excel, toca <b>Importar alumnado (Excel/CSV)</b> e escolle o ficheiro. A app atopa sós os nomes e os apelidos: non fai falta escribilos un por un.</li></ol>
@@ -746,6 +768,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantillas.jpg" alt="Modelos: crear o exame" loading="lazy"><img src="img/gl/plantilla-datos.jpg" alt="Modelos: crear o exame" loading="lazy"><img src="img/gl/plantilla-formato.jpg" alt="Modelos: crear o exame" loading="lazy"><img src="img/gl/imprimir.jpg" alt="Modelos: crear o exame" loading="lazy"></div>
         <p>O modelo é o teu exame dentro da app. Toca un modelo da lista para abrilo e cambiar o que queiras. Cos tres puntos (…), ou manténdoo premido, tamén podes <b>duplicalo</b> (para facer un exame parecido sen empezar de cero) ou <b>eliminalo</b>. Desde ese mesmo menú podes ir a <b>Imprimir follas</b>.</p>
         <h3 class="subhead">Crear un exame, paso a paso</h3>
         <ol class="steps"><li>Na lapela <b>Modelos</b>, toca <b>Novo modelo</b>.</li><li>Escribe o <b>título</b> e, se queres, a materia e o curso. Saen impresos arriba da folla. Tamén podes engadir o <b>logotipo do teu centro</b>.</li><li>Escolle o <b>idioma da folla</b>: é o idioma dos textos impresos, non o da app. Toca o campo e ábrese unha roleta cos 9 idiomas dispoñibles; ao principio aparece o idioma da app.</li><li>Escribe o <b>número de preguntas</b> e escolle cantas <b>opcións de resposta</b> ten cada unha (de 2 a 5). Se todas as preguntas son de verdadeiro ou falso, escolle <b>V/F</b>.</li><li>Decide se os erros <b>restan</b> e se as preguntas en branco tamén restan. Se non queres complicarte, deixa a penalización en 0: así os erros non restan nada.</li><li>Escolle a <b>nota máxima</b>. Normalmente, 10.</li><li>En <b>Respostas correctas</b>, toca en cada pregunta a letra boa.</li><li>Toca <b>Crear modelo</b>. Se estás cambiando un modelo que xa existía, o botón chámase <b>Gardar cambios</b>. Ao crealo, a app lévate directamente á páxina <b>Imprimir follas</b>.</li></ol>
@@ -766,6 +789,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantilla-puntos.jpg" alt="Preguntas que valen máis ca outras" loading="lazy"></div>
         <p>Normalmente todas as preguntas valen o mesmo. Se queres que algunha conte máis (por exemplo, porque é máis difícil), podes darlle máis puntos.</p>
         <h3 class="subhead">Como se fai</h3>
         <ol class="steps"><li>Abre o modelo.</li><li>En <b>Puntuación por pregunta</b>, escolle <b>Personalizada</b>.</li><li>Na lista de <b>Respostas correctas</b>, ao lado de cada pregunta aparecen os botóns <b>−</b> e <b>+</b>. Úsaos para indicar cantos puntos vale esa pregunta.</li><li>Enriba da lista verás o <b>total de puntos</b> do exame.</li><li>Toca <b>Gardar cambios</b>.</li></ol>
@@ -780,6 +804,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantilla-respuestas.jpg" alt="Máis dunha resposta correcta" loading="lazy"></div>
         <p>Ás veces unha pregunta ten dúas respostas válidas, ou decátaste despois do exame de que estaba mal formulada e outra opción tamén debería valer. Podes marcar varias letras como correctas na mesma pregunta.</p>
         <h3 class="subhead">Como se fai</h3>
         <ol class="steps"><li>Abre o modelo.</li><li>En <b>Respostas correctas</b>, toca todas as letras que dean por boa esa pregunta. Se volves tocar unha letra marcada, desmárcase.</li><li>Toca <b>Gardar cambios</b>.</li></ol>
@@ -795,6 +820,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantilla-vf.jpg" alt="Preguntas de Verdadeiro/Falso" loading="lazy"></div>
         <p>Podes facer un exame enteiro de verdadeiro ou falso, ou mesturar preguntas de verdadeiro ou falso con preguntas normais de opcións (A, B, C, D) no mesmo exame.</p>
         <h3 class="subhead">Todo o exame de Verdadeiro/Falso</h3>
         <ol class="steps"><li>Abre o modelo (ou crea un novo).</li><li>En <b>Opcións de resposta</b>, toca <b>V/F</b>.</li><li>En <b>Respostas correctas</b>, marca en cada pregunta se a boa é a <b>V</b> (verdadeiro) ou a <b>F</b> (falso).</li><li>Toca <b>Gardar cambios</b>.</li></ol>
@@ -814,6 +840,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantilla-criterios.jpg" alt="Criterios de avaliación (CA)" loading="lazy"><img src="img/gl/progreso.jpg" alt="Criterios de avaliación (CA)" loading="lazy"></div>
         <p>Se na túa programación traballas con criterios de avaliación, resultados de aprendizaxe ou competencias, podes indicar que criterio avalía cada pregunta. Así a app díche, para cada alumno/a, que parte de cada criterio domina. Por exemplo: «Marta: CA 2.1 → 90 %, CA 2.3 → 40 %».</p>
         <h3 class="subhead">1. Crea os criterios</h3>
         <ol class="steps"><li>Abre o modelo.</li><li>Na sección <b>Criterios de avaliación</b>, toca <b>+ Engadir criterio</b>.</li><li>Escribe un nome curto, tal como aparece na túa programación (por exemplo, «CA 2.1»).</li><li>Repite con cada criterio que avalíe o exame.</li></ol>
@@ -843,6 +870,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/plantilla-modelos.jpg" alt="Varias versións do exame (A, B, C, D)" loading="lazy"></div>
         <p>Para que non se copien, podes repartir versións distintas do mesmo exame: a versión A, a B, etc., coas preguntas noutra orde e as respostas cambiadas de sitio. A app corrixe cada folla coa súa versión.</p>
         <h3 class="subhead">Como funciona na aula</h3>
         <p>Todas as follas de respostas se imprimen iguais. Cada alumno/a marca na súa folla, na casiña da versión, que versión lle tocou (A, B, C ou D). Ao escanear, a app le esa casiña e usa as respostas correctas desa versión.</p>
@@ -866,6 +894,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/rubrica.jpg" alt="Rúbricas: avaliar por niveis de logro" loading="lazy"></div>
         <p>Ademais de exames tipo test, FullGrader serve para avaliar con <b>rúbricas</b>: traballos, exposicións orais, proxectos, cadernos… En vez de que o alumnado conteste preguntas, es ti quen marca na folla, en cada criterio, o nivel de logro que acadou. A app le a folla e calcula a nota.</p>
         <h3 class="subhead">Crear unha rúbrica</h3>
         <ol class="steps"><li>En <b>Modelos</b>, toca <b>Novo modelo</b> e escribe o título.</li><li>En <b>Tipo de modelo</b>, escolle <b>Rúbrica</b>.</li><li>En <b>Niveis de logro</b>, revisa os niveis e os puntos de cada un. Veñen postos Experto (4), Avanzado (3), Aprendiz (2), Novato (1) e Sen facer (0), pero podes cambiarlles o nome e os puntos, engadir niveis (ata 8) ou quitalos (mínimo 2).</li><li>En <b>Criterios da rúbrica</b>, escribe o nome de cada criterio, por exemplo «Expresión oral» ou «Uso de fontes». Podes ter ata 15.</li><li>Escolle a <b>Nota máxima</b> e toca <b>Crear modelo</b>.</li></ol>
@@ -889,6 +918,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/escanear-clase.jpg" alt="Escanear: corrixir as follas" loading="lazy"><img src="img/gl/escanear.jpg" alt="Escanear: corrixir as follas" loading="lazy"><img src="img/gl/hoja-corregida.jpg" alt="Escanear: corrixir as follas" loading="lazy"></div>
         <h3 class="subhead">Como corrixir</h3>
         <ol class="steps"><li>Vai á lapela <b>Escanear</b>.</li><li>Escolle a <b>clase</b> e despois o <b>modelo</b> (o exame).</li><li>Comproba que arriba estea escollido o <b>tamaño do papel</b> correcto: <b>1 exame por folio</b> ou <b>2 exames por folio</b>, segundo como imprimises a folla.</li><li>Pon a folla sobre a mesa e encáixaa dentro do marco branco da pantalla.</li><li>Toca o botón redondo grande para facer a foto. Se non saíu ben, toca <b>Repetir</b>; se está ben, toca <b>Usar esta foto</b>.</li><li>Revisa o que leu a app e toca <b>Aceptar</b> para gardalo. Xa podes pasar á seguinte folla.</li></ol>
         <h3 class="subhead">A pantalla de revisión</h3>
@@ -909,6 +939,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/resultados.jpg" alt="Resultados: notas e estatísticas" loading="lazy"></div>
         <p>Aquí están todos os exames corrixidos, agrupados por clase. Toca unha clase para ver os seus exames e toca un exame para ver todo o detalle.</p>
         <div class="feature"><div class="feature-title">Borrar os exames dunha clase</div><p>Despraza a clase cara á esquerda. Bórranse os seus exames corrixidos, pero a clase e o alumnado mantéñense.</p></div>
         <div class="feature"><div class="feature-title">Progreso por criterio</div><p>Dentro dunha clase, arriba de todo, verás como evoluciona cada alumno/a en cada criterio de avaliación ao longo de todos os exames. Explícase no apartado «Criterios de avaliación (CE)».</p></div>
@@ -932,6 +963,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/gl/ajustes.jpg" alt="Axustes" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Onde están os Axustes</div><p>Na pantalla de <b>Inicio</b>, toca o botón morado <b>Axustes</b>, arriba á dereita. A barra de abaixo ten as cinco seccións do día a día (Inicio, Clases, Escanear, Modelos e Resultados), con <b>Escanear</b> como botón redondo grande no centro.</p></div>
         <div class="feature"><div class="feature-title">Aparencia</div><p>Escolle como queres ver a app: <b>Claro</b> (fondo branco), <b>Escuro</b> (fondo negro, máis cómodo de noite) ou <b>Automático</b> (cambia só, igual que o teu móbil).</p></div>
         <div class="feature"><div class="feature-title">Idioma</div><p>O idioma da app. «Automático» usa o do teu móbil.</p></div>
@@ -1007,6 +1039,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/inicio.jpg" alt="Hasiera" loading="lazy"></div>
         <p>Aplikazioa irekitzean ikusten duzun lehen pantaila da. Begirada batean, zer duzun egiteko esaten dizu.</p>
         <div class="feature"><div class="feature-title">Azterketa eskaneatu</div><p>Goiko botoi handia. Zuzenean kamerara eramaten zaitu zuzentzeko.</p></div>
         <div class="feature"><div class="feature-title">Zuzentzeko</div><p>Zuzentzen hasi zaren azterketak, oraindik ikasle batzuk eskaneatzeko dituztenak. Sakatu bat azterketa horretara joateko.</p></div>
@@ -1020,6 +1053,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/clases.jpg" alt="Ikasgelak" loading="lazy"><img src="img/eu/clase-detalle.jpg" alt="Ikasgelak" loading="lazy"></div>
         <p>Hemen daude zure taldeak eta haien ikasleak. Ikasle bakoitzak <b>4 zenbakiko kode</b> bat du: azterketa-orrian idazten du, aplikazioak jakin dezan norena den.</p>
         <h3 class="subhead">Ikasgela bat sortu eta ikasleak gehitu</h3>
         <ol class="steps"><li>Sakatu <b>Ikasgela berria</b> eta idatzi haren izena (adibidez, «3. DBH A»).</li><li>Sakatu ikasgela barruan sartzeko.</li><li>Sakatu <b>Ikaslea gehitu</b> eta idatzi izena eta abizenak. 4 zenbakiko kodea berez jartzen da.</li><li>Zerrenda Excel batean baduzu, sakatu <b>Ikasleak inportatu (Excel/CSV)</b> eta aukeratu fitxategia. Aplikazioak berak aurkitzen ditu izenak eta abizenak: ez dituzu banan-banan idatzi behar.</li></ol>
@@ -1040,6 +1074,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantillas.jpg" alt="Ereduak: azterketa sortu" loading="lazy"><img src="img/eu/plantilla-datos.jpg" alt="Ereduak: azterketa sortu" loading="lazy"><img src="img/eu/plantilla-formato.jpg" alt="Ereduak: azterketa sortu" loading="lazy"><img src="img/eu/imprimir.jpg" alt="Ereduak: azterketa sortu" loading="lazy"></div>
         <p>Eredua zure azterketa da, aplikazioaren barruan. Sakatu zerrendako eredu bat irekitzeko eta nahi duzuna aldatzeko. Hiru puntuekin (…), edo luze sakatuta, <b>bikoiztu</b> ere egin dezakezu (antzeko azterketa bat hutsetik hasi gabe egiteko) edo <b>ezabatu</b>. Menu horretatik bertatik <b>Orriak inprimatu</b> atalera joan zaitezke.</p>
         <h3 class="subhead">Azterketa bat sortu, urratsez urrats</h3>
         <ol class="steps"><li><b>Ereduak</b> fitxan, sakatu <b>Eredu berria</b>.</li><li>Idatzi <b>izenburua</b> eta, nahi baduzu, ikasgaia eta ikasturtea. Orriaren goialdean inprimatzen dira. <b>Ikastetxearen logotipoa</b> ere gehi dezakezu.</li><li>Aukeratu <b>orriaren hizkuntza</b>: inprimatutako testuen hizkuntza da, ez aplikazioarena. Sakatu eremua eta ruleta bat irekiko da eskuragarri dauden 9 hizkuntzekin; hasieran aplikazioaren hizkuntza agertzen da.</li><li>Idatzi <b>galdera kopurua</b> eta aukeratu galdera bakoitzak zenbat <b>erantzun aukera</b> dituen (2tik 5era). Galdera guztiak egia ala gezurra motakoak badira, aukeratu <b>E/G</b>.</li><li>Erabaki erroreek <b>kentzen</b> duten eta erantzun hutsek ere kentzen duten. Gauzak erraz egin nahi badituzu, utzi zigorra 0-n: horrela erroreek ez dute ezer kentzen.</li><li>Aukeratu <b>gehieneko nota</b>. Normalean, 10.</li><li><b>Erantzun zuzenak</b> atalean, sakatu galdera bakoitzaren letra zuzena.</li><li>Sakatu <b>Eredua sortu</b>. Lehendik zegoen eredu bat aldatzen ari bazara, botoiak <b>Aldaketak gorde</b> dio. Sortzean, aplikazioak zuzenean <b>Orriak inprimatu</b> orrira eramaten zaitu.</li></ol>
@@ -1060,6 +1095,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantilla-puntos.jpg" alt="Besteek baino gehiago balio duten galderak" loading="lazy"></div>
         <p>Normalean galdera guztiek berdin balio dute. Galderaren batek gehiago kontatzea nahi baduzu (adibidez, zailagoa delako), puntu gehiago eman diezazkiokezu.</p>
         <h3 class="subhead">Nola egiten da</h3>
         <ol class="steps"><li>Ireki eredua.</li><li><b>Puntuazioa galderaka</b> atalean, aukeratu <b>Pertsonalizatua</b>.</li><li><b>Erantzun zuzenak</b> zerrendan, galdera bakoitzaren ondoan <b>−</b> eta <b>+</b> botoiak agertzen dira. Erabili galdera horrek zenbat puntu balio duen adierazteko.</li><li>Zerrendaren gainean azterketaren <b>puntu guztiak</b> ikusiko dituzu.</li><li>Sakatu <b>Aldaketak gorde</b>.</li></ol>
@@ -1074,6 +1110,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantilla-respuestas.jpg" alt="Erantzun zuzen bat baino gehiago" loading="lazy"></div>
         <p>Batzuetan galdera batek bi erantzun baliozko ditu, edo azterketaren ondoren konturatzen zara gaizki planteatuta zegoela eta beste aukera batek ere balio beharko lukeela. Galdera berean hainbat letra marka ditzakezu zuzen gisa.</p>
         <h3 class="subhead">Nola egiten da</h3>
         <ol class="steps"><li>Ireki eredua.</li><li><b>Erantzun zuzenak</b> atalean, sakatu galdera horretan zuzentzat hartu behar diren letra guztiak. Markatutako letra bat berriro sakatzen baduzu, desmarkatu egiten da.</li><li>Sakatu <b>Aldaketak gorde</b>.</li></ol>
@@ -1089,6 +1126,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantilla-vf.jpg" alt="Egia/Gezurra galderak" loading="lazy"></div>
         <p>Azterketa oso bat egia ala gezurra motakoa egin dezakezu, edo egia/gezurra galderak ohiko aukera anitzeko galderekin (A, B, C, D) nahastu azterketa berean.</p>
         <h3 class="subhead">Azterketa osoa Egia/Gezurra</h3>
         <ol class="steps"><li>Ireki eredua (edo sortu berri bat).</li><li><b>Erantzun aukerak</b> atalean, sakatu <b>E/G</b>.</li><li><b>Erantzun zuzenak</b> atalean, markatu galdera bakoitzean zuzena <b>E</b> (egia) ala <b>G</b> (gezurra) den.</li><li>Sakatu <b>Aldaketak gorde</b>.</li></ol>
@@ -1108,6 +1146,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantilla-criterios.jpg" alt="Ebaluazio-irizpideak (EI)" loading="lazy"><img src="img/eu/progreso.jpg" alt="Ebaluazio-irizpideak (EI)" loading="lazy"></div>
         <p>Zure programazioan ebaluazio-irizpideekin, ikaskuntza-emaitzekin edo gaitasunekin lan egiten baduzu, galdera bakoitzak zein irizpide ebaluatzen duen adieraz dezakezu. Horrela, aplikazioak esaten dizu ikasle bakoitzak irizpide bakoitzaren zer zati menderatzen duen. Adibidez: «Marta: EI 2.1 → % 90, EI 2.3 → % 40».</p>
         <h3 class="subhead">1. Sortu irizpideak</h3>
         <ol class="steps"><li>Ireki eredua.</li><li><b>Ebaluazio-irizpideak</b> atalean, sakatu <b>+ Irizpidea gehitu</b>.</li><li>Idatzi izen labur bat, zure programazioan agertzen den bezala (adibidez, «EI 2.1»).</li><li>Errepikatu azterketak ebaluatzen duen irizpide bakoitzarekin.</li></ol>
@@ -1137,6 +1176,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/plantilla-modelos.jpg" alt="Azterketaren hainbat bertsio (A, B, C, D)" loading="lazy"></div>
         <p>Kopiatu ez dezaten, azterketa beraren bertsio desberdinak bana ditzakezu: A bertsioa, B bertsioa, etab., galderak beste ordena batean eta erantzunak lekuz aldatuta. Aplikazioak orri bakoitza bere bertsioarekin zuzentzen du.</p>
         <h3 class="subhead">Nola funtzionatzen duen ikasgelan</h3>
         <p>Erantzun-orri guztiak berdin inprimatzen dira. Ikasle bakoitzak bere orrian, bertsioaren laukian, zein bertsio egokitu zaion markatzen du (A, B, C edo D). Eskaneatzean, aplikazioak lauki hori irakurtzen du eta bertsio horren erantzun zuzenak erabiltzen ditu.</p>
@@ -1160,6 +1200,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/rubrica.jpg" alt="Errubrikak: lorpen-mailen bidez ebaluatu" loading="lazy"></div>
         <p>Test motako azterketez gain, FullGrader <b>errubrikekin</b> ebaluatzeko ere balio du: lanak, ahozko aurkezpenak, proiektuak, koadernoak… Ikasleak galderei erantzun beharrean, zuk markatzen duzu orrian, irizpide bakoitzean, ikasleak lortu duen maila. Aplikazioak orria irakurri eta nota kalkulatzen du.</p>
         <h3 class="subhead">Errubrika bat sortu</h3>
         <ol class="steps"><li><b>Ereduak</b> fitxan, sakatu <b>Eredu berria</b> eta idatzi izenburua.</li><li><b>Txantiloi mota</b> atalean, aukeratu <b>Errubrika</b>.</li><li><b>Lorpen-mailak</b> atalean, berrikusi mailak eta bakoitzaren puntuak. Aditu (4), Aurreratua (3), Ikaslea (2), Hasiberria (1) eta Egin gabe (0) datoz jarrita, baina izena eta puntuak alda ditzakezu, mailak gehitu (8 arte) edo kendu (gutxienez 2).</li><li><b>Errubrikaren irizpideak</b> atalean, idatzi irizpide bakoitzaren izena, adibidez «Ahozko adierazpena» edo «Iturrien erabilera». 15 arte izan ditzakezu.</li><li>Aukeratu <b>Gehieneko nota</b> eta sakatu <b>Eredua sortu</b>.</li></ol>
@@ -1183,6 +1224,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/escanear-clase.jpg" alt="Eskaneatu: orriak zuzendu" loading="lazy"><img src="img/eu/escanear.jpg" alt="Eskaneatu: orriak zuzendu" loading="lazy"><img src="img/eu/hoja-corregida.jpg" alt="Eskaneatu: orriak zuzendu" loading="lazy"></div>
         <h3 class="subhead">Nola zuzendu</h3>
         <ol class="steps"><li>Joan <b>Eskaneatu</b> fitxara.</li><li>Aukeratu <b>ikasgela</b> eta gero <b>eredua</b> (azterketa).</li><li>Egiaztatu goian <b>orriaren tamaina</b> zuzena aukeratuta dagoela: <b>Azterketa 1 orriko</b> edo <b>2 azterketa orriko</b>, orria nola inprimatu duzun kontuan hartuta.</li><li>Jarri orria mahai gainean eta egokitu pantailako marko zuriaren barruan.</li><li>Sakatu botoi biribil handia argazkia ateratzeko. Ondo atera ez bada, sakatu <b>Errepikatu</b>; ondo badago, sakatu <b>Argazki hau erabili</b>.</li><li>Berrikusi aplikazioak irakurri duena eta sakatu <b>Onartu</b> gordetzeko. Hurrengo orrira pasa zaitezke.</li></ol>
         <h3 class="subhead">Berrikusteko pantaila</h3>
@@ -1203,6 +1245,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/resultados.jpg" alt="Emaitzak: notak eta estatistikak" loading="lazy"></div>
         <p>Hemen daude zuzendutako azterketa guztiak, ikasgelaka multzokatuta. Sakatu ikasgela bat haren azterketak ikusteko, eta sakatu azterketa bat xehetasun guztiak ikusteko.</p>
         <div class="feature"><div class="feature-title">Ikasgela baten azterketak ezabatu</div><p>Lerratu ikasgela ezkerrera. Haren azterketa zuzenduak ezabatzen dira, baina ikasgela eta ikasleak mantendu egiten dira.</p></div>
         <div class="feature"><div class="feature-title">Aurrerapena irizpideka</div><p>Ikasgela baten barruan, goian-goian, ikasle bakoitza ebaluazio-irizpide bakoitzean nola doan ikusiko duzu azterketa guztietan zehar. «Ebaluazio-irizpideak» atalean azaltzen da.</p></div>
@@ -1226,6 +1269,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/eu/ajustes.jpg" alt="Ezarpenak" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Non daude Ezarpenak</div><p><b>Hasiera</b> pantailan, sakatu goian eskuinean dagoen <b>Ezarpenak</b> botoi morea. Beheko barran eguneroko bost atalak daude (Hasiera, Ikasgelak, Eskaneatu, Ereduak eta Emaitzak), eta <b>Eskaneatu</b> erdiko botoi biribil handia da.</p></div>
         <div class="feature"><div class="feature-title">Itxura</div><p>Aukeratu aplikazioa nola ikusi nahi duzun: <b>Argia</b> (hondo zuria), <b>Iluna</b> (hondo beltza, gauez erosoagoa) edo <b>Automatikoa</b> (berez aldatzen da, zure mugikorra bezala).</p></div>
         <div class="feature"><div class="feature-title">Hizkuntza</div><p>Aplikazioaren hizkuntza. «Automatikoa» aukerak zure mugikorraren hizkuntza erabiltzen du.</p></div>
@@ -1301,6 +1345,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/inicio.jpg" alt="Home" loading="lazy"></div>
         <p>This is the first screen you see when you open the app. At a glance, it shows you what’s still to do.</p>
         <div class="feature"><div class="feature-title">Scan a test</div><p>The big button at the top. It takes you straight to the camera to grade.</p></div>
         <div class="feature"><div class="feature-title">Still to grade</div><p>Tests you’ve started grading where some students still haven’t been scanned. Tap one to go to that test.</p></div>
@@ -1314,6 +1359,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/clases.jpg" alt="Classes" loading="lazy"><img src="img/en/clase-detalle.jpg" alt="Classes" loading="lazy"></div>
         <p>Here are your groups and their students. Each student has a <b>4-digit code</b>: they write it on the answer sheet so the app knows whose sheet it is.</p>
         <h3 class="subhead">Create a class and add students</h3>
         <ol class="steps"><li>Tap <b>New class</b> and type its name (for example, “10th grade A”).</li><li>Tap the class to open it.</li><li>Tap <b>Add student</b> and type their first and last name. The 4-digit code is added automatically.</li><li>If you already have the list in Excel, tap <b>Import students (Excel/CSV)</b> and choose the file. The app finds the first and last names on its own, so you don’t have to type them one by one.</li></ol>
@@ -1334,6 +1380,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantillas.jpg" alt="Templates: create the test" loading="lazy"><img src="img/en/plantilla-datos.jpg" alt="Templates: create the test" loading="lazy"><img src="img/en/plantilla-formato.jpg" alt="Templates: create the test" loading="lazy"><img src="img/en/imprimir.jpg" alt="Templates: create the test" loading="lazy"></div>
         <p>A template is your test inside the app. Tap a template in the list to open it and change anything you like. With the three dots (…), or by pressing and holding it, you can also <b>duplicate</b> it (to make a similar test without starting from scratch) or <b>delete</b> it. From that same menu you can go to <b>Print sheets</b>.</p>
         <h3 class="subhead">Create a test, step by step</h3>
         <ol class="steps"><li>In the <b>Templates</b> tab, tap <b>New template</b>.</li><li>Type the <b>title</b> and, if you want, the subject and school year. They are printed at the top of the sheet. You can also add your <b>school logo</b>.</li><li>Choose the <b>sheet language</b>: this is the language of the printed text, not of the app. Tap the field and a scroll wheel opens with the 9 available languages; at first it shows the app’s language.</li><li>Type the <b>number of questions</b> and choose how many <b>answer options</b> each one has (from 2 to 5). If every question is true or false, choose <b>T/F</b>.</li><li>Decide whether wrong answers <b>take points off</b>, and whether blank answers do too. To keep it simple, leave the penalty at 0: wrong answers then take nothing off.</li><li>Choose the <b>maximum grade</b>, for example 10 or 100.</li><li>Under <b>Correct answers</b>, tap the right letter for each question.</li><li>Tap <b>Create template</b>. If you’re changing a template that already exists, the button says <b>Save changes</b>. Once it’s created, the app takes you straight to the <b>Print sheets</b> page.</li></ol>
@@ -1354,6 +1401,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantilla-puntos.jpg" alt="Questions worth more than others" loading="lazy"></div>
         <p>Normally every question is worth the same. If you want one to count for more (for example, because it’s harder), you can give it more points.</p>
         <h3 class="subhead">How to do it</h3>
         <ol class="steps"><li>Open the template.</li><li>Under <b>Points per question</b>, choose <b>Custom</b>.</li><li>In the <b>Correct answers</b> list, <b>−</b> and <b>+</b> buttons appear next to each question. Use them to set how many points that question is worth.</li><li>Above the list you’ll see the test’s <b>total points</b>.</li><li>Tap <b>Save changes</b>.</li></ol>
@@ -1368,6 +1416,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantilla-respuestas.jpg" alt="More than one correct answer" loading="lazy"></div>
         <p>Sometimes a question has two valid answers, or you realize after the test that a question was badly worded and another option should also count. You can mark several letters as correct in the same question.</p>
         <h3 class="subhead">How to do it</h3>
         <ol class="steps"><li>Open the template.</li><li>Under <b>Correct answers</b>, tap every letter that should count as right for that question. Tap a marked letter again to unmark it.</li><li>Tap <b>Save changes</b>.</li></ol>
@@ -1383,6 +1432,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantilla-vf.jpg" alt="True/False questions" loading="lazy"></div>
         <p>You can make a whole true-or-false test, or mix true-or-false questions with regular multiple-choice questions (A, B, C, D) in the same test.</p>
         <h3 class="subhead">A whole True/False test</h3>
         <ol class="steps"><li>Open the template (or create a new one).</li><li>In <b>Answer options</b>, tap <b>T/F</b>.</li><li>In <b>Correct answers</b>, mark for each question whether the right answer is <b>T</b> (true) or <b>F</b> (false).</li><li>Tap <b>Save changes</b>.</li></ol>
@@ -1402,6 +1452,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantilla-criterios.jpg" alt="Assessment criteria" loading="lazy"><img src="img/en/progreso.jpg" alt="Assessment criteria" loading="lazy"></div>
         <p>If your syllabus uses assessment criteria, learning outcomes or competences, you can say which criterion each question assesses. The app then tells you, for each student, how much of each criterion they have mastered. For example: “Emma: AC 2.1 → 90%, AC 2.3 → 40%”.</p>
         <h3 class="subhead">1. Create the criteria</h3>
         <ol class="steps"><li>Open the template.</li><li>In the <b>Assessment criteria</b> section, tap <b>+ Add criterion</b>.</li><li>Type a short name, as it appears in your syllabus (for example, “AC 2.1”).</li><li>Repeat for each criterion the test assesses.</li></ol>
@@ -1431,6 +1482,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/plantilla-modelos.jpg" alt="Several versions of the test (A, B, C, D)" loading="lazy"></div>
         <p>To stop students copying, you can hand out different versions of the same test: version A, version B, and so on, with the questions in a different order and the answers moved around. The app grades each sheet with its own version.</p>
         <h3 class="subhead">How it works in class</h3>
         <p>Every answer sheet is printed the same. Each student marks on their sheet, in the version box, which version they got (A, B, C or D). When scanning, the app reads that box and uses the correct answers for that version.</p>
@@ -1454,6 +1506,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/rubrica.jpg" alt="Rubrics: grading by achievement levels" loading="lazy"></div>
         <p>Besides multiple-choice tests, FullGrader can grade with <b>rubrics</b>: assignments, oral presentations, projects, notebooks… Instead of the student answering questions, you mark on the sheet, for each criterion, the achievement level the student reached. The app reads the sheet and works out the grade.</p>
         <h3 class="subhead">Create a rubric</h3>
         <ol class="steps"><li>In <b>Templates</b>, tap <b>New template</b> and type the title.</li><li>In <b>Template type</b>, choose <b>Rubric</b>.</li><li>In <b>Achievement levels</b>, check the levels and the points for each one. They come set to Expert (4), Advanced (3), Apprentice (2), Novice (1) and Not done (0), but you can rename them, change their points, add levels (up to 8) or remove them (at least 2).</li><li>In <b>Rubric criteria</b>, type the name of each criterion, for example “Oral expression” or “Use of sources”. You can have up to 15.</li><li>Choose the <b>Maximum grade</b> and tap <b>Create template</b>.</li></ol>
@@ -1477,6 +1530,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/escanear-clase.jpg" alt="Scan: grade the sheets" loading="lazy"><img src="img/en/escanear.jpg" alt="Scan: grade the sheets" loading="lazy"><img src="img/en/hoja-corregida.jpg" alt="Scan: grade the sheets" loading="lazy"></div>
         <h3 class="subhead">How to grade</h3>
         <ol class="steps"><li>Go to the <b>Scan</b> tab.</li><li>Choose the <b>class</b> and then the <b>template</b> (the test).</li><li>Check that the right <b>paper</b> option is selected at the top: <b>1 test per page</b> or <b>2 tests per page</b>, depending on how you printed the sheet.</li><li>Put the sheet on the table and fit it inside the white frame on the screen.</li><li>Tap the big round button to take the photo. If it didn’t come out well, tap <b>Retake</b>; if it’s fine, tap <b>Use this photo</b>.</li><li>Check what the app has read and tap <b>Accept</b> to save it. You can now move on to the next sheet.</li></ol>
         <h3 class="subhead">The review screen</h3>
@@ -1497,6 +1551,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/resultados.jpg" alt="Results: grades and statistics" loading="lazy"></div>
         <p>Here are all your graded tests, grouped by class. Tap a class to see its tests, and tap a test to see all its details.</p>
         <div class="feature"><div class="feature-title">Delete a class’s tests</div><p>Swipe the class to the left. Its graded tests are deleted, but the class and its students stay.</p></div>
         <div class="feature"><div class="feature-title">Progress by criterion</div><p>Inside a class, at the top, you’ll see how each student is progressing in each assessment criterion across all tests. It’s explained in the “Assessment criteria” section.</p></div>
@@ -1520,6 +1575,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/en/ajustes.jpg" alt="Settings" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Where to find Settings</div><p>On the <b>Home</b> screen, tap the purple <b>Settings</b> button in the top right corner. The bottom bar holds the five everyday sections (Home, Classes, Scan, Templates and Results), with <b>Scan</b> as the big round button in the middle.</p></div>
         <div class="feature"><div class="feature-title">Appearance</div><p>Choose how you want the app to look: <b>Light</b> (white background), <b>Dark</b> (black background, easier on the eyes at night) or <b>Automatic</b> (changes on its own, just like your phone).</p></div>
         <div class="feature"><div class="feature-title">Language</div><p>The app’s language. “Automatic” uses your phone’s language.</p></div>
@@ -1595,6 +1651,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/inicio.jpg" alt="Start" loading="lazy"></div>
         <p>Das ist der erste Bildschirm, den du beim Öffnen der App siehst. Auf einen Blick zeigt er dir, was noch zu tun ist.</p>
         <div class="feature"><div class="feature-title">Prüfung scannen</div><p>Die große Schaltfläche oben. Sie bringt dich direkt zur Kamera, um zu korrigieren.</p></div>
         <div class="feature"><div class="feature-title">Noch zu korrigieren</div><p>Prüfungen, mit deren Korrektur du schon angefangen hast, bei denen aber noch Schülerinnen oder Schüler zu scannen sind. Tippe darauf, um zu dieser Prüfung zu gelangen.</p></div>
@@ -1608,7 +1665,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-clases.jpg" alt="Liste der Klassen" loading="lazy"><img src="img/es-clase-detalle.jpg" alt="Schülerinnen und Schüler einer Klasse" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/de/clases.jpg" alt="Klassen" loading="lazy"><img src="img/de/clase-detalle.jpg" alt="Klassen" loading="lazy"></div>
         <p>Hier findest du deine Klassen und ihre Schülerinnen und Schüler. Jede Person hat einen <b>4-stelligen Code</b>: Sie schreibt ihn auf den Prüfungsbogen, damit die App weiß, von wem er ist.</p>
         <h3 class="subhead">Eine Klasse erstellen und Schülerinnen und Schüler hinzufügen</h3>
         <ol class="steps"><li>Tippe auf <b>Neue Klasse</b> und gib ihren Namen ein (zum Beispiel „8a“).</li><li>Tippe auf die Klasse, um sie zu öffnen.</li><li>Tippe auf <b>Schüler/in hinzufügen</b> und gib Vor- und Nachnamen ein. Der 4-stellige Code wird automatisch vergeben.</li><li>Wenn du die Liste schon in Excel hast, tippe auf <b>Schüler/innen importieren (Excel/CSV)</b> und wähle die Datei. Die App erkennt Vor- und Nachnamen von selbst: Du musst sie nicht einzeln eintippen.</li></ol>
@@ -1629,7 +1686,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-plantillas.jpg" alt="Liste der Vorlagen" loading="lazy"><img src="img/es-plantilla-datos.jpg" alt="Angaben zur Prüfung" loading="lazy"><img src="img/es-plantilla-formato.jpg" alt="Format und Noten" loading="lazy"><img src="img/es-plantilla-imprimir.jpg" alt="Bögen drucken" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/de/plantillas.jpg" alt="Vorlagen: die Prüfung erstellen" loading="lazy"><img src="img/de/plantilla-datos.jpg" alt="Vorlagen: die Prüfung erstellen" loading="lazy"><img src="img/de/plantilla-formato.jpg" alt="Vorlagen: die Prüfung erstellen" loading="lazy"><img src="img/de/imprimir.jpg" alt="Vorlagen: die Prüfung erstellen" loading="lazy"></div>
         <p>Die Vorlage ist deine Prüfung in der App. Tippe auf eine Vorlage in der Liste, um sie zu öffnen und beliebig zu ändern. Über die drei Punkte (…) oder durch langes Drücken kannst du sie auch <b>duplizieren</b> (um eine ähnliche Prüfung zu erstellen, ohne bei null anzufangen) oder <b>löschen</b>. Im selben Menü gelangst du auch zu <b>Bögen drucken</b>.</p>
         <h3 class="subhead">Eine Prüfung erstellen, Schritt für Schritt</h3>
         <ol class="steps"><li>Tippe im Tab <b>Vorlagen</b> auf <b>Neue Vorlage</b>.</li><li>Gib den <b>Titel</b> ein und, wenn du möchtest, das Fach und das Schuljahr. Sie werden oben auf den Bogen gedruckt. Du kannst auch das <b>Schullogo</b> hinzufügen.</li><li>Wähle die <b>Sprache des Bogens</b>: Das ist die Sprache der gedruckten Texte, nicht die der App. Tippe auf das Feld, dann öffnet sich ein Auswahlrad mit den 9 verfügbaren Sprachen; am Anfang steht dort die Sprache der App.</li><li>Gib die <b>Anzahl der Fragen</b> ein und wähle, wie viele <b>Antwortoptionen</b> jede Frage hat (2 bis 5). Wenn alle Fragen Wahr/Falsch-Fragen sind, wähle <b>W/F</b>.</li><li>Lege fest, ob falsche Antworten <b>Punkte abziehen</b> und ob auch leere Antworten abgezogen werden. Wenn du es einfach halten willst, lass den Abzug auf 0: Dann kosten falsche Antworten keine Punkte.</li><li>Wähle die <b>Höchstnote</b>. Meistens ist das 10.</li><li>Tippe unter <b>Richtige Antworten</b> bei jeder Frage auf den richtigen Buchstaben.</li><li>Tippe auf <b>Vorlage erstellen</b>. Wenn du eine bestehende Vorlage änderst, heißt die Schaltfläche <b>Änderungen speichern</b>. Nach dem Erstellen bringt dich die App direkt zur Seite <b>Bögen drucken</b>.</li></ol>
@@ -1650,6 +1707,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/plantilla-puntos.jpg" alt="Fragen, die mehr zählen als andere" loading="lazy"></div>
         <p>Normalerweise sind alle Fragen gleich viel wert. Wenn eine Frage mehr zählen soll (zum Beispiel, weil sie schwieriger ist), kannst du ihr mehr Punkte geben.</p>
         <h3 class="subhead">So geht’s</h3>
         <ol class="steps"><li>Öffne die Vorlage.</li><li>Wähle bei <b>Punkte pro Frage</b> die Option <b>Individuell</b>.</li><li>In der Liste <b>Richtige Antworten</b> erscheinen neben jeder Frage die Schaltflächen <b>−</b> und <b>+</b>. Damit legst du fest, wie viele Punkte diese Frage wert ist.</li><li>Über der Liste siehst du die <b>Gesamtpunktzahl</b> der Prüfung.</li><li>Tippe auf <b>Änderungen speichern</b>.</li></ol>
@@ -1664,6 +1722,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/plantilla-respuestas.jpg" alt="Mehr als eine richtige Antwort" loading="lazy"></div>
         <p>Manchmal hat eine Frage zwei gültige Antworten, oder du merkst nach der Prüfung, dass sie unglücklich formuliert war und eine weitere Option ebenfalls gelten sollte. Du kannst bei derselben Frage mehrere Buchstaben als richtig markieren.</p>
         <h3 class="subhead">So geht’s</h3>
         <ol class="steps"><li>Öffne die Vorlage.</li><li>Tippe unter <b>Richtige Antworten</b> auf alle Buchstaben, die bei dieser Frage als richtig gelten sollen. Tippst du erneut auf einen markierten Buchstaben, wird die Markierung aufgehoben.</li><li>Tippe auf <b>Änderungen speichern</b>.</li></ol>
@@ -1679,6 +1738,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/plantilla-vf.jpg" alt="Wahr/Falsch-Fragen" loading="lazy"></div>
         <p>Du kannst eine komplette Wahr/Falsch-Prüfung erstellen oder Wahr/Falsch-Fragen mit normalen Auswahlfragen (A, B, C, D) in derselben Prüfung mischen.</p>
         <h3 class="subhead">Die ganze Prüfung als Wahr/Falsch</h3>
         <ol class="steps"><li>Öffne die Vorlage (oder erstelle eine neue).</li><li>Tippe bei <b>Antwortoptionen</b> auf <b>W/F</b>.</li><li>Markiere unter <b>Richtige Antworten</b> bei jeder Frage, ob <b>W</b> (wahr) oder <b>F</b> (falsch) richtig ist.</li><li>Tippe auf <b>Änderungen speichern</b>.</li></ol>
@@ -1698,6 +1758,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/plantilla-criterios.jpg" alt="Bewertungskriterien" loading="lazy"><img src="img/de/progreso.jpg" alt="Bewertungskriterien" loading="lazy"></div>
         <p>Wenn du in deiner Unterrichtsplanung mit Bewertungskriterien, Lernzielen oder Kompetenzen arbeitest, kannst du angeben, welches Kriterium jede Frage prüft. Dann zeigt dir die App für jede Person, wie viel sie von jedem Kriterium beherrscht. Zum Beispiel: „Marta: K 2.1 → 90 %, K 2.3 → 40 %“.</p>
         <h3 class="subhead">1. Lege die Kriterien an</h3>
         <ol class="steps"><li>Öffne die Vorlage.</li><li>Tippe im Abschnitt <b>Bewertungskriterien</b> auf <b>+ Kriterium hinzufügen</b>.</li><li>Gib einen kurzen Namen ein, so wie er in deiner Planung steht (zum Beispiel „K 2.1“).</li><li>Wiederhole das für jedes Kriterium, das die Prüfung abfragt.</li></ol>
@@ -1727,6 +1788,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/plantilla-modelos.jpg" alt="Mehrere Versionen der Prüfung (A, B, C, D)" loading="lazy"></div>
         <p>Damit niemand abschreibt, kannst du verschiedene Versionen derselben Prüfung austeilen: Version A, B usw., mit den Fragen in anderer Reihenfolge und vertauschten Antworten. Die App korrigiert jeden Bogen mit der passenden Version.</p>
         <h3 class="subhead">So läuft es im Klassenzimmer</h3>
         <p>Alle Antwortbögen werden gleich gedruckt. Jede Person kreuzt auf ihrem Bogen im Versionsfeld an, welche Version sie bekommen hat (A, B, C oder D). Beim Scannen liest die App dieses Feld und verwendet die richtigen Antworten dieser Version.</p>
@@ -1750,6 +1812,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/rubrica.jpg" alt="Bewertungsraster: nach Leistungsstufen bewerten" loading="lazy"></div>
         <p>Neben Multiple-Choice-Prüfungen kannst du mit FullGrader auch mit <b>Bewertungsrastern</b> bewerten: Hausarbeiten, Referate, Projekte, Hefte … Statt dass die Schülerinnen und Schüler Fragen beantworten, kreuzt du selbst auf dem Bogen bei jedem Kriterium die erreichte Leistungsstufe an. Die App liest den Bogen und berechnet die Note.</p>
         <h3 class="subhead">Ein Bewertungsraster erstellen</h3>
         <ol class="steps"><li>Tippe unter <b>Vorlagen</b> auf <b>Neue Vorlage</b> und gib den Titel ein.</li><li>Wähle bei <b>Art der Vorlage</b> die Option <b>Bewertungsraster</b>.</li><li>Prüfe unter <b>Leistungsstufen</b> die Stufen und ihre Punkte. Voreingestellt sind Experte (4), Fortgeschritten (3), Lernend (2), Anfänger (1) und Nicht erledigt (0), aber du kannst Namen und Punkte ändern, Stufen hinzufügen (bis zu 8) oder entfernen (mindestens 2).</li><li>Gib unter <b>Kriterien des Rasters</b> den Namen jedes Kriteriums ein, zum Beispiel „Mündlicher Ausdruck“ oder „Umgang mit Quellen“. Du kannst bis zu 15 haben.</li><li>Wähle die <b>Höchstnote</b> und tippe auf <b>Vorlage erstellen</b>.</li></ol>
@@ -1773,7 +1836,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-escanear.jpg" alt="Scan-Bildschirm" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/de/escanear-clase.jpg" alt="Scannen: die Bögen korrigieren" loading="lazy"><img src="img/de/escanear.jpg" alt="Scannen: die Bögen korrigieren" loading="lazy"><img src="img/de/hoja-corregida.jpg" alt="Scannen: die Bögen korrigieren" loading="lazy"></div>
         <h3 class="subhead">So korrigierst du</h3>
         <ol class="steps"><li>Geh zum Tab <b>Scannen</b>.</li><li>Wähle die <b>Klasse</b> und dann die <b>Vorlage</b> (die Prüfung).</li><li>Prüfe, ob oben die richtige <b>Papier</b>-Option gewählt ist: <b>1 Prüfung pro Seite</b> oder <b>2 Prüfungen pro Seite</b>, je nachdem, wie du den Bogen gedruckt hast.</li><li>Leg den Bogen auf den Tisch und bring ihn in den weißen Rahmen auf dem Bildschirm.</li><li>Tippe auf den großen runden Knopf, um das Foto aufzunehmen. Wenn es nicht gut geworden ist, tippe auf <b>Wiederholen</b>; wenn es passt, tippe auf <b>Dieses Foto verwenden</b>.</li><li>Prüfe, was die App gelesen hat, und tippe auf <b>Übernehmen</b>, um es zu speichern. Jetzt kannst du mit dem nächsten Bogen weitermachen.</li></ol>
         <h3 class="subhead">Der Überprüfungsbildschirm</h3>
@@ -1794,7 +1857,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-resultados.jpg" alt="Statistiken einer Prüfung" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/de/resultados.jpg" alt="Ergebnisse: Noten und Statistiken" loading="lazy"></div>
         <p>Hier findest du alle korrigierten Prüfungen, nach Klasse gruppiert. Tippe auf eine Klasse, um ihre Prüfungen zu sehen, und auf eine Prüfung, um alle Details zu sehen.</p>
         <div class="feature"><div class="feature-title">Die Prüfungen einer Klasse löschen</div><p>Wische die Klasse nach links. Ihre korrigierten Prüfungen werden gelöscht, die Klasse und die Schülerinnen und Schüler bleiben aber erhalten.</p></div>
         <div class="feature"><div class="feature-title">Fortschritt nach Kriterium</div><p>Ganz oben in einer Klasse siehst du, wie sich jede Person bei jedem Bewertungskriterium über alle Prüfungen hinweg entwickelt. Das wird im Abschnitt „Bewertungskriterien“ erklärt.</p></div>
@@ -1818,6 +1881,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/de/ajustes.jpg" alt="Einstellungen" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Wo du die Einstellungen findest</div><p>Tippe auf dem Bildschirm <b>Start</b> oben rechts auf die violette Schaltfläche <b>Einstellungen</b>. Die Leiste unten enthält die fünf Bereiche für den Alltag (Start, Klassen, Scannen, Vorlagen und Ergebnisse), mit <b>Scannen</b> als großem runden Knopf in der Mitte.</p></div>
         <div class="feature"><div class="feature-title">Darstellung</div><p>Wähle, wie die App aussehen soll: <b>Hell</b> (weißer Hintergrund), <b>Dunkel</b> (schwarzer Hintergrund, angenehmer am Abend) oder <b>Automatisch</b> (wechselt von selbst, genau wie dein Handy).</p></div>
         <div class="feature"><div class="feature-title">Sprache</div><p>Die Sprache der App. „Automatisch“ verwendet die Sprache deines Handys.</p></div>
@@ -1893,6 +1957,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/inicio.jpg" alt="Accueil" loading="lazy"></div>
         <p>C’est le premier écran que vous voyez en ouvrant l’application. Il vous montre d’un coup d’œil ce qu’il vous reste à faire.</p>
         <div class="feature"><div class="feature-title">Scanner un examen</div><p>Le grand bouton en haut. Il vous emmène directement à l’appareil photo pour corriger.</p></div>
         <div class="feature"><div class="feature-title">À corriger</div><p>Les examens que vous avez commencé à corriger mais pour lesquels il reste des élèves à scanner. Touchez-en un pour accéder à cet examen.</p></div>
@@ -1906,7 +1971,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-clases.jpg" alt="Liste des classes" loading="lazy"><img src="img/es-clase-detalle.jpg" alt="Élèves d’une classe" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/fr/clases.jpg" alt="Classes" loading="lazy"><img src="img/fr/clase-detalle.jpg" alt="Classes" loading="lazy"></div>
         <p>Vous trouverez ici vos groupes et leurs élèves. Chaque élève a un <b>code à 4 chiffres</b> : il l’écrit sur la feuille d’examen pour que l’application sache à qui elle appartient.</p>
         <h3 class="subhead">Créer une classe et ajouter des élèves</h3>
         <ol class="steps"><li>Touchez <b>Nouvelle classe</b> et saisissez son nom (par exemple « 3e A »).</li><li>Touchez la classe pour l’ouvrir.</li><li>Touchez <b>Ajouter un élève</b> et saisissez son prénom et son nom. Le code à 4 chiffres est attribué automatiquement.</li><li>Si vous avez déjà la liste dans un fichier Excel, touchez <b>Importer des élèves (Excel/CSV)</b> et choisissez le fichier. L’application trouve toute seule les prénoms et les noms : inutile de les saisir un par un.</li></ol>
@@ -1927,7 +1992,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-plantillas.jpg" alt="Liste des modèles" loading="lazy"><img src="img/es-plantilla-datos.jpg" alt="Informations de l’examen" loading="lazy"><img src="img/es-plantilla-formato.jpg" alt="Format et notes" loading="lazy"><img src="img/es-plantilla-imprimir.jpg" alt="Imprimer les feuilles" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/fr/plantillas.jpg" alt="Modèles : créer l’examen" loading="lazy"><img src="img/fr/plantilla-datos.jpg" alt="Modèles : créer l’examen" loading="lazy"><img src="img/fr/plantilla-formato.jpg" alt="Modèles : créer l’examen" loading="lazy"><img src="img/fr/imprimir.jpg" alt="Modèles : créer l’examen" loading="lazy"></div>
         <p>Le modèle, c’est votre examen dans l’application. Touchez un modèle de la liste pour l’ouvrir et modifier ce que vous voulez. Avec les trois points (…), ou en appuyant longuement dessus, vous pouvez aussi le <b>dupliquer</b> (pour faire un examen similaire sans repartir de zéro) ou le <b>supprimer</b>. Depuis ce même menu, vous pouvez aller à <b>Imprimer les feuilles</b>.</p>
         <h3 class="subhead">Créer un examen, pas à pas</h3>
         <ol class="steps"><li>Dans l’onglet <b>Modèles</b>, touchez <b>Nouveau modèle</b>.</li><li>Saisissez le <b>titre</b> et, si vous le souhaitez, la matière et l’année scolaire. Ils sont imprimés en haut de la feuille. Vous pouvez aussi ajouter le <b>logo de votre établissement</b>.</li><li>Choisissez la <b>langue de la feuille</b> : c’est la langue des textes imprimés, pas celle de l’application. Touchez le champ : une roulette s’ouvre avec les 9 langues disponibles ; au départ, c’est la langue de l’application qui s’affiche.</li><li>Saisissez le <b>nombre de questions</b> et choisissez combien d’<b>options de réponse</b> a chacune (de 2 à 5). Si toutes les questions sont de type vrai ou faux, choisissez <b>V/F</b>.</li><li>Décidez si les erreurs <b>retirent des points</b> et si les réponses vides en retirent aussi. Pour faire simple, laissez la pénalité à 0 : ainsi, les erreurs ne retirent rien.</li><li>Choisissez la <b>note maximale</b>. En général, 10.</li><li>Dans <b>Bonnes réponses</b>, touchez pour chaque question la bonne lettre.</li><li>Touchez <b>Créer le modèle</b>. Si vous modifiez un modèle qui existait déjà, le bouton s’appelle <b>Enregistrer les modifications</b>. Une fois le modèle créé, l’application vous emmène directement à la page <b>Imprimer les feuilles</b>.</li></ol>
@@ -1948,6 +2013,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/plantilla-puntos.jpg" alt="Des questions qui valent plus que d’autres" loading="lazy"></div>
         <p>Normalement, toutes les questions valent la même chose. Si vous voulez que certaines comptent davantage (par exemple parce qu’elles sont plus difficiles), vous pouvez leur donner plus de points.</p>
         <h3 class="subhead">Comment faire</h3>
         <ol class="steps"><li>Ouvrez le modèle.</li><li>Dans <b>Points par question</b>, choisissez <b>Personnalisé</b>.</li><li>Dans la liste des <b>Bonnes réponses</b>, les boutons <b>−</b> et <b>+</b> apparaissent à côté de chaque question. Utilisez-les pour indiquer combien de points vaut cette question.</li><li>Au-dessus de la liste, vous verrez le <b>total de points</b> de l’examen.</li><li>Touchez <b>Enregistrer les modifications</b>.</li></ol>
@@ -1962,6 +2028,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/plantilla-respuestas.jpg" alt="Plusieurs bonnes réponses" loading="lazy"></div>
         <p>Parfois, une question a deux réponses valables, ou vous vous rendez compte après l’examen qu’elle était mal posée et qu’une autre option devrait aussi être acceptée. Vous pouvez marquer plusieurs lettres comme correctes pour une même question.</p>
         <h3 class="subhead">Comment faire</h3>
         <ol class="steps"><li>Ouvrez le modèle.</li><li>Dans <b>Bonnes réponses</b>, touchez toutes les lettres à accepter pour cette question. Si vous touchez à nouveau une lettre cochée, elle se décoche.</li><li>Touchez <b>Enregistrer les modifications</b>.</li></ol>
@@ -1977,6 +2044,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/plantilla-vf.jpg" alt="Questions Vrai/Faux" loading="lazy"></div>
         <p>Vous pouvez faire un examen entièrement en vrai ou faux, ou mélanger dans le même examen des questions vrai ou faux et des questions à choix classiques (A, B, C, D).</p>
         <h3 class="subhead">Tout l’examen en Vrai/Faux</h3>
         <ol class="steps"><li>Ouvrez le modèle (ou créez-en un nouveau).</li><li>Dans <b>Options de réponse</b>, touchez <b>V/F</b>.</li><li>Dans <b>Bonnes réponses</b>, indiquez pour chaque question si la bonne réponse est <b>V</b> (vrai) ou <b>F</b> (faux).</li><li>Touchez <b>Enregistrer les modifications</b>.</li></ol>
@@ -1996,6 +2064,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/plantilla-criterios.jpg" alt="Critères d’évaluation" loading="lazy"><img src="img/fr/progreso.jpg" alt="Critères d’évaluation" loading="lazy"></div>
         <p>Si votre programmation s’appuie sur des critères d’évaluation, des acquis d’apprentissage ou des compétences, vous pouvez indiquer quel critère évalue chaque question. L’application vous indique alors, pour chaque élève, quelle part de chaque critère il maîtrise. Par exemple : « Léa : C 2.1 → 90 %, C 2.3 → 40 % ».</p>
         <h3 class="subhead">1. Créez les critères</h3>
         <ol class="steps"><li>Ouvrez le modèle.</li><li>Dans la section <b>Critères d’évaluation</b>, touchez <b>+ Ajouter un critère</b>.</li><li>Écrivez un nom court, tel qu’il apparaît dans votre programme (par exemple « C 2.1 »).</li><li>Recommencez pour chaque critère évalué par l’examen.</li></ol>
@@ -2025,6 +2094,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/plantilla-modelos.jpg" alt="Plusieurs versions de l’examen (A, B, C, D)" loading="lazy"></div>
         <p>Pour éviter la triche, vous pouvez distribuer différentes versions du même examen : la version A, la B, etc., avec les questions dans un autre ordre et les réponses à d’autres places. L’application corrige chaque feuille avec sa version.</p>
         <h3 class="subhead">Comment ça marche en classe</h3>
         <p>Toutes les feuilles de réponses sont imprimées de la même façon. Chaque élève coche sur sa feuille, dans la case de la version, celle qu’il a reçue (A, B, C ou D). Lors du scan, l’application lit cette case et utilise les bonnes réponses de cette version.</p>
@@ -2048,6 +2118,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/rubrica.jpg" alt="Grilles d’évaluation : évaluer par niveaux de maîtrise" loading="lazy"></div>
         <p>En plus des QCM, FullGrader permet d’évaluer avec des <b>grilles d’évaluation</b> : travaux, exposés oraux, projets, cahiers… Au lieu que l’élève réponde à des questions, c’est vous qui cochez sur la feuille, pour chaque critère, le niveau de maîtrise atteint. L’application lit la feuille et calcule la note.</p>
         <h3 class="subhead">Créer une grille d’évaluation</h3>
         <ol class="steps"><li>Dans <b>Modèles</b>, touchez <b>Nouveau modèle</b> et saisissez le titre.</li><li>Dans <b>Type de modèle</b>, choisissez <b>Grille d’évaluation</b>.</li><li>Dans <b>Niveaux de maîtrise</b>, vérifiez les niveaux et les points de chacun. Par défaut, vous avez Expert (4), Avancé (3), Apprenti (2), Débutant (1) et Non fait (0), mais vous pouvez changer leur nom et leurs points, ajouter des niveaux (jusqu’à 8) ou en retirer (2 au minimum).</li><li>Dans <b>Critères de la grille</b>, écrivez le nom de chaque critère, par exemple « Expression orale » ou « Utilisation des sources ». Vous pouvez en avoir jusqu’à 15.</li><li>Choisissez la <b>Note maximale</b> et touchez <b>Créer le modèle</b>.</li></ol>
@@ -2071,7 +2142,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-escanear.jpg" alt="Écran Scanner" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/fr/escanear-clase.jpg" alt="Scanner : corriger les feuilles" loading="lazy"><img src="img/fr/escanear.jpg" alt="Scanner : corriger les feuilles" loading="lazy"><img src="img/fr/hoja-corregida.jpg" alt="Scanner : corriger les feuilles" loading="lazy"></div>
         <h3 class="subhead">Comment corriger</h3>
         <ol class="steps"><li>Allez dans l’onglet <b>Scanner</b>.</li><li>Choisissez la <b>classe</b>, puis le <b>modèle</b> (l’examen).</li><li>Vérifiez qu’en haut, la bonne option de <b>papier</b> est sélectionnée : <b>1 examen par page</b> ou <b>2 examens par page</b>, selon la façon dont vous avez imprimé la feuille.</li><li>Posez la feuille sur la table et cadrez-la dans le cadre blanc de l’écran.</li><li>Touchez le grand bouton rond pour prendre la photo. Si elle n’est pas réussie, touchez <b>Reprendre</b> ; si elle est bonne, touchez <b>Utiliser cette photo</b>.</li><li>Vérifiez ce que l’application a lu et touchez <b>Valider</b> pour l’enregistrer. Vous pouvez passer à la feuille suivante.</li></ol>
         <h3 class="subhead">L’écran de vérification</h3>
@@ -2092,7 +2163,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-resultados.jpg" alt="Statistiques d’un examen" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/fr/resultados.jpg" alt="Résultats : notes et statistiques" loading="lazy"></div>
         <p>Vous trouverez ici tous les examens corrigés, regroupés par classe. Touchez une classe pour voir ses examens, puis touchez un examen pour en voir tout le détail.</p>
         <div class="feature"><div class="feature-title">Supprimer les examens d’une classe</div><p>Faites glisser la classe vers la gauche. Ses examens corrigés sont supprimés, mais la classe et les élèves sont conservés.</p></div>
         <div class="feature"><div class="feature-title">Progrès par critère</div><p>Dans une classe, tout en haut, vous verrez comment chaque élève progresse dans chaque critère d’évaluation au fil de tous les examens. C’est expliqué dans la section « Critères d’évaluation ».</p></div>
@@ -2116,6 +2187,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/fr/ajustes.jpg" alt="Réglages" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Où trouver les Réglages</div><p>Sur l’écran <b>Accueil</b>, touchez le bouton violet <b>Réglages</b>, en haut à droite. La barre du bas regroupe les cinq sections du quotidien (Accueil, Classes, Scanner, Modèles et Résultats), avec <b>Scanner</b> en grand bouton rond au centre.</p></div>
         <div class="feature"><div class="feature-title">Apparence</div><p>Choisissez l’affichage de l’application : <b>Clair</b> (fond blanc), <b>Sombre</b> (fond noir, plus agréable le soir) ou <b>Automatique</b> (change tout seul, comme votre téléphone).</p></div>
         <div class="feature"><div class="feature-title">Langue</div><p>La langue de l’application. « Automatique » utilise celle de votre téléphone.</p></div>
@@ -2191,6 +2263,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/inicio.jpg" alt="Home" loading="lazy"></div>
         <p>È la prima schermata che vedi quando apri l’app. Con un colpo d’occhio ti dice cosa hai in sospeso.</p>
         <div class="feature"><div class="feature-title">Scansiona una verifica</div><p>Il pulsante grande in alto. Ti porta direttamente alla fotocamera per correggere.</p></div>
         <div class="feature"><div class="feature-title">Da correggere</div><p>Verifiche che hai iniziato a correggere ma in cui mancano ancora studenti da scansionare. Toccale per andare a quella verifica.</p></div>
@@ -2204,7 +2277,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-clases.jpg" alt="Elenco delle classi" loading="lazy"><img src="img/es-clase-detalle.jpg" alt="Studenti di una classe" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/it/clases.jpg" alt="Classi" loading="lazy"><img src="img/it/clase-detalle.jpg" alt="Classi" loading="lazy"></div>
         <p>Qui trovi i tuoi gruppi e i loro studenti. Ogni studente ha un <b>codice di 4 cifre</b>: lo scrive sul foglio della verifica perché l’app sappia di chi è.</p>
         <h3 class="subhead">Creare una classe e aggiungere studenti</h3>
         <ol class="steps"><li>Tocca <b>Nuova classe</b> e scrivi il suo nome (per esempio, «2ª A»).</li><li>Tocca la classe per entrare.</li><li>Tocca <b>Aggiungi studente</b> e scrivi nome e cognome. Il codice di 4 cifre viene assegnato da solo.</li><li>Se hai già l’elenco in un file Excel, tocca <b>Importa studenti (Excel/CSV)</b> e scegli il file. L’app trova da sola nomi e cognomi: non serve scriverli uno per uno.</li></ol>
@@ -2225,7 +2298,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-plantillas.jpg" alt="Elenco dei modelli" loading="lazy"><img src="img/es-plantilla-datos.jpg" alt="Dati della verifica" loading="lazy"><img src="img/es-plantilla-formato.jpg" alt="Formato e voti" loading="lazy"><img src="img/es-plantilla-imprimir.jpg" alt="Stampa fogli" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/it/plantillas.jpg" alt="Modelli: creare la verifica" loading="lazy"><img src="img/it/plantilla-datos.jpg" alt="Modelli: creare la verifica" loading="lazy"><img src="img/it/plantilla-formato.jpg" alt="Modelli: creare la verifica" loading="lazy"><img src="img/it/imprimir.jpg" alt="Modelli: creare la verifica" loading="lazy"></div>
         <p>Il modello è la tua verifica dentro l’app. Tocca un modello dell’elenco per aprirlo e cambiare ciò che vuoi. Con i tre puntini (…), oppure tenendolo premuto, puoi anche <b>duplicarlo</b> (per fare una verifica simile senza ripartire da zero) o <b>eliminarlo</b>. Da quello stesso menu puoi andare a <b>Stampa fogli</b>.</p>
         <h3 class="subhead">Creare una verifica, passo dopo passo</h3>
         <ol class="steps"><li>Nella scheda <b>Modelli</b>, tocca <b>Nuovo modello</b>.</li><li>Scrivi il <b>titolo</b> e, se vuoi, la materia e l’anno scolastico. Vengono stampati in alto sul foglio. Puoi anche aggiungere il <b>logo della tua scuola</b>.</li><li>Scegli la <b>lingua del foglio</b>: è la lingua dei testi stampati, non quella dell’app. Tocca il campo e si apre una rotella con le 9 lingue disponibili; all’inizio compare la lingua dell’app.</li><li>Scrivi il <b>numero di domande</b> e scegli quante <b>opzioni di risposta</b> ha ognuna (da 2 a 5). Se tutte le domande sono vero o falso, scegli <b>V/F</b>.</li><li>Decidi se gli errori <b>tolgono punti</b> e se anche le domande lasciate in bianco tolgono punti. Se non vuoi complicarti la vita, lascia la penalità a 0: così gli errori non tolgono nulla.</li><li>Scegli il <b>voto massimo</b>. Di solito, 10.</li><li>In <b>Risposte corrette</b>, tocca in ogni domanda la lettera giusta.</li><li>Tocca <b>Crea modello</b>. Se stai modificando un modello che esisteva già, il pulsante si chiama <b>Salva modifiche</b>. Quando lo crei, l’app ti porta direttamente alla pagina <b>Stampa fogli</b>.</li></ol>
@@ -2246,6 +2319,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/plantilla-puntos.jpg" alt="Domande che valgono più di altre" loading="lazy"></div>
         <p>Di solito tutte le domande valgono uguale. Se vuoi che qualcuna conti di più (per esempio, perché è più difficile), puoi darle più punti.</p>
         <h3 class="subhead">Come si fa</h3>
         <ol class="steps"><li>Apri il modello.</li><li>In <b>Punti per domanda</b>, scegli <b>Personalizzati</b>.</li><li>Nell’elenco delle <b>Risposte corrette</b>, accanto a ogni domanda compaiono i pulsanti <b>−</b> e <b>+</b>. Usali per indicare quanti punti vale quella domanda.</li><li>Sopra l’elenco vedrai il <b>totale dei punti</b> della verifica.</li><li>Tocca <b>Salva modifiche</b>.</li></ol>
@@ -2260,6 +2334,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/plantilla-respuestas.jpg" alt="Più di una risposta corretta" loading="lazy"></div>
         <p>A volte una domanda ha due risposte valide, oppure ti accorgi dopo la verifica che era formulata male e che anche un’altra opzione dovrebbe essere accettata. Puoi segnare più lettere come corrette nella stessa domanda.</p>
         <h3 class="subhead">Come si fa</h3>
         <ol class="steps"><li>Apri il modello.</li><li>In <b>Risposte corrette</b>, tocca tutte le lettere che consideri giuste per quella domanda. Se tocchi di nuovo una lettera segnata, viene deselezionata.</li><li>Tocca <b>Salva modifiche</b>.</li></ol>
@@ -2275,6 +2350,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/plantilla-vf.jpg" alt="Domande Vero/Falso" loading="lazy"></div>
         <p>Puoi fare una verifica interamente vero o falso, oppure mescolare domande vero o falso con normali domande a scelta multipla (A, B, C, D) nella stessa verifica.</p>
         <h3 class="subhead">Tutta la verifica Vero/Falso</h3>
         <ol class="steps"><li>Apri il modello (o creane uno nuovo).</li><li>In <b>Opzioni di risposta</b>, tocca <b>V/F</b>.</li><li>In <b>Risposte corrette</b>, segna in ogni domanda se la risposta giusta è <b>V</b> (vero) o <b>F</b> (falso).</li><li>Tocca <b>Salva modifiche</b>.</li></ol>
@@ -2294,6 +2370,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/plantilla-criterios.jpg" alt="Criteri di valutazione (CV)" loading="lazy"><img src="img/it/progreso.jpg" alt="Criteri di valutazione (CV)" loading="lazy"></div>
         <p>Se nella tua programmazione lavori con criteri di valutazione, obiettivi di apprendimento o competenze, puoi indicare quale criterio valuta ogni domanda. Così l’app ti dice, per ogni studente, quanta parte di ogni criterio padroneggia. Per esempio: «Marta: CV 2.1 → 90 %, CV 2.3 → 40 %».</p>
         <h3 class="subhead">1. Crea i criteri</h3>
         <ol class="steps"><li>Apri il modello.</li><li>Nella sezione <b>Criteri di valutazione</b>, tocca <b>+ Aggiungi criterio</b>.</li><li>Scrivi un nome breve, così come compare nella tua programmazione (per esempio, «CV 2.1»).</li><li>Ripeti con ogni criterio valutato dalla verifica.</li></ol>
@@ -2323,6 +2400,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/plantilla-modelos.jpg" alt="Più versioni della verifica (A, B, C, D)" loading="lazy"></div>
         <p>Per evitare che copino, puoi distribuire versioni diverse della stessa verifica: la versione A, la B, ecc., con le domande in un altro ordine e le risposte spostate. L’app corregge ogni foglio con la sua versione.</p>
         <h3 class="subhead">Come funziona in classe</h3>
         <p>Tutti i fogli delle risposte si stampano uguali. Ogni studente segna sul suo foglio, nella casella della versione, quale versione ha ricevuto (A, B, C o D). Durante la scansione, l’app legge quella casella e usa le risposte corrette di quella versione.</p>
@@ -2346,6 +2424,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/rubrica.jpg" alt="Rubriche: valutare per livelli di padronanza" loading="lazy"></div>
         <p>Oltre ai test a risposta multipla, FullGrader serve anche a valutare con le <b>rubriche</b>: elaborati, esposizioni orali, progetti, quaderni… Invece di far rispondere lo studente a delle domande, sei tu a segnare sul foglio, per ogni criterio, il livello di padronanza che ha raggiunto. L’app legge il foglio e calcola il voto.</p>
         <h3 class="subhead">Creare una rubrica</h3>
         <ol class="steps"><li>In <b>Modelli</b>, tocca <b>Nuovo modello</b> e scrivi il titolo.</li><li>In <b>Tipo di modello</b>, scegli <b>Rubrica</b>.</li><li>In <b>Livelli di padronanza</b>, controlla i livelli e i punti di ciascuno. Sono già impostati Esperto (4), Avanzato (3), Apprendista (2), Principiante (1) e Non svolto (0), ma puoi cambiarne il nome e i punti, aggiungere livelli (fino a 8) o toglierli (minimo 2).</li><li>In <b>Criteri della rubrica</b>, scrivi il nome di ogni criterio, per esempio «Espressione orale» o «Uso delle fonti». Puoi averne fino a 15.</li><li>Scegli il <b>Voto massimo</b> e tocca <b>Crea modello</b>.</li></ol>
@@ -2369,7 +2448,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-escanear.jpg" alt="Schermata di scansione" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/it/escanear-clase.jpg" alt="Scansiona: correggere i fogli" loading="lazy"><img src="img/it/escanear.jpg" alt="Scansiona: correggere i fogli" loading="lazy"><img src="img/it/hoja-corregida.jpg" alt="Scansiona: correggere i fogli" loading="lazy"></div>
         <h3 class="subhead">Come correggere</h3>
         <ol class="steps"><li>Vai alla scheda <b>Scansiona</b>.</li><li>Scegli la <b>classe</b> e poi il <b>modello</b> (la verifica).</li><li>Controlla che in alto sia selezionata l’opzione di <b>carta</b> giusta: <b>1 verifica per pagina</b> o <b>2 verifiche per pagina</b>, a seconda di come hai stampato il foglio.</li><li>Appoggia il foglio sul tavolo e inquadralo dentro la cornice bianca dello schermo.</li><li>Tocca il grande pulsante rotondo per scattare la foto. Se non è venuta bene, tocca <b>Ripeti</b>; se va bene, tocca <b>Usa questa foto</b>.</li><li>Controlla ciò che ha letto l’app e tocca <b>Accetta</b> per salvarlo. Ora puoi passare al foglio successivo.</li></ol>
         <h3 class="subhead">La schermata di revisione</h3>
@@ -2390,7 +2469,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-resultados.jpg" alt="Statistiche di una verifica" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/it/resultados.jpg" alt="Risultati: voti e statistiche" loading="lazy"></div>
         <p>Qui trovi tutte le verifiche corrette, raggruppate per classe. Tocca una classe per vedere le sue verifiche e tocca una verifica per vedere tutti i dettagli.</p>
         <div class="feature"><div class="feature-title">Eliminare le verifiche di una classe</div><p>Fai scorrere la classe verso sinistra. Vengono eliminate le sue verifiche corrette, ma la classe e gli studenti restano.</p></div>
         <div class="feature"><div class="feature-title">Progressi per criterio</div><p>Dentro una classe, in cima, vedrai come progredisce ogni studente in ogni criterio di valutazione nel corso di tutte le verifiche. È spiegato nella sezione «Criteri di valutazione (CV)».</p></div>
@@ -2414,6 +2493,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/it/ajustes.jpg" alt="Impostazioni" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Dove sono le Impostazioni</div><p>Nella schermata <b>Home</b>, tocca il pulsante viola <b>Impostazioni</b>, in alto a destra. La barra in basso contiene le cinque sezioni di tutti i giorni (Home, Classi, Scansiona, Modelli e Risultati), con <b>Scansiona</b> come grande pulsante rotondo al centro.</p></div>
         <div class="feature"><div class="feature-title">Aspetto</div><p>Scegli come vuoi vedere l’app: <b>Chiaro</b> (sfondo bianco), <b>Scuro</b> (sfondo nero, più comodo di sera) o <b>Automatico</b> (cambia da solo, come il tuo telefono).</p></div>
         <div class="feature"><div class="feature-title">Lingua</div><p>La lingua dell’app. «Automatico» usa quella del tuo telefono.</p></div>
@@ -2489,6 +2569,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/inicio.jpg" alt="Início" loading="lazy"></div>
         <p>É o primeiro ecrã que vê ao abrir a aplicação. Mostra-lhe, num relance, o que tem por fazer.</p>
         <div class="feature"><div class="feature-title">Digitalizar um teste</div><p>O botão grande no topo. Leva-o diretamente à câmara para corrigir.</p></div>
         <div class="feature"><div class="feature-title">Por corrigir</div><p>Testes que começou a corrigir mas em que ainda faltam alunos por digitalizar. Toque para ir para esse teste.</p></div>
@@ -2502,7 +2583,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-clases.jpg" alt="Lista de turmas" loading="lazy"><img src="img/es-clase-detalle.jpg" alt="Alunos de uma turma" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/pt/clases.jpg" alt="Turmas" loading="lazy"><img src="img/pt/clase-detalle.jpg" alt="Turmas" loading="lazy"></div>
         <p>Aqui estão as suas turmas e os respetivos alunos. Cada aluno tem um <b>código de 4 dígitos</b>: escreve-o na folha do teste para que a aplicação saiba de quem é.</p>
         <h3 class="subhead">Criar uma turma e adicionar alunos</h3>
         <ol class="steps"><li>Toque em <b>Nova turma</b> e escreva o nome (por exemplo, «8.º A»).</li><li>Toque na turma para entrar.</li><li>Toque em <b>Adicionar aluno</b> e escreva o nome e o apelido. O código de 4 dígitos é atribuído automaticamente.</li><li>Se já tem a lista num Excel, toque em <b>Importar alunos (Excel/CSV)</b> e escolha o ficheiro. A aplicação encontra sozinha os nomes e os apelidos: não precisa de os escrever um a um.</li></ol>
@@ -2523,7 +2604,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-plantillas.jpg" alt="Lista de modelos" loading="lazy"><img src="img/es-plantilla-datos.jpg" alt="Dados do teste" loading="lazy"><img src="img/es-plantilla-formato.jpg" alt="Formato e notas" loading="lazy"><img src="img/es-plantilla-imprimir.jpg" alt="Imprimir folhas" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/pt/plantillas.jpg" alt="Modelos: criar o teste" loading="lazy"><img src="img/pt/plantilla-datos.jpg" alt="Modelos: criar o teste" loading="lazy"><img src="img/pt/plantilla-formato.jpg" alt="Modelos: criar o teste" loading="lazy"><img src="img/pt/imprimir.jpg" alt="Modelos: criar o teste" loading="lazy"></div>
         <p>O modelo é o seu teste dentro da aplicação. Toque num modelo da lista para o abrir e alterar o que quiser. Com os três pontos (…), ou mantendo-o premido, também pode <b>duplicá-lo</b> (para fazer um teste parecido sem começar do zero) ou <b>eliminá-lo</b>. Nesse mesmo menu pode ir para <b>Imprimir folhas</b>.</p>
         <h3 class="subhead">Criar um teste, passo a passo</h3>
         <ol class="steps"><li>No separador <b>Modelos</b>, toque em <b>Novo modelo</b>.</li><li>Escreva o <b>título</b> e, se quiser, a disciplina e o ano. Aparecem impressos no topo da folha. Também pode adicionar o <b>logótipo da sua escola</b>.</li><li>Escolha o <b>idioma da folha</b>: é o idioma dos textos impressos, não o da aplicação. Toque no campo e abre-se uma roleta com os 9 idiomas disponíveis; ao início aparece o idioma da aplicação.</li><li>Escreva o <b>número de perguntas</b> e escolha quantas <b>opções de resposta</b> tem cada uma (de 2 a 5). Se todas as perguntas forem de verdadeiro ou falso, escolha <b>V/F</b>.</li><li>Decida se os erros <b>descontam</b> e se as perguntas em branco também descontam. Se não quiser complicar, deixe a penalização em 0: assim os erros não descontam nada.</li><li>Escolha a <b>nota máxima</b>. Normalmente, 10.</li><li>Em <b>Respostas certas</b>, toque, em cada pergunta, na letra certa.</li><li>Toque em <b>Criar modelo</b>. Se estiver a alterar um modelo que já existia, o botão chama-se <b>Guardar alterações</b>. Ao criá-lo, a aplicação leva-o diretamente para a página <b>Imprimir folhas</b>.</li></ol>
@@ -2544,6 +2625,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/plantilla-puntos.jpg" alt="Perguntas que valem mais do que outras" loading="lazy"></div>
         <p>Normalmente, todas as perguntas valem o mesmo. Se quiser que alguma conte mais (por exemplo, por ser mais difícil), pode dar-lhe mais pontos.</p>
         <h3 class="subhead">Como se faz</h3>
         <ol class="steps"><li>Abra o modelo.</li><li>Em <b>Pontos por pergunta</b>, escolha <b>Personalizados</b>.</li><li>Na lista de <b>Respostas certas</b>, ao lado de cada pergunta aparecem os botões <b>−</b> e <b>+</b>. Use-os para indicar quantos pontos vale essa pergunta.</li><li>Por cima da lista verá o <b>total de pontos</b> do teste.</li><li>Toque em <b>Guardar alterações</b>.</li></ol>
@@ -2558,6 +2640,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/plantilla-respuestas.jpg" alt="Mais de uma resposta certa" loading="lazy"></div>
         <p>Por vezes, uma pergunta tem duas respostas válidas, ou percebe depois do teste que estava mal formulada e que outra opção também devia valer. Pode assinalar várias letras como certas na mesma pergunta.</p>
         <h3 class="subhead">Como se faz</h3>
         <ol class="steps"><li>Abra o modelo.</li><li>Em <b>Respostas certas</b>, toque em todas as letras que considera certas nessa pergunta. Se voltar a tocar numa letra assinalada, ela deixa de estar assinalada.</li><li>Toque em <b>Guardar alterações</b>.</li></ol>
@@ -2573,6 +2656,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/plantilla-vf.jpg" alt="Perguntas de Verdadeiro/Falso" loading="lazy"></div>
         <p>Pode fazer um teste inteiro de verdadeiro ou falso, ou misturar perguntas de verdadeiro ou falso com perguntas normais de opções (A, B, C, D) no mesmo teste.</p>
         <h3 class="subhead">O teste inteiro de Verdadeiro/Falso</h3>
         <ol class="steps"><li>Abra o modelo (ou crie um novo).</li><li>Em <b>Opções de resposta</b>, toque em <b>V/F</b>.</li><li>Em <b>Respostas certas</b>, assinale em cada pergunta se a certa é o <b>V</b> (verdadeiro) ou o <b>F</b> (falso).</li><li>Toque em <b>Guardar alterações</b>.</li></ol>
@@ -2592,6 +2676,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/plantilla-criterios.jpg" alt="Critérios de avaliação (CA)" loading="lazy"><img src="img/pt/progreso.jpg" alt="Critérios de avaliação (CA)" loading="lazy"></div>
         <p>Se na sua planificação trabalha com critérios de avaliação, aprendizagens essenciais ou competências, pode indicar que critério avalia cada pergunta. Assim, a aplicação mostra-lhe, para cada aluno, que parte de cada critério domina. Por exemplo: «Marta: CA 2.1 → 90 %, CA 2.3 → 40 %».</p>
         <h3 class="subhead">1. Crie os critérios</h3>
         <ol class="steps"><li>Abra o modelo.</li><li>Na secção <b>Critérios de avaliação</b>, toque em <b>+ Adicionar critério</b>.</li><li>Escreva um nome curto, tal como aparece na sua planificação (por exemplo, «CA 2.1»).</li><li>Repita com cada critério que o teste avalia.</li></ol>
@@ -2621,6 +2706,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/plantilla-modelos.jpg" alt="Várias versões do teste (A, B, C, D)" loading="lazy"></div>
         <p>Para evitar que copiem, pode distribuir versões diferentes do mesmo teste: a versão A, a B, etc., com as perguntas por outra ordem e as respostas trocadas de lugar. A aplicação corrige cada folha com a sua versão.</p>
         <h3 class="subhead">Como funciona na sala de aula</h3>
         <p>Todas as folhas de respostas são impressas iguais. Cada aluno assinala na sua folha, na caixa da versão, que versão lhe calhou (A, B, C ou D). Ao digitalizar, a aplicação lê essa caixa e usa as respostas certas dessa versão.</p>
@@ -2644,6 +2730,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/rubrica.jpg" alt="Rubricas: avaliar por níveis de desempenho" loading="lazy"></div>
         <p>Além de testes de escolha múltipla, o FullGrader serve para avaliar com <b>rubricas</b>: trabalhos, apresentações orais, projetos, cadernos… Em vez de ser o aluno a responder a perguntas, é o professor que assinala na folha, em cada critério, o nível de desempenho que o aluno atingiu. A aplicação lê a folha e calcula a nota.</p>
         <h3 class="subhead">Criar uma rubrica</h3>
         <ol class="steps"><li>Em <b>Modelos</b>, toque em <b>Novo modelo</b> e escreva o título.</li><li>Em <b>Tipo de modelo</b>, escolha <b>Rubrica</b>.</li><li>Em <b>Níveis de desempenho</b>, reveja os níveis e os pontos de cada um. Vêm predefinidos Especialista (4), Avançado (3), Aprendiz (2), Iniciante (1) e Não feito (0), mas pode mudar-lhes o nome e os pontos, adicionar níveis (até 8) ou removê-los (mínimo 2).</li><li>Em <b>Critérios da rubrica</b>, escreva o nome de cada critério, por exemplo «Expressão oral» ou «Uso de fontes». Pode ter até 15.</li><li>Escolha a <b>Nota máxima</b> e toque em <b>Criar modelo</b>.</li></ol>
@@ -2667,7 +2754,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-escanear.jpg" alt="Ecrã de digitalização" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/pt/escanear-clase.jpg" alt="Digitalizar: corrigir as folhas" loading="lazy"><img src="img/pt/escanear.jpg" alt="Digitalizar: corrigir as folhas" loading="lazy"><img src="img/pt/hoja-corregida.jpg" alt="Digitalizar: corrigir as folhas" loading="lazy"></div>
         <h3 class="subhead">Como corrigir</h3>
         <ol class="steps"><li>Vá ao separador <b>Digitalizar</b>.</li><li>Escolha a <b>turma</b> e depois o <b>modelo</b> (o teste).</li><li>Confirme que no topo está escolhida a opção de <b>papel</b> correta: <b>1 teste por página</b> ou <b>2 testes por página</b>, conforme a forma como imprimiu a folha.</li><li>Coloque a folha em cima da mesa e enquadre-a dentro da moldura branca do ecrã.</li><li>Toque no botão redondo grande para tirar a fotografia. Se não ficou bem, toque em <b>Repetir</b>; se está bem, toque em <b>Usar esta fotografia</b>.</li><li>Reveja o que a aplicação leu e toque em <b>Aceitar</b> para o guardar. Já pode passar à folha seguinte.</li></ol>
         <h3 class="subhead">O ecrã de revisão</h3>
@@ -2688,7 +2775,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
-        <div class="screenshot-row"><img src="img/es-resultados.jpg" alt="Estatísticas de um teste" loading="lazy"></div>
+        <div class="screenshot-row"><img src="img/pt/resultados.jpg" alt="Resultados: notas e estatísticas" loading="lazy"></div>
         <p>Aqui estão todos os testes corrigidos, agrupados por turma. Toque numa turma para ver os respetivos testes e toque num teste para ver todos os pormenores.</p>
         <div class="feature"><div class="feature-title">Eliminar os testes de uma turma</div><p>Deslize a turma para a esquerda. São eliminados os testes corrigidos, mas a turma e os alunos mantêm-se.</p></div>
         <div class="feature"><div class="feature-title">Progresso por critério</div><p>Dentro de uma turma, mesmo no topo, verá como evolui cada aluno em cada critério de avaliação ao longo de todos os testes. Está explicado na secção «Critérios de avaliação (CA)».</p></div>
@@ -2712,6 +2799,7 @@
         <span class="chevron">▶</span>
       </div>
       <div class="section-body">
+        <div class="screenshot-row"><img src="img/pt/ajustes.jpg" alt="Definições" loading="lazy"></div>
         <div class="feature"><div class="feature-title">Onde estão as Definições</div><p>No ecrã <b>Início</b>, toque no botão roxo <b>Definições</b>, no canto superior direito. A barra em baixo tem as cinco secções do dia a dia (Início, Turmas, Digitalizar, Modelos e Resultados), com <b>Digitalizar</b> como botão redondo grande ao centro.</p></div>
         <div class="feature"><div class="feature-title">Aspeto</div><p>Escolha como quer ver a aplicação: <b>Claro</b> (fundo branco), <b>Escuro</b> (fundo preto, mais confortável à noite) ou <b>Automático</b> (muda sozinho, tal como o seu telemóvel).</p></div>
         <div class="feature"><div class="feature-title">Idioma</div><p>O idioma da aplicação. «Automático» usa o do seu telemóvel.</p></div>
@@ -2773,6 +2861,13 @@ function toggle(header) {
   var lang = supported.indexOf(saved) >= 0 ? saved : (supported.indexOf(browser) >= 0 ? browser : 'es');
   if (lang !== 'es') setLang(lang);
 })();
+</script>
+<script>
+// Tocar una captura la abre a tamaño completo.
+document.addEventListener('click', function (e) {
+  var img = e.target.closest && e.target.closest('.screenshot-row img');
+  if (img) window.open(img.src, '_blank', 'noopener');
+});
 </script>
 </body>
 </html>
