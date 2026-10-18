@@ -116,6 +116,7 @@
   @media (max-width: 480px) { body { font-size: 16px; } .hero .lead { font-size: 17.5px; } }
 </style>
 <link rel="stylesheet" href="topbar.css">
+<link rel="stylesheet" href="ds.css">
 </head>
 <body data-page="home" data-root="">
 <div class="topbar">
@@ -146,33 +147,25 @@
   <section class="how">
     <div class="wrap">
       <h2 data-i="whatTitle">Qué hace la app</h2>
-      <ol class="steps">
-        <li><img class="shot" data-shot="plantilla-datos" src="help/img/es/plantilla-datos.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</p></li>
-        <li><img class="shot" data-shot="imprimir" src="help/img/es/imprimir.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</p></li>
-        <li><img class="shot" data-shot="escanear" src="help/img/es/escanear.jpg" alt="" loading="lazy" width="540" height="1000"><p data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</p></li>
-      </ol>
-      <div class="more">
-        <p data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</p>
-        <p data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</p>
+      <div class="bento">
+        <article class="tile s2"><span class="num">1</span><p data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</p><div class="shot-wrap"><img data-shot="plantilla-datos" src="help/img/es/plantilla-datos.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
+        <article class="tile s2"><span class="num">2</span><p data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</p><div class="shot-wrap"><img data-shot="imprimir" src="help/img/es/imprimir.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
+        <article class="tile s2"><span class="num">3</span><p data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</p><div class="shot-wrap"><img data-shot="escanear" src="help/img/es/escanear.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
+        <article class="tile s3"><p data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</p><div class="shot-wrap"><img data-shot="resultados" src="help/img/es/resultados.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
+        <article class="tile s3"><p data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</p><div class="shot-wrap"><img data-shot="rubrica" src="help/img/es/rubrica.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
       </div>
-    </div>
-  </section>
-
-  <section class="privacy">
-    <div class="wrap">
-      <div class="lock" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
-      <div>
-        <h2 data-i="dataTitle">Tus datos son tuyos</h2>
-        <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+      <div class="duo">
+        <div class="dark">
+          <div class="lock" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
+          <h2 data-i="dataTitle">Tus datos son tuyos</h2>
+          <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+        </div>
+        <div class="light glass">
+          <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
+          <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
+          <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="classroom">
-    <div class="wrap">
-      <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
-      <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
-      <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
     </div>
   </section>
 
