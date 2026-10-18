@@ -63,6 +63,9 @@
     font-weight: 600; text-decoration: none;
     background: var(--accent); color: #fff;
   }
+  .btn.play { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; font-size: 17px; box-shadow: 0 6px 18px rgba(79,70,229,.30); }
+  .btn.play svg { width: 20px; height: 20px; flex: none; }
+  .hero .links { justify-content: center; }
   .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
   footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
   footer a { color: var(--accent); }
@@ -88,6 +91,7 @@
     <h1>FullGrader</h1>
     <p class="tagline" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</p>
     <div class="links">
+      <a class="btn play" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span data-i="getPlay">Descárgala en Google Play</span></a>
       <a class="btn secondary" href="help/" data-i="help">Tutorial</a>
       <a class="btn secondary" href="privacy/" data-i="privacy">Política de privacidad</a>
     </div>
@@ -112,6 +116,7 @@
   <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
 
   <div class="links">
+    <a class="btn play" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span data-i="getPlay">Descárgala en Google Play</span></a>
     <a class="btn" href="privacy/" data-i="privacyFull">Leer la política de privacidad</a>
   </div>
 
@@ -125,6 +130,7 @@
 (function () {
   var T = {
     es: {
+      getPlay: 'Descárgala en Google Play',
       title: 'FullGrader · Corrige exámenes tipo test con la cámara del móvil',
       tagline: 'Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.',
       help: 'Tutorial', privacy: 'Política de privacidad',
@@ -143,6 +149,7 @@
       langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.'
     },
     ca: {
+      getPlay: 'Descarrega-la a Google Play',
       title: 'FullGrader · Corregeix exàmens tipus test amb la càmera del mòbil',
       tagline: 'Corregeix exàmens tipus test amb la càmera del mòbil, en segons i sense servidors.',
       help: 'Tutorial', privacy: 'Política de privadesa',
@@ -161,6 +168,7 @@
       langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès.'
     },
     gl: {
+      getPlay: 'Descárgaa en Google Play',
       title: 'FullGrader · Corrixe exames tipo test coa cámara do móbil',
       tagline: 'Corrixe exames tipo test coa cámara do móbil, en segundos e sen servidores.',
       help: 'Titorial', privacy: 'Política de privacidade',
@@ -179,6 +187,7 @@
       langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués.'
     },
     eu: {
+      getPlay: 'Deskargatu Google Play-n',
       title: 'FullGrader · Zuzendu test motako azterketak telefonoaren kamerarekin',
       tagline: 'Zuzendu test motako azterketak telefonoaren kamerarekin, segundo gutxitan eta zerbitzaririk gabe.',
       help: 'Tutoriala', privacy: 'Pribatutasun-politika',
@@ -197,6 +206,7 @@
       langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez.'
     },
     en: {
+      getPlay: 'Get it on Google Play',
       title: 'FullGrader · Grade multiple-choice tests with your phone camera',
       tagline: 'Grade multiple-choice tests with your phone camera, in seconds and with no servers.',
       help: 'Tutorial', privacy: 'Privacy policy',
@@ -215,6 +225,7 @@
       langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese.'
     },
     de: {
+      getPlay: 'Jetzt bei Google Play',
       title: 'FullGrader · Multiple-Choice-Prüfungen mit der Handykamera korrigieren',
       tagline: 'Korrigiere Multiple-Choice-Prüfungen mit der Handykamera – in Sekunden und ohne Server.',
       help: 'Anleitung',
@@ -234,6 +245,7 @@
       langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch.'
     },
     fr: {
+      getPlay: 'Disponible sur Google Play',
       title: 'FullGrader · Corrigez vos QCM avec l’appareil photo de votre téléphone',
       tagline: 'Corrigez vos QCM avec l’appareil photo de votre téléphone, en quelques secondes et sans serveurs.',
       help: 'Tutoriel',
@@ -253,6 +265,7 @@
       langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais.'
     },
     it: {
+      getPlay: 'Disponibile su Google Play',
       title: 'FullGrader · Correggi i test a risposta multipla con la fotocamera del telefono',
       tagline: 'Correggi i test a risposta multipla con la fotocamera del telefono, in pochi secondi e senza server.',
       help: 'Tutorial',
@@ -272,6 +285,7 @@
       langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese.'
     },
     pt: {
+      getPlay: 'Disponível no Google Play',
       title: 'FullGrader · Corrija testes de escolha múltipla com a câmara do telemóvel',
       tagline: 'Corrija testes de escolha múltipla com a câmara do telemóvel, em segundos e sem servidores.',
       help: 'Tutorial',
