@@ -64,7 +64,10 @@
     background: var(--accent); color: #fff;
   }
   .play-badge { display: inline-flex; }
-  .play-badge img { height: 64px; width: auto; display: block; margin: -8px -10px; }
+  /* La imagen oficial ya trae alrededor el margen libre que pide Google
+     (1/4 de la altura de la insignia): no se recorta ni se toca. */
+  .play-badge img { height: 64px; width: auto; display: block; }
+  .legal { font-size: 12px; opacity: .8; }
   .hero .links, .links { justify-content: center; align-items: center; }
   .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
   footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
@@ -122,6 +125,7 @@
 
   <footer>
     <p data-i="langs">Disponible en castellano, català, galego, euskara y English.</p>
+    <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
     <p>Instagram <a href="https://www.instagram.com/fullgrader">@FullGrader</a> · X <a href="https://x.com/FullGrader">@FullGrader</a></p>
   </footer>
 </main>
@@ -130,6 +134,7 @@
 (function () {
   var T = {
     es: {
+      gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgala en Google Play',
       title: 'FullGrader · Corrige exámenes tipo test con la cámara del móvil',
       tagline: 'Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.',
@@ -149,6 +154,7 @@
       langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.'
     },
     ca: {
+      gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
       getPlay: 'Descarrega-la a Google Play',
       title: 'FullGrader · Corregeix exàmens tipus test amb la càmera del mòbil',
       tagline: 'Corregeix exàmens tipus test amb la càmera del mòbil, en segons i sense servidors.',
@@ -168,6 +174,7 @@
       langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès.'
     },
     gl: {
+      gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgaa en Google Play',
       title: 'FullGrader · Corrixe exames tipo test coa cámara do móbil',
       tagline: 'Corrixe exames tipo test coa cámara do móbil, en segundos e sen servidores.',
@@ -187,6 +194,7 @@
       langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués.'
     },
     eu: {
+      gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
       getPlay: 'Deskargatu Google Play-n',
       title: 'FullGrader · Zuzendu test motako azterketak telefonoaren kamerarekin',
       tagline: 'Zuzendu test motako azterketak telefonoaren kamerarekin, segundo gutxitan eta zerbitzaririk gabe.',
@@ -206,6 +214,7 @@
       langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez.'
     },
     en: {
+      gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
       getPlay: 'Get it on Google Play',
       title: 'FullGrader · Grade multiple-choice tests with your phone camera',
       tagline: 'Grade multiple-choice tests with your phone camera, in seconds and with no servers.',
@@ -225,6 +234,7 @@
       langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese.'
     },
     de: {
+      gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
       getPlay: 'Jetzt bei Google Play',
       title: 'FullGrader · Multiple-Choice-Prüfungen mit der Handykamera korrigieren',
       tagline: 'Korrigiere Multiple-Choice-Prüfungen mit der Handykamera – in Sekunden und ohne Server.',
@@ -245,6 +255,7 @@
       langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch.'
     },
     fr: {
+      gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
       getPlay: 'Disponible sur Google Play',
       title: 'FullGrader · Corrigez vos QCM avec l’appareil photo de votre téléphone',
       tagline: 'Corrigez vos QCM avec l’appareil photo de votre téléphone, en quelques secondes et sans serveurs.',
@@ -265,6 +276,7 @@
       langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais.'
     },
     it: {
+      gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
       getPlay: 'Disponibile su Google Play',
       title: 'FullGrader · Correggi i test a risposta multipla con la fotocamera del telefono',
       tagline: 'Correggi i test a risposta multipla con la fotocamera del telefono, in pochi secondi e senza server.',
@@ -285,6 +297,7 @@
       langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese.'
     },
     pt: {
+      gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
       getPlay: 'Disponível no Google Play',
       title: 'FullGrader · Corrija testes de escolha múltipla com a câmara do telemóvel',
       tagline: 'Corrija testes de escolha múltipla com a câmara do telemóvel, em segundos e sem servidores.',
