@@ -41,18 +41,10 @@
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-padding-top: 112px; -webkit-text-size-adjust: 100%; }
+    html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
     /* Barra fija de arriba: marca + idiomas (siempre visibles) */
-    .topbar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--surface) 88%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); border-bottom: 1px solid var(--border); padding: 10px 16px 10px; }
-    .topbar-row { max-width: 720px; margin: 0 auto 8px; display: flex; align-items: center; }
-    .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 17px; letter-spacing: -.01em; }
-    .brand img { width: 28px; height: 28px; border-radius: 7px; }
-    .brand-sub { font-weight: 500; color: var(--muted); padding-left: 9px; border-left: 1px solid var(--border); }
-    .lang-switch { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; }
-    .lang-btn { font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .03em; padding: 6px 0; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; }
-    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
     main { max-width: 720px; margin: 0 auto; padding: 8px 16px 40px; }
     .hero { padding: 28px 2px 18px; }
@@ -115,13 +107,15 @@
     .social-links a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
 
   </style>
+  <link rel="stylesheet" href="../topbar.css">
 </head>
 <body>
 <div class="topbar">
   <div class="topbar-row">
-    <a class="brand" href="/" data-back><img src="../icon.png" alt="" width="28" height="28"><span>FullGrader</span><span class="brand-sub" data-helpword>Ayuda</span></a>
+    <a class="brand" href="/" data-back><img src="../icon.png" alt="" width="28" height="28"><span class="brand-name">FullGrader</span></a>
+    <span class="tb-seg" data-pageword data-helpword>Ayuda</span>
+    <label class="tb-seg"><span class="lang-label" data-langword>Idioma</span><span class="select-wrap"><select id="langSelect" aria-label="Idioma"><option value="es">Español</option><option value="ca">Català</option><option value="gl">Galego</option><option value="eu">Euskara</option><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português</option></select></span></label>
   </div>
-  <div class="lang-switch" role="group" aria-label="Language"><button type="button" class="lang-btn" data-set-lang="es" title="Español" aria-label="Español">ESP</button><button type="button" class="lang-btn" data-set-lang="ca" title="Català" aria-label="Català">CAT</button><button type="button" class="lang-btn" data-set-lang="gl" title="Galego" aria-label="Galego">GAL</button><button type="button" class="lang-btn" data-set-lang="eu" title="Euskara" aria-label="Euskara">EUS</button><button type="button" class="lang-btn" data-set-lang="en" title="English" aria-label="English">ENG</button><button type="button" class="lang-btn" data-set-lang="de" title="Deutsch" aria-label="Deutsch">DEU</button><button type="button" class="lang-btn" data-set-lang="fr" title="Français" aria-label="Français">FRA</button><button type="button" class="lang-btn" data-set-lang="it" title="Italiano" aria-label="Italiano">ITA</button><button type="button" class="lang-btn" data-set-lang="pt" title="Português" aria-label="Português">POR</button></div>
 </div>
 
 
@@ -2837,6 +2831,7 @@
 
 
 
+<script src="../topbar.js"></script>
 <script>
 (function () {
   var LANGS = ['es', 'ca', 'gl', 'eu', 'en', 'de', 'fr', 'it', 'pt'];
@@ -2849,9 +2844,6 @@
     document.querySelectorAll('[data-lang]').forEach(function (el) {
       el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
     });
-    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-      b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
-    });
     document.documentElement.lang = lang;
     document.title = 'FullGrader · ' + HELP[lang];
     var hw = document.querySelector('[data-helpword]');
@@ -2861,12 +2853,11 @@
     // La primera sección («Empieza aquí») se abre sola.
     var first = document.querySelector('[data-lang="' + lang + '"] .section');
     if (first && !document.querySelector('[data-lang="' + lang + '"] .section.open')) first.classList.add('open');
+    FGBar.sync(lang);
     try { localStorage.setItem(KEY, lang); } catch (e) {}
   }
 
-  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
-  });
+  FGBar.onChange(function (l) { setLang(l); window.scrollTo(0, 0); });
 
   // Abrir y cerrar secciones.
   window.toggle = function (header) { header.parentElement.classList.toggle('open'); };
