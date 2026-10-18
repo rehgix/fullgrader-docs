@@ -9,9 +9,9 @@
 .topbar .brand img { width: 28px; height: 28px; border-radius: 7px; display: block; box-shadow: none; }
 .tb-seg { display: inline-flex; align-items: center; gap: 6px; margin-left: 9px; padding-left: 9px; border-left: 1px solid var(--tb-border); color: var(--tb-muted); font-weight: 500; flex: none; }
 .tb-lang { position: relative; cursor: pointer; gap: 7px; }
-.tb-arrow { width: 7px; height: 7px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); }
-/* El desplegable real queda invisible encima de «Idioma ⌄»: al tocarlo se abre la lista de idiomas. */
-#langSelect { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; border: 0; margin: 0; }
+.tb-arrow { flex: none; width: 7px; height: 7px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); }
+/* El desplegable real queda invisible encima de «Idioma ⌄» o «Ayuda ⌄»: al tocarlo se abre la lista. */
+.tb-lang select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 16px; border: 0; margin: 0; }
 .tb-lang:hover, .tb-lang:focus-within { color: var(--tb-accent); }
 @media (max-width: 400px) { .topbar-row { font-size: 15.5px; } }
 /* Si no cabe todo en una línea se oculta el nombre (queda el icono). */
