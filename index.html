@@ -38,16 +38,16 @@
     -webkit-font-smoothing: antialiased;
   }
   main { max-width: 720px; margin: 0 auto; }
-  .lang-switch { display: flex; flex-wrap: wrap; gap: 6px; padding: 24px 0 0; }
+  .lang-switch { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 24px 0 0; }
   .lang-btn {
-    font: inherit; font-size: 14px; font-weight: 600;
-    padding: 7px 14px; border-radius: 999px;
+    font: inherit; font-size: 13px; font-weight: 700; letter-spacing: .03em;
+    padding: 6px 11px; border-radius: 999px;
     border: 1px solid var(--border); background: var(--surface); color: var(--muted);
     cursor: pointer;
   }
   .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
   .hero { text-align: center; padding: 48px 0 24px; }
-  .hero img { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(79,70,229,.25); }
+  .hero-icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(79,70,229,.25); }
   h1 { font-size: 40px; line-height: 1.15; margin: 20px 0 8px; letter-spacing: -.02em; }
   .tagline { font-size: 20px; color: var(--muted); margin: 0 auto; max-width: 560px; }
   h2 { font-size: 22px; margin: 40px 0 12px; }
@@ -67,10 +67,14 @@
   /* Insignia oficial de Google Play (archivos en badges/, del paquete de
      Google). Normas: no modificarla, altura mínima 28 px y un espacio libre
      alrededor de 1/4 de su altura (aquí 52 px de alto -> 13 px). */
-  .play-badge { margin: 13px; }
-  .play-badge img { height: 52px; width: auto; display: block; }
+  .play-badge { margin: 14px; }
+  .play-badge img { height: 56px; width: auto; display: block; }
+  .cta { display: flex; justify-content: center; margin-top: 18px; }
+  .cta-bottom { margin-top: 40px; }
+  .sublinks { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; color: var(--muted); }
+  .sublinks a { color: var(--accent); font-weight: 600; text-decoration: none; padding: 6px 2px; }
+  .sublinks a:hover { text-decoration: underline; }
   .legal { font-size: 12px; opacity: .8; }
-  .hero .links, .links { justify-content: center; align-items: center; }
   .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
   footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
   footer a { color: var(--accent); }
@@ -92,14 +96,15 @@
   </div>
 
   <section class="hero">
-    <img src="icon.png" alt="FullGrader">
+    <img class="hero-icon" src="icon.png" alt="FullGrader">
     <h1>FullGrader</h1>
     <p class="tagline" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</p>
-    <div class="links">
-      <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a>
-      <a class="btn secondary" href="help/" data-i="help">Tutorial</a>
-      <a class="btn secondary" href="privacy/" data-i="privacy">Política de privacidad</a>
-    </div>
+    <div class="cta"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+    <nav class="sublinks">
+      <a href="help/" data-i="help">Tutorial</a>
+      <span aria-hidden="true">·</span>
+      <a href="privacy/" data-i="privacy">Política de privacidad</a>
+    </nav>
   </section>
 
   <h2 data-i="whatTitle">Qué hace la app</h2>
@@ -120,10 +125,10 @@
   <h2 data-i="dataTitle">Tus datos son tuyos</h2>
   <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
 
-  <div class="links">
-    <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a>
-    <a class="btn" href="privacy/" data-i="privacyFull">Leer la política de privacidad</a>
-  </div>
+  <div class="cta cta-bottom"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a></div>
+  <nav class="sublinks">
+    <a href="privacy/" data-i="privacyFull">Leer la política de privacidad</a>
+  </nav>
 
   <footer>
     <p data-i="langs">Disponible en castellano, català, galego, euskara y English.</p>
