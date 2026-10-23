@@ -296,3 +296,5 @@ footer { color: var(--z-muted) !important; }
 @media (prefers-color-scheme: dark) { .soon-badge { color: #a1a1aa; } .soon-badge .sb-name { color: #e4e4e7; } }
 .darkband .soon-badge, .dark .soon-badge { color: #a1a1aa; }
 @media (max-width: 600px) { .price { column-gap: 14px; } .soon-badge { padding: 0 14px; } .soon-badge .sb-name { font-size: 18px; } }
+.play-badge { vertical-align: middle; }
+.closing .soon-badge { margin-left: 14px; }
