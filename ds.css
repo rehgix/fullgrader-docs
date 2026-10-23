@@ -324,3 +324,13 @@ footer { color: var(--z-muted) !important; }
 @media (prefers-color-scheme: dark) { .demo-steps button { color: #a1a1aa; } }
 @media (max-width: 400px) { .demo-steps button { font-size: 12px; padding: 6px 9px; } }
 @media (prefers-reduced-motion: reduce) { .demo .scr { transition: none; } }
+
+/* ---------- Barra: enlaces a las páginas ---------- */
+.tb-links { display: flex; align-items: center; gap: 2px; margin-left: 18px; flex: none; }
+.tb-links a { padding: 6px 12px; border-radius: 999px; border: 1px solid transparent; color: var(--z-muted, #71717a); text-decoration: none; font-weight: 500; transition: background .18s, color .18s, border-color .18s; }
+.tb-links a:hover { color: var(--z-text); background: var(--z-card); border-color: var(--z-line); }
+.tb-links a[aria-current="page"] { color: var(--z-text); background: var(--z-card); border-color: var(--z-line-2, var(--z-line)); font-weight: 600; }
+.tb-menu { display: none !important; }
+.topbar-row.compact .tb-links { display: none; }
+.topbar-row.compact .tb-menu { display: inline-flex !important; }
+.tb-langpick { margin-left: auto !important; }

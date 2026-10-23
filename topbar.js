@@ -1,8 +1,9 @@
-/* Barra fija común a toda la web: menú de páginas («Ayuda ⌄») e idioma («Idioma ⌄»).
+/* Barra fija común a toda la web: enlaces a las páginas (o «Menú ⌄» si no caben) e idioma («Idioma ⌄»).
    Cada página llama a FGBar.sync(idioma) cuando cambia de idioma. */
 (function () {
   var LANGWORD = { es: 'Idioma', ca: 'Idioma', gl: 'Idioma', eu: 'Hizkuntza', en: 'Language', de: 'Sprache', fr: 'Langue', it: 'Lingua', pt: 'Idioma' };
-  var MENUWORD = { es: 'Páginas', ca: 'Pàgines', gl: 'Páxinas', eu: 'Orriak', en: 'Pages', de: 'Seiten', fr: 'Pages', it: 'Pagine', pt: 'Páginas' };
+  var MENUWORD = { es: 'Menú', ca: 'Menú', gl: 'Menú', eu: 'Menua', en: 'Menu', de: 'Menü', fr: 'Menu', it: 'Menu', pt: 'Menu' };
+  var BAR = ['help', 'premium', 'faq', 'contact'];
   var PAGES = ['home', 'help', 'premium', 'faq', 'contact', 'privacy', 'terms'];
   var PATH = { home: '', help: 'help/', premium: 'premium/', faq: 'faq/', contact: 'contact/', privacy: 'privacy/', terms: 'terms/' };
   var NAMES = {
@@ -22,10 +23,27 @@
 
   function href(p) { return (root + PATH[p]) || './'; }
 
+  // Enlaces a las páginas en la barra; si no caben, se sustituyen por «Menú ⌄».
+  var row = document.querySelector('.topbar-row');
+  var links = null;
+  if (row) {
+    var brand = row.querySelector('.brand');
+    var menu = document.getElementById('pageSelect');
+    if (menu) menu.closest('label').classList.add('tb-menu');
+    var lang = document.getElementById('langSelect');
+    if (lang) lang.closest('label').classList.add('tb-langpick');
+    links = document.createElement('nav');
+    links.className = 'tb-links';
+    links.innerHTML = BAR.map(function (p) {
+      return '<a href="' + href(p) + '" data-bar="' + p + '"' + (p === page ? ' aria-current="page"' : '') + '></a>';
+    }).join('');
+    if (brand) brand.insertAdjacentElement('afterend', links);
+  }
+
   function fit() {
-    var row = document.querySelector('.topbar-row');
     if (!row) return;
-    row.classList.remove('c1');
+    row.classList.remove('c1', 'compact');
+    if (row.scrollWidth > row.clientWidth + 1) row.classList.add('compact');
     if (row.scrollWidth > row.clientWidth + 1) row.classList.add('c1');
   }
 
@@ -42,7 +60,9 @@
       ps.setAttribute('aria-label', MENUWORD[lang]);
     }
     var pw = document.querySelector('[data-pageword]');
-    if (pw) pw.textContent = n[page];
+    if (pw) pw.textContent = MENUWORD[lang] || MENUWORD.en;
+    if (links) links.querySelectorAll('[data-bar]').forEach(function (a) { a.textContent = n[a.getAttribute('data-bar')]; });
+    var nav = links; if (nav) nav.setAttribute('aria-label', MENUWORD[lang] || MENUWORD.en);
     // Enlaces sueltos con el nombre de una página (pie, portada...).
     document.querySelectorAll('[data-nav]').forEach(function (a) {
       var p = a.getAttribute('data-nav');
