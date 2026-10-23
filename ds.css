@@ -287,3 +287,12 @@ footer { color: var(--z-muted) !important; }
   .topbar { padding: 10px 14px !important; }
   .tb-lang { padding: 5px 7px; margin-left: 2px !important; }
 }
+
+/* Insignia «App Store · próximamente» junto a la de Google Play.
+   No es la insignia oficial de Apple (solo se puede usar cuando la app ya está en el App Store). */
+.soon-badge { display: inline-flex; flex-direction: column; justify-content: center; gap: 1px; height: 56px; padding: 0 20px; border-radius: 12px; border: 1.5px dashed color-mix(in srgb, currentColor 35%, transparent); color: #71717a; line-height: 1.1; text-align: left; vertical-align: middle; cursor: default; user-select: none; }
+.soon-badge .sb-top { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.soon-badge .sb-name { font-size: 20px; font-weight: 700; letter-spacing: -.01em; color: #3f3f46; }
+@media (prefers-color-scheme: dark) { .soon-badge { color: #a1a1aa; } .soon-badge .sb-name { color: #e4e4e7; } }
+.darkband .soon-badge, .dark .soon-badge { color: #a1a1aa; }
+@media (max-width: 600px) { .price { column-gap: 14px; } .soon-badge { padding: 0 14px; } .soon-badge .sb-name { font-size: 18px; } }
