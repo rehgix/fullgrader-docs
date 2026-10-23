@@ -123,7 +123,7 @@
   @media (max-width: 480px) { body { font-size: 16px; } .hero .lead { font-size: 17.5px; } }
 </style>
 <link rel="stylesheet" href="topbar.css">
-<link rel="stylesheet" href="ds.css?v=20261023b">
+<link rel="stylesheet" href="ds.css?v=20261023c">
 </head>
 <body data-page="home" data-root="">
 <div class="topbar">
@@ -146,8 +146,22 @@
       </nav>
     </div>
     <div class="stage">
-      <div class="phone"><img data-shot="hoja-corregida" src="help/img/es/hoja-corregida.jpg" alt="" width="540" height="1168"></div>
+      <div class="phone demo" id="demo" aria-hidden="true">
+        <div class="screens">
+          <img class="scr" data-shot="escanear" src="help/img/es/escanear.jpg" alt="" width="540" height="1168">
+          <img class="scr on" data-shot="hoja-corregida" src="help/img/es/hoja-corregida.jpg" alt="" width="540" height="1168">
+          <img class="scr" data-shot="resultados" src="help/img/es/resultados.jpg" alt="" width="540" height="1168" loading="lazy">
+          <img class="scr" data-shot="progreso" src="help/img/es/progreso.jpg" alt="" width="540" height="1168" loading="lazy">
+          <span class="scanline"></span><span class="tap"></span><span class="flash"></span>
+        </div>
+      </div>
       <div class="grade" aria-hidden="true"><i></i>8.50</div>
+      <div class="demo-steps" role="group">
+        <button type="button" data-step="0" data-i="d1">Escanea</button>
+        <button type="button" data-step="1" data-i="d2">Corrige</button>
+        <button type="button" data-step="2" data-i="d3">Resultados</button>
+        <button type="button" data-step="3" data-i="d4">Progreso</button>
+      </div>
     </div>
   </section>
 
@@ -200,6 +214,7 @@
       gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgala en Google Play',
       soon: 'Próximamente',
+      d1: 'Escanea', d2: 'Corrige', d3: 'Resultados', d4: 'Progreso',
       title: 'FullGrader · Corrige exámenes tipo test con la cámara del móvil',
       tagline: 'Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.',
       help: 'Tutorial', privacy: 'Política de privacidad',
@@ -222,6 +237,7 @@
       gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
       getPlay: 'Descarrega-la a Google Play',
       soon: 'Properament',
+      d1: 'Escaneja', d2: 'Corregeix', d3: 'Resultats', d4: 'Progrés',
       title: 'FullGrader · Corregeix exàmens tipus test amb la càmera del mòbil',
       tagline: 'Corregeix exàmens tipus test amb la càmera del mòbil, en segons i sense servidors.',
       help: 'Tutorial', privacy: 'Política de privadesa',
@@ -244,6 +260,7 @@
       gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgaa en Google Play',
       soon: 'Proximamente',
+      d1: 'Escanea', d2: 'Corrixe', d3: 'Resultados', d4: 'Progreso',
       title: 'FullGrader · Corrixe exames tipo test coa cámara do móbil',
       tagline: 'Corrixe exames tipo test coa cámara do móbil, en segundos e sen servidores.',
       help: 'Titorial', privacy: 'Política de privacidade',
@@ -266,6 +283,7 @@
       gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
       getPlay: 'Deskargatu Google Play-n',
       soon: 'Laster',
+      d1: 'Eskaneatu', d2: 'Zuzendu', d3: 'Emaitzak', d4: 'Aurrerapena',
       title: 'FullGrader · Zuzendu test motako azterketak telefonoaren kamerarekin',
       tagline: 'Zuzendu test motako azterketak telefonoaren kamerarekin, segundo gutxitan eta zerbitzaririk gabe.',
       help: 'Tutoriala', privacy: 'Pribatutasun-politika',
@@ -288,6 +306,7 @@
       gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
       getPlay: 'Get it on Google Play',
       soon: 'Coming soon',
+      d1: 'Scan', d2: 'Grade', d3: 'Results', d4: 'Progress',
       title: 'FullGrader · Grade multiple-choice tests with your phone camera',
       tagline: 'Grade multiple-choice tests with your phone camera, in seconds and with no servers.',
       help: 'Tutorial', privacy: 'Privacy policy',
@@ -310,6 +329,7 @@
       gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
       getPlay: 'Jetzt bei Google Play',
       soon: 'Demnächst',
+      d1: 'Scannen', d2: 'Korrigieren', d3: 'Ergebnisse', d4: 'Fortschritt',
       title: 'FullGrader · Multiple-Choice-Prüfungen mit der Handykamera korrigieren',
       tagline: 'Korrigiere Multiple-Choice-Prüfungen mit der Handykamera – in Sekunden und ohne Server.',
       help: 'Anleitung',
@@ -333,6 +353,7 @@
       gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
       getPlay: 'Disponible sur Google Play',
       soon: 'Bientôt',
+      d1: 'Scanner', d2: 'Corriger', d3: 'Résultats', d4: 'Progrès',
       title: 'FullGrader · Corrigez vos QCM avec l’appareil photo de votre téléphone',
       tagline: 'Corrigez vos QCM avec l’appareil photo de votre téléphone, en quelques secondes et sans serveurs.',
       help: 'Tutoriel',
@@ -356,6 +377,7 @@
       gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
       getPlay: 'Disponibile su Google Play',
       soon: 'Prossimamente',
+      d1: 'Scansiona', d2: 'Correggi', d3: 'Risultati', d4: 'Progressi',
       title: 'FullGrader · Correggi i test a risposta multipla con la fotocamera del telefono',
       tagline: 'Correggi i test a risposta multipla con la fotocamera del telefono, in pochi secondi e senza server.',
       help: 'Tutorial',
@@ -379,6 +401,7 @@
       gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
       getPlay: 'Disponível no Google Play',
       soon: 'Brevemente',
+      d1: 'Digitalizar', d2: 'Corrigir', d3: 'Resultados', d4: 'Progresso',
       title: 'FullGrader · Corrija testes de escolha múltipla com a câmara do telemóvel',
       tagline: 'Corrija testes de escolha múltipla com a câmara do telemóvel, em segundos e sem servidores.',
       help: 'Tutorial',
@@ -425,6 +448,31 @@
   }
   FGBar.onChange(render);
   render(pick());
+})();
+</script>
+<script>
+/* Demo animada del móvil: escanear → hoja corregida → resultados → progreso */
+(function () {
+  var demo = document.getElementById('demo'); if (!demo) return;
+  var stage = demo.parentNode, scr = demo.querySelectorAll('.scr'), btns = stage.querySelectorAll('.demo-steps button');
+  var DUR = [3400, 3200, 3400, 3200], i = 1, timer = null;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) {
+    i = n;
+    for (var k = 0; k < scr.length; k++) scr[k].classList.toggle('on', k === n);
+    for (var b = 0; b < btns.length; b++) btns[b].setAttribute('aria-pressed', b === n ? 'true' : 'false');
+    stage.setAttribute('data-step', n);
+    demo.classList.remove('run'); void demo.offsetWidth; demo.classList.add('run');
+  }
+  function loop() { timer = setTimeout(function () { show((i + 1) % scr.length); loop(); }, DUR[i]); }
+  for (var b = 0; b < btns.length; b++) btns[b].addEventListener('click', function () {
+    clearTimeout(timer); show(+this.getAttribute('data-step')); if (!still) loop();
+  });
+  show(still ? 1 : 0);
+  if (!still) loop();
+  document.addEventListener('visibilitychange', function () {
+    if (still) return; clearTimeout(timer); if (!document.hidden) loop();
+  });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecd0814faef9474b99f98e1efa2c1651"}'></script><!-- End Cloudflare Web Analytics -->
