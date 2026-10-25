@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="home">
 <head>
 <!-- Copia de la portada para contar las visitas que llegan desde este enlace. Se regenera a partir de index.html. -->
 <base href="/">
@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FullGrader · Corrige exámenes tipo test con la cámara del móvil</title>
 <meta name="description" content="FullGrader es la app para docentes que corrige exámenes tipo test con la cámara del móvil. Tus datos se guardan solo en tu dispositivo.">
-<meta name="theme-color" content="#4F46E5">
+<meta name="theme-color" content="#fffffe">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="apple-mobile-web-app-title" content="FullGrader">
 <meta property="og:type" content="website">
@@ -31,113 +31,231 @@
 <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="icon.png">
 <style>
-  :root {
-    --paper: #ffffff;
-    --wash: #f3f2ff;
-    --ink: #17163a;
-    --text: #23223f;
-    --muted: #5d5c78;
-    --accent: #4f46e5;
-    --accent-deep: #3730a3;
-    --line: #e4e3f2;
-    --ok: #16a34a;
-    --ko: #e5484d;
-    --phone: #12112a;
+  /* =====================================================================
+     Portada 2026 · estilo «una sola pantalla»: fondo blanco plano,
+     titular enorme y ancho, gama de lilas y el móvil flotando.
+     Todo lo de aquí solo afecta a la portada (html.home).
+     ===================================================================== */
+
+  /* Paleta (la portada siempre en claro, también si el móvil está en modo oscuro) */
+  html.home, html.home:root {
+    color-scheme: light;
+    --white: #fffffe;
+    --l-900: #3730a3;   /* índigo profundo: hover y textos pequeños */
+    --l-700: #5b54e8;   /* lila de marca: el protagonista */
+    --l-500: #8b5cf6;   /* violeta vivo */
+    --l-400: #d8b4fe;   /* rosado-liloso */
+    --l-300: #c4b5fd;   /* lavanda */
+    --l-200: #ddd6fe;   /* lila claro */
+    --l-100: #ede9fe;   /* muy pálido */
+    --l-50:  #f5f3ff;
+    --ink-1: #18181b;
+    --ink-2: #3f3f46;
+    --ink-3: #71717a;
+    --case: #12112a;
+    --ease-out: cubic-bezier(.2, .8, .2, 1);
+    --spring: cubic-bezier(.3, 1.5, .5, 1);
+    /* lo que usan la barra y ds.css */
+    --z-bg: #fffffe; --z-bg-2: #f5f3ff; --z-card: #fffffe; --z-card-solid: #fffffe; --z-text: #18181b; --z-text-2: #3f3f46; --z-muted: #71717a;
+    --z-line: #ede9fe; --z-line-2: #ddd6fe; --z-accent: #5b54e8; --z-accent-soft: #f5f3ff; --z-on-accent: #fffffe;
+    --tb-bg: #fffffe; --tb-text: #18181b; --tb-muted: #52525b; --tb-border: transparent; --tb-accent: #3730a3;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #0f0e1f;
-      --wash: #17162e;
-      --ink: #f2f1ff;
-      --text: #e6e5f5;
-      --muted: #a4a3c0;
-      --accent: #8f88ff;
-      --accent-deep: #c7c3ff;
-      --line: #2a2946;
-      --phone: #000;
+    html.home {
+      --z-bg: #fffffe; --z-bg-2: #f5f3ff; --z-card: #fffffe; --z-card-solid: #fffffe; --z-text: #18181b; --z-text-2: #3f3f46; --z-muted: #71717a;
+      --z-line: #ede9fe; --z-line-2: #ddd6fe; --z-accent: #5b54e8; --z-accent-soft: #f5f3ff; --z-on-accent: #fffffe;
+      --tb-bg: #fffffe; --tb-text: #18181b; --tb-muted: #52525b; --tb-border: transparent; --tb-accent: #3730a3;
     }
+    html.home .soon-badge { color: #71717a; }
+    html.home .soon-badge .sb-name { color: #3f3f46; }
   }
+
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0; background: var(--paper); color: var(--text);
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  html.home body {
+    margin: 0; background: var(--white) !important; color: var(--ink-2) !important;
     font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  html.home .topbar { background: color-mix(in srgb, var(--white) 92%, transparent) !important; border-bottom: 0 !important; }
+  html.home .topbar .brand img { box-shadow: none !important; }
+  a { color: var(--l-900); }
   main { overflow-x: clip; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  /* Portada: titular grande a un lado, la hoja corregida en el móvil al otro */
-  .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding: 64px 0 72px; }
-  .hero h1 { font-size: clamp(36px, 5.2vw, 60px); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; color: var(--ink); margin: 0; text-wrap: balance; }
-  .hero .lead { font-size: 19px; color: var(--muted); margin: 22px 0 0; max-width: 34ch; }
-  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; margin-top: 28px; }
-  .play-badge { display: inline-block; padding: 14px; margin: -14px; line-height: 0; }
-  .play-badge img { height: 56px; width: auto; display: block; }
-  .textlinks { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 18px; font-weight: 600; font-size: 15.5px; }
-  .textlinks a { text-decoration: none; }
-  .textlinks a:hover { text-decoration: underline; }
+  /* ---------- Pantalla principal ---------- */
+  .fg-hero {
+    min-height: calc(100svh - 58px);
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr); gap: clamp(24px, 4vw, 64px);
+    align-items: center; padding-top: 24px; padding-bottom: 32px;
+  }
+  .fg-copy { max-width: 560px; }
+  .fg-hero h1 {
+    font-family: "Unbounded", "Geist", sans-serif; font-weight: 700;
+    font-size: clamp(30px, 3.5vw, 50px); line-height: 1.08; letter-spacing: -.03em;
+    color: var(--ink-1); margin: 0; text-wrap: balance; hyphens: manual;
+  }
+  .fg-hero h1 .hl { color: var(--l-700); }
+  .fg-lead { font-size: clamp(16.5px, 1.35vw, 19px); color: var(--ink-2); margin: 20px 0 0; max-width: 36ch; line-height: 1.5; }
+  .fg-lead .data { display: inline; color: var(--ink-1); font-weight: 600; padding: 0 .12em;
+    background: linear-gradient(transparent 46%, var(--l-200) 46%, var(--l-200) 84%, transparent 84%) no-repeat;
+    background-size: 0% 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    animation: fg-mark .9s var(--ease-out) .55s forwards; }
+  .fg-lead .lk { display: inline-block; width: .95em; height: .95em; margin: 0 .38em -.12em 0; background: var(--l-700);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='11' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center / contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='11' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .fg-lead .first { display: block; margin-bottom: 6px; }
+  .fg-lead { max-width: 40ch !important; text-wrap: pretty; }
+  @keyframes fg-mark { to { background-size: 100% 100%; } }
+  .fg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 28px; }
+  .play-badge { display: inline-block; line-height: 0; border-radius: 12px; transition: transform .35s var(--spring); }
+  .play-badge img { height: 52px; width: auto; display: block; }
+  html.home .play-badge:hover { transform: translateY(-3px) rotate(-1.5deg); filter: none; }
+  .fg-actions .soon-badge { height: 52px; }
 
-  .stage { position: relative; display: flex; justify-content: center; }
-  .stage::before { content: ''; position: absolute; inset: 6% 0 2% 10%; border-radius: 44px; background: var(--wash); transform: rotate(-4deg); }
-  .phone { position: relative; width: min(300px, 78vw); border-radius: 42px; background: var(--phone); padding: 11px; box-shadow: 0 30px 60px -20px rgba(40, 30, 120, .45); }
-  .phone img { display: block; width: 100%; height: auto; border-radius: 32px; aspect-ratio: 540 / 1168; background: #f6f6fb; }
-  .grade { position: absolute; right: -6px; top: 22%; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 16px; padding: 10px 14px; font-weight: 800; font-size: 26px; letter-spacing: -.02em; box-shadow: 0 12px 28px -12px rgba(40, 30, 120, .35); display: flex; align-items: center; gap: 10px; }
-  .grade i { width: 14px; height: 14px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
+  /* Píldora de novedades */
+  .fg-pill {
+    position: relative; display: inline-flex; flex-direction: column; gap: 2px; margin-top: 26px;
+    padding: 12px 64px 13px 18px; border-radius: 18px; background: var(--l-100);
+    text-decoration: none; color: var(--ink-1); max-width: 100%;
+    transition: background .3s var(--ease-out), transform .45s var(--spring);
+  }
+  .fg-pill .tag { font-size: 12.5px; font-weight: 600; color: var(--l-900); letter-spacing: .01em; }
+  .fg-pill .tag i { font-style: normal; display: inline-block; transition: transform .35s var(--spring); }
+  .fg-pill b { font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
+  .fg-pill .peek { position: absolute; right: -14px; top: -16px; width: 52px; height: 52px; transform: rotate(12deg); transition: transform .5s var(--spring); }
+  .fg-pill:hover { background: var(--l-200); transform: translateY(-2px); }
+  .fg-pill:hover .tag i { transform: translate(2px, -2px); }
+  .fg-pill:hover .peek { transform: rotate(-6deg) translateY(-4px) scale(1.06); }
 
-  /* Cómo funciona: tres pasos (es una secuencia real) */
-  .how { background: var(--wash); padding: 72px 0 80px; }
-  h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.12; letter-spacing: -.025em; font-weight: 800; color: var(--ink); margin: 0 0 36px; text-wrap: balance; }
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
-  .steps li { counter-increment: step; display: flex; flex-direction: column; }
-  .shot { display: block; width: 100%; max-width: 250px; margin: 0 auto 22px; border-radius: 26px; border: 8px solid var(--phone); background: var(--phone); height: auto; aspect-ratio: 540 / 1000; object-fit: cover; object-position: top; }
-  .steps p { margin: 0; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
-  .steps p::before { content: counter(step); width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 16px; display: grid; place-items: center; margin-top: 1px; }
-  .more { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--line); }
-  .more p { margin: 0; color: var(--muted); }
+  .fg-links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 26px; font-size: 14.5px; font-weight: 600; }
+  .fg-links a { color: var(--ink-2); text-decoration: none; position: relative; }
+  .fg-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--l-700); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease-out); }
+  .fg-links a:hover { color: var(--l-900); }
+  .fg-links a:hover::after { transform: scaleX(1); }
 
-  /* Privacidad: el único bloque oscuro de la página */
-  .privacy { background: var(--ink); color: #e7e6fb; padding: 76px 0; }
-  @media (prefers-color-scheme: dark) { .privacy { background: #1d1c3b; } }
-  .privacy .wrap { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: start; max-width: 860px; }
-  .privacy h2 { color: #fff; margin-bottom: 14px; }
-  .privacy p { margin: 0; font-size: 18px; color: #cfcdf0; }
-  .lock { width: 64px; height: 64px; border-radius: 18px; background: rgba(255, 255, 255, .08); display: grid; place-items: center; }
+  /* Escenario del móvil */
+  .stage { position: relative; display: flex; flex-direction: column; align-items: center; justify-self: center; --mx: 0; --my: 0; }
+  .stage::before { content: none !important; }
+  .fg-phone-wrap { position: relative; z-index: 2; transform: translate(calc(var(--mx) * 6px), calc(var(--my) * 6px)); transition: transform .6s var(--ease-out); }
+  .fg-phone {
+    --w: clamp(210px, calc((100svh - 230px) / 2.25), 290px);
+    width: var(--w); border-radius: calc(var(--w) * .15); background: var(--case); padding: calc(var(--w) * .035);
+    animation: fg-float-phone 7s ease-in-out infinite;
+  }
+  .fg-phone .screens { border-radius: calc(var(--w) * .118) !important; }
+  .fg-phone .scr { display: block; }
+  @keyframes fg-float-phone { 0%, 100% { transform: rotate(6deg) translateY(0); } 50% { transform: rotate(4.5deg) translateY(-10px); } }
 
-  /* Classroom: texto sencillo, sin caja */
-  .classroom { padding: 72px 0 24px; }
-  .classroom .wrap { max-width: 760px; }
-  .classroom h2 { font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 14px; }
-  .classroom p { color: var(--muted); margin: 0 0 12px; font-size: 16px; }
+  .deco { position: absolute; z-index: 1; pointer-events: none; transform: translate(calc(var(--mx) * var(--d) * 1px), calc(var(--my) * var(--d) * 1px)); transition: transform .8s var(--ease-out); }
+  .deco > * { display: block; width: 100%; height: auto; animation: fg-float var(--t, 6s) ease-in-out var(--dl, 0s) infinite; }
+  .deco.front { z-index: 3; }
+  @keyframes fg-float { 0%, 100% { transform: translateY(0) rotate(var(--r0, 0deg)); } 50% { transform: translateY(var(--dy, -9px)) rotate(var(--r1, 4deg)); } }
 
-  .closing { text-align: center; padding: 56px 0 24px; }
-  .closing .actions { justify-content: center; }
-  .closing .textlinks { justify-content: center; }
+  .d-row   { width: clamp(118px, 13vw, 168px); right: -24%; top: 3%;  --d: 18; --t: 6.5s; --r0: 8deg; --r1: 3deg; }
+  .d-check { width: clamp(64px, 6.5vw, 86px);  left: -16%; top: 47%;  --d: 26; --t: 5.2s; --dl: -1s; --r0: -10deg; --r1: -2deg; --dy: -12px; }
+  .d-pencil{ width: clamp(70px, 7.5vw, 100px); left: -22%; top: 9%;   --d: 10; --t: 7.4s; --dl: -2s; --r0: -24deg; --r1: -16deg; }
+  .d-sheet { width: clamp(80px, 8.5vw, 112px); right: -18%; bottom: 14%; --d: 14; --t: 8s; --dl: -3s; --r0: 10deg; --r1: 16deg; }
+  .d-star  { width: 30px; right: -4%; top: 1%; --d: 34; --t: 4.6s; --r0: 0deg; --r1: 40deg; }
+  .dot { position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; transform: translate(calc(var(--mx) * var(--d) * 1px), calc(var(--my) * var(--d) * 1px)); transition: transform .9s var(--ease-out); }
+  .dot.a { width: 16px; height: 16px; background: var(--l-200); left: -8%; top: 30%; --d: 40; }
+  .dot.b { width: 11px; height: 11px; background: var(--l-400); right: -9%; top: 44%; --d: 30; }
+  .dot.c { width: 20px; height: 20px; background: var(--l-100); left: 2%; bottom: 8%; --d: 22; }
+  .dot.e { width: 9px;  height: 9px;  background: var(--l-300); left: 30%; top: -3%; --d: 46; }
 
-  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 36px 20px 56px; }
+  /* Etiqueta de nota (sale en el paso «Corrige») */
+  .stage .grade {
+    position: absolute; z-index: 4; right: -10%; top: 34%; display: flex; align-items: center;
+    background: var(--ok) !important; color: var(--white) !important; border: 0 !important; box-shadow: none !important;
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    font-family: "Unbounded", sans-serif; font-weight: 700 !important; font-size: 22px; letter-spacing: -.02em;
+    padding: 8px 16px; border-radius: 16px !important;
+  }
+  .stage .grade i { display: none; }
+
+  /* Botones de pasos de la demo */
+  .demo-steps { margin-top: 26px !important; background: var(--white) !important; border: 1.5px solid var(--l-100) !important; box-shadow: none !important; z-index: 3; }
+  .demo-steps button { color: var(--ink-3) !important; font-size: 12.5px !important; transition: background .25s, color .25s, transform .3s var(--spring) !important; }
+  .demo-steps button:hover { color: var(--l-900) !important; }
+  .demo-steps button[aria-pressed="true"] { background: var(--l-700) !important; color: var(--white) !important; }
+
+  /* Entrada escalonada */
+  .rise { animation: fg-rise .55s var(--ease-out) both; }
+  .rise:nth-child(1) { animation-delay: 0ms; }
+  .rise:nth-child(2) { animation-delay: 70ms; }
+  .rise:nth-child(3) { animation-delay: 140ms; }
+  .rise:nth-child(4) { animation-delay: 210ms; }
+  .rise:nth-child(5) { animation-delay: 280ms; }
+  @keyframes fg-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .stage-in { animation: fg-pop .7s var(--ease-out) .1s both; }
+  @keyframes fg-pop { from { opacity: 0; transform: translateY(24px) scale(.96); } to { opacity: 1; transform: none; } }
+
+  /* ---------- Debajo de la primera pantalla ---------- */
+  .fg-h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(24px, 2.6vw, 34px) !important; line-height: 1.12; letter-spacing: -.03em !important; color: var(--ink-1) !important; margin: 0 0 40px !important; }
+  .feats { margin-top: 64px; }
+  .feat-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; counter-reset: f; }
+  .feat-list li { counter-increment: f; }
+  .feat-list .shot { position: relative; height: 230px; overflow: hidden; margin-bottom: 18px; border-radius: 22px 22px 0 0; }
+  .feat-list .shot img { display: block; width: 100%; height: auto; border: 6px solid var(--case); border-bottom: 0; border-radius: 22px 22px 0 0; transition: transform .5s var(--spring); }
+  .feat-list .shot::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--l-100); }
+  .feat-list li:hover .shot img { transform: translateY(-8px); }
+  .feat-list p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+  .feat-list p::before { content: counter(f); display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--l-700); color: var(--white); font-weight: 700; font-size: 13.5px; margin: 0 0 10px; }
+  .feat-list li:nth-child(n+4) p::before { background: var(--l-100); color: var(--l-900); }
+  .feat-list p { display: flex; flex-direction: column; align-items: flex-start; }
+
+  .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 104px; }
+  .trust .lock { width: 56px; height: 56px; border-radius: 18px; background: var(--l-700); display: grid; place-items: center; margin-bottom: 22px; transform: rotate(-6deg); }
+  .trust h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(22px, 2.2vw, 28px) !important; letter-spacing: -.03em !important; line-height: 1.15; color: var(--ink-1) !important; margin: 0 0 14px !important; }
+  .trust .data p { font-size: 17.5px; color: var(--ink-2); margin: 0; }
+  .trust .gc { padding-top: 78px; }
+  .trust .gc h2 { font-size: clamp(18px, 1.7vw, 21px) !important; }
+  .trust .gc p { font-size: 15px; color: var(--ink-3); margin: 0 0 12px; }
+
+  .closing { text-align: center; padding: 72px 0 16px; }
+  .closing .fg-actions { justify-content: center; }
+  .closing .fg-links { justify-content: center; }
+
+  footer { text-align: center; color: var(--ink-3) !important; font-size: 14px; padding: 32px 20px 56px; }
   footer p { margin: 6px 0; }
+  footer a { color: var(--ink-2); text-decoration: none; }
+  footer a:hover { color: var(--l-900); }
   .legal { font-size: 12px; opacity: .85; }
 
-  a:focus-visible, .play-badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  a:focus-visible, .play-badge:focus-visible { outline: 3px solid var(--l-700) !important; outline-offset: 3px; border-radius: 8px; }
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; gap: 44px; padding: 40px 0 56px; text-align: center; }
-    .hero .lead { margin-left: auto; margin-right: auto; }
-    .actions, .textlinks { justify-content: center; }
-    .grade { right: 0; top: 18%; font-size: 22px; }
-    .steps { grid-template-columns: 1fr; gap: 28px; max-width: 460px; margin: 0 auto; }
-    .steps li { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; }
-    .shot { max-width: none; margin: 0; border-width: 5px; border-radius: 18px; }
-    .steps p { grid-template-columns: 1fr; gap: 8px; }
-    .how h2 { text-align: center; }
-    .more { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-    .privacy .wrap { grid-template-columns: 1fr; gap: 20px; }
+  /* ---------- Móvil y tableta ---------- */
+  @media (max-width: 900px) {
+    .fg-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 32px; gap: 56px; text-align: left; }
+    .fg-copy { max-width: 600px; }
+    .fg-phone { --w: min(250px, 62vw); }
+    .stage { margin: 0 auto 8px; }
+    .feat-list { grid-template-columns: 1fr; gap: 26px; max-width: 520px; }
+    .feat-list li { display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: center; }
+    .feat-list .shot { height: 150px; margin: 0; border-radius: 16px 16px 0 0; }
+    .feat-list .shot img { border-width: 4px; border-radius: 16px 16px 0 0; }
+    .trust { grid-template-columns: 1fr; gap: 40px; }
+    .trust .gc { padding-top: 0; }
   }
-  @media (max-width: 480px) { body { font-size: 16px; } .hero .lead { font-size: 17.5px; } }
+  @media (max-width: 480px) {
+    html.home body { font-size: 16px; }
+    .fg-hero h1 { font-size: clamp(27px, 7.6vw, 34px); }
+    .d-row { right: -12%; top: 0; width: 104px; } .d-pencil { left: -8%; width: 64px; } .d-check { left: -6%; width: 58px; } .d-sheet { right: -6%; width: 72px; }
+    .stage .grade { right: -4%; font-size: 18px; }
+    .fg-pill { padding-right: 52px; }
+    .play-badge img, .fg-actions .soon-badge { height: 48px; }
+  }
+
+  /* Quien pide «reducir movimiento»: todo quieto */
+  @media (prefers-reduced-motion: reduce) {
+    .fg-phone { animation: none; transform: rotate(5deg); }
+    .deco > *, .rise, .stage-in { animation: none !important; }
+    .fg-lead .data { animation: none; background-size: 100% 100%; }
+    .deco, .dot, .fg-phone-wrap { transform: none !important; }
+  }
 </style>
 <link rel="stylesheet" href="topbar.css">
 <link rel="stylesheet" href="ds.css?v=20261023e">
+<link rel="stylesheet" href="fg2026.css?v=20261025a">
 </head>
 <body data-page="home" data-root="">
 <div class="topbar">
@@ -148,28 +266,43 @@
   </div>
 </div>
 <main>
-  <section class="wrap hero">
-    <div>
-      <h1 data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</h1>
-      <p class="lead" data-i="lead"></p>
-      <div class="actions"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
-      <nav class="textlinks">
+  <section class="wrap fg-hero">
+    <div class="fg-copy">
+      <h1 class="rise" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</h1>
+      <p class="fg-lead rise" data-i="lead"></p>
+      <div class="fg-actions rise"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
+      <div class="rise"><a class="fg-pill" href="premium/">
+        <span class="tag"><span data-i="pillTag">Novedad</span> <i aria-hidden="true">↗</i></span>
+        <b data-i="pill">Ya está aquí FullGrader Premium</b>
+        <svg class="peek" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#c4b5fd"/><circle cx="26" cy="26" r="19" fill="#5b54e8"/><path d="M17.5 26.5l6 6 11-12" fill="none" stroke="#fffffe" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a></div>
+      <nav class="fg-links rise">
         <a href="help/" data-i="help">Tutorial</a>
         <a href="premium/" data-nav="premium">Premium</a>
         <a href="faq/" data-nav="faq">Preguntas frecuentes</a>
       </nav>
     </div>
-    <div class="stage">
-      <div class="phone demo" id="demo" aria-hidden="true">
-        <div class="screens">
-          <img class="scr" data-shot="escanear" src="help/img/es/escanear.jpg" alt="" width="540" height="1168">
-          <img class="scr on" data-shot="hoja-corregida" src="help/img/es/hoja-corregida.jpg" alt="" width="540" height="1168">
-          <img class="scr" data-shot="resultados" src="help/img/es/resultados.jpg" alt="" width="540" height="1168" loading="lazy">
-          <img class="scr" data-shot="progreso" src="help/img/es/progreso.jpg" alt="" width="540" height="1168" loading="lazy">
-          <span class="scanline"></span><span class="tap"></span><span class="flash"></span>
+
+    <div class="stage stage-in" id="stage">
+      <span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="dot e"></span>
+      <div class="deco d-pencil" aria-hidden="true"><svg viewBox="0 0 120 32"><rect x="20" y="4" width="78" height="24" rx="6" fill="#c4b5fd"/><rect x="20" y="4" width="78" height="8" rx="4" fill="#ddd6fe"/><path d="M98 4 L118 16 L98 28 Z" fill="#ede9fe"/><path d="M111 12 L118 16 L111 20 Z" fill="#3730a3"/><rect x="2" y="4" width="22" height="24" rx="8" fill="#d8b4fe"/></svg></div>
+      <div class="deco d-row front" aria-hidden="true"><svg viewBox="0 0 180 64"><rect width="180" height="64" rx="32" fill="#5b54e8"/><circle cx="36" cy="32" r="12" fill="none" stroke="#fffffe" stroke-width="3.5"/><circle cx="72" cy="32" r="12" fill="none" stroke="#fffffe" stroke-width="3.5"/><circle cx="108" cy="32" r="13.5" fill="#fffffe"/><circle cx="144" cy="32" r="12" fill="none" stroke="#fffffe" stroke-width="3.5"/></svg></div>
+      <div class="deco d-check front" aria-hidden="true"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="40" fill="#8b5cf6"/><path d="M24 41l11 11 21-23" fill="none" stroke="#fffffe" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="deco d-sheet front" aria-hidden="true"><svg viewBox="0 0 100 120"><path d="M14 0h56l30 30v76a14 14 0 0 1-14 14H14A14 14 0 0 1 0 106V14A14 14 0 0 1 14 0z" fill="#ddd6fe"/><path d="M70 0v18a12 12 0 0 0 12 12h18z" fill="#c4b5fd"/><g fill="#fffffe"><circle cx="22" cy="50" r="7"/><circle cx="42" cy="50" r="7"/><circle cx="62" cy="50" r="7"/><circle cx="22" cy="72" r="7"/><circle cx="62" cy="72" r="7"/><circle cx="82" cy="72" r="7"/><circle cx="42" cy="94" r="7"/><circle cx="62" cy="94" r="7"/><circle cx="82" cy="94" r="7"/></g><g fill="#8b5cf6"><circle cx="82" cy="50" r="7"/><circle cx="42" cy="72" r="7"/><circle cx="22" cy="94" r="7"/></g></svg></div>
+      <div class="deco d-star front" aria-hidden="true"><svg viewBox="0 0 30 30"><path d="M15 0c1.6 8.2 6.8 13.4 15 15-8.2 1.6-13.4 6.8-15 15-1.6-8.2-6.8-13.4-15-15C8.2 13.4 13.4 8.2 15 0z" fill="#d8b4fe"/></svg></div>
+
+      <div class="fg-phone-wrap">
+        <div class="fg-phone demo" id="demo" aria-hidden="true">
+          <div class="screens">
+            <img class="scr" data-shot="escanear" src="help/img/es/escanear.jpg" alt="" width="540" height="1168">
+            <img class="scr on" data-shot="hoja-corregida" src="help/img/es/hoja-corregida.jpg" alt="" width="540" height="1168">
+            <img class="scr" data-shot="resultados" src="help/img/es/resultados.jpg" alt="" width="540" height="1168" loading="lazy">
+            <img class="scr" data-shot="progreso" src="help/img/es/progreso.jpg" alt="" width="540" height="1168" loading="lazy">
+            <span class="scanline"></span><span class="tap"></span><span class="flash"></span>
+          </div>
         </div>
+        <div class="grade" aria-hidden="true"><i></i>8.50</div>
       </div>
-      <div class="grade" aria-hidden="true"><i></i>8.50</div>
       <div class="demo-steps" role="group">
         <button type="button" data-step="0" data-i="d1">Escanea</button>
         <button type="button" data-step="1" data-i="d2">Corrige</button>
@@ -179,34 +312,33 @@
     </div>
   </section>
 
-  <section class="how">
-    <div class="wrap">
-      <h2 data-i="whatTitle">Qué hace la app</h2>
-      <div class="bento">
-        <article class="tile s2"><span class="num">1</span><p data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</p><div class="shot-wrap"><img data-shot="plantilla-datos" src="help/img/es/plantilla-datos.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
-        <article class="tile s2"><span class="num">2</span><p data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</p><div class="shot-wrap"><img data-shot="imprimir" src="help/img/es/imprimir.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
-        <article class="tile s2"><span class="num">3</span><p data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</p><div class="shot-wrap"><img data-shot="escanear" src="help/img/es/escanear.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
-        <article class="tile s3"><p data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</p><div class="shot-wrap"><img data-shot="resultados" src="help/img/es/resultados.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
-        <article class="tile s3"><p data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</p><div class="shot-wrap"><img data-shot="rubrica" src="help/img/es/rubrica.jpg" alt="" loading="lazy" width="540" height="1168"></div></article>
-      </div>
-      <div class="duo">
-        <div class="dark">
-          <div class="lock" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
-          <h2 data-i="dataTitle">Tus datos son tuyos</h2>
-          <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
-        </div>
-        <div class="light glass">
-          <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
-          <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
-          <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
-        </div>
-      </div>
+  <section class="wrap feats">
+    <h2 class="fg-h2" data-i="whatTitle">Qué hace la app</h2>
+    <ol class="feat-list">
+      <li><div class="shot"><img data-shot="plantilla-datos" src="help/img/es/plantilla-datos.jpg" alt="" loading="lazy" width="540" height="1168"></div><p data-i="f1">Crea la plantilla de tu examen: preguntas, opciones, respuestas correctas, penalización y nota máxima.</p></li>
+      <li><div class="shot"><img data-shot="imprimir" src="help/img/es/imprimir.jpg" alt="" loading="lazy" width="540" height="1168"></div><p data-i="f2">Genera e imprime la hoja de respuestas en PDF, con el nombre y el logotipo de tu centro.</p></li>
+      <li><div class="shot"><img data-shot="escanear" src="help/img/es/escanear.jpg" alt="" loading="lazy" width="540" height="1168"></div><p data-i="f3">Haz una foto a cada hoja: la app lee las marcas, calcula la nota y te deja revisarla antes de guardarla.</p></li>
+      <li><div class="shot"><img data-shot="resultados" src="help/img/es/resultados.jpg" alt="" loading="lazy" width="540" height="1168"></div><p data-i="f4">Consulta resultados por examen, por grupo y por alumno, con estadísticas por pregunta y progreso por criterio.</p></li>
+      <li><div class="shot"><img data-shot="rubrica" src="help/img/es/rubrica.jpg" alt="" loading="lazy" width="540" height="1168"></div><p data-i="f5">Evalúa también con rúbricas y exporta los resultados a Excel.</p></li>
+    </ol>
+  </section>
+
+  <section class="wrap trust">
+    <div class="data">
+      <div class="lock" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fffffe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
+      <h2 data-i="dataTitle">Tus datos son tuyos</h2>
+      <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
+    </div>
+    <div class="gc">
+      <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
+      <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
+      <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
     </div>
   </section>
 
   <section class="closing">
-    <div class="actions"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
-    <nav class="textlinks">
+    <div class="fg-actions"><a class="play-badge" href="https://play.google.com/store/apps/details?id=com.fullgrader.app" target="_blank" rel="noopener"><img data-badge alt="Google Play" src="badges/GetItOnGooglePlay_Badge_Web_color_Spanish.svg"></a><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
+    <nav class="fg-links">
       <a href="contact/" data-nav="contact">Contacto</a>
       <a href="privacy/" data-nav="privacy">Privacidad</a>
       <a href="terms/" data-nav="terms">Condiciones</a>
@@ -224,6 +356,7 @@
 (function () {
   var T = {
     es: {
+      pillTag: 'Novedad', pill: 'Ya está aquí FullGrader Premium',
       lead: 'Hecha por docentes, para docentes. Los datos de tu alumnado nunca salen de tu móvil.',
       gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgala en Google Play',
@@ -247,6 +380,7 @@
       langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.'
     },
     ca: {
+      pillTag: 'Novetat', pill: 'Ja és aquí FullGrader Premium',
       lead: 'Feta per docents, per a docents. Les dades del teu alumnat no surten mai del teu mòbil.',
       gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
       getPlay: 'Descarrega-la a Google Play',
@@ -270,6 +404,7 @@
       langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès.'
     },
     gl: {
+      pillTag: 'Novidade', pill: 'Xa chegou FullGrader Premium',
       lead: 'Feita por docentes, para docentes. Os datos do teu alumnado nunca saen do teu móbil.',
       gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
       getPlay: 'Descárgaa en Google Play',
@@ -293,6 +428,7 @@
       langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués.'
     },
     eu: {
+      pillTag: 'Berria', pill: 'FullGrader Premium iritsi da',
       lead: 'Irakasleek irakasleentzat egina. Zure ikasleen datuak ez dira inoiz zure mugikorretik ateratzen.',
       gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
       getPlay: 'Deskargatu Google Play-n',
@@ -316,6 +452,7 @@
       langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez.'
     },
     en: {
+      pillTag: 'What’s new', pill: 'FullGrader Premium is here',
       lead: 'Made by teachers, for teachers. Your students’ data never leaves your phone.',
       gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
       getPlay: 'Get it on Google Play',
@@ -339,6 +476,7 @@
       langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese.'
     },
     de: {
+      pillTag: 'Neu', pill: 'FullGrader Premium ist da',
       lead: 'Von Lehrkräften für Lehrkräfte gemacht. Die Daten deiner Schüler/innen verlassen nie dein Handy.',
       gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
       getPlay: 'Jetzt bei Google Play',
@@ -363,6 +501,7 @@
       langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch.'
     },
     fr: {
+      pillTag: 'Nouveau', pill: 'FullGrader Premium est arrivé',
       lead: 'Conçue par des enseignants, pour les enseignants. Les données de vos élèves ne quittent jamais votre téléphone.',
       gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
       getPlay: 'Disponible sur Google Play',
@@ -387,6 +526,7 @@
       langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais.'
     },
     it: {
+      pillTag: 'Novità', pill: 'È arrivato FullGrader Premium',
       lead: 'Creata da docenti, per i docenti. I dati dei tuoi studenti non lasciano mai il tuo telefono.',
       gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
       getPlay: 'Disponibile su Google Play',
@@ -411,6 +551,7 @@
       langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese.'
     },
     pt: {
+      pillTag: 'Novidade', pill: 'Já chegou o FullGrader Premium',
       lead: 'Feita por professores, para professores. Os dados dos seus alunos nunca saem do seu telemóvel.',
       gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
       getPlay: 'Disponível no Google Play',
@@ -446,8 +587,24 @@
     document.documentElement.lang = lang;
     document.title = d.title;
     document.querySelectorAll('[data-i]').forEach(function (el) {
-      var v = d[el.getAttribute('data-i')];
-      if (v) el.textContent = v;
+      var key = el.getAttribute('data-i'), v = d[key];
+      if (!v) return;
+      if (key === 'tagline' && el.tagName === 'H1') {
+        /* La primera palabra del titular va en lila */
+        var cut = v.indexOf(' ');
+        el.textContent = '';
+        var s = document.createElement('span'); s.className = 'hl'; s.textContent = v.slice(0, cut);
+        el.appendChild(s); el.appendChild(document.createTextNode(v.slice(cut)));
+      } else if (key === 'lead') {
+        /* Segunda frase («los datos nunca salen de tu móvil») destacada */
+        var p = v.search(/[.!?] /), a = document.createElement('span'), b = document.createElement('span');
+        el.textContent = '';
+        if (p < 0) { el.textContent = v; return; }
+        a.className = 'first'; a.textContent = v.slice(0, p + 1);
+        b.className = 'data'; b.textContent = v.slice(p + 2);
+        var k = document.createElement('span'); k.className = 'lk'; k.setAttribute('aria-hidden', 'true');
+        el.appendChild(a); el.appendChild(k); el.appendChild(b);
+      } else el.textContent = v;
     });
     var BADGE = { es: 'Spanish', ca: 'Catalan', gl: 'Galician', eu: 'Basque', en: 'English', de: 'German', fr: 'French', it: 'Italian', pt: 'Portuguese-Portugal' };
     document.querySelectorAll('img[data-shot]').forEach(function (img) {
@@ -468,7 +625,7 @@
 /* Demo animada del móvil: escanear → hoja corregida → resultados → progreso */
 (function () {
   var demo = document.getElementById('demo'); if (!demo) return;
-  var stage = demo.parentNode, scr = demo.querySelectorAll('.scr'), btns = stage.querySelectorAll('.demo-steps button');
+  var stage = document.getElementById('stage') || demo.parentNode, scr = demo.querySelectorAll('.scr'), btns = stage.querySelectorAll('.demo-steps button');
   var DUR = [3400, 3200, 3400, 3200], i = 1, timer = null;
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function show(n) {
@@ -487,6 +644,21 @@
   document.addEventListener('visibilitychange', function () {
     if (still) return; clearTimeout(timer); if (!document.hidden) loop();
   });
+})();
+</script>
+<script>
+/* Profundidad: el móvil y los adornos se mueven un poco al mover el ratón */
+(function () {
+  var stage = document.getElementById('stage'); if (!stage) return;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  if (still || !fine) return;
+  var raf = 0, x = 0, y = 0;
+  window.addEventListener('mousemove', function (e) {
+    x = (e.clientX / window.innerWidth) * 2 - 1; y = (e.clientY / window.innerHeight) * 2 - 1;
+    if (!raf) raf = requestAnimationFrame(function () { raf = 0; stage.style.setProperty('--mx', x.toFixed(3)); stage.style.setProperty('--my', y.toFixed(3)); });
+  }, { passive: true });
+  document.addEventListener('mouseleave', function () { stage.style.setProperty('--mx', 0); stage.style.setProperty('--my', 0); });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecd0814faef9474b99f98e1efa2c1651"}'></script><!-- End Cloudflare Web Analytics -->
