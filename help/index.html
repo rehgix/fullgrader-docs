@@ -43,23 +43,10 @@
       --premium-text: #b45309;
       --radius: 16px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --accent: #8f88ff;
-        --accent-text: #a5a0ff;
-        --accent-soft: #1e1b4b;
-        --bg: #0f0e1f;
-        --surface: #17162e;
-        --text: #f0f0f4;
-        --muted: #a0a0b0;
-        --border: #2a2946;
-        --example-bg: #2a2110;
-        --example-border: #a16207;
-        --example-text: #fcd34d;
-        --premium-bg: #3a2a12;
-        --premium-text: #fbbf24;
-      }
-    }
+    /* La web es siempre clara (fg2026.css fuerza los colores claros incluso
+       con el movil en modo oscuro). Antes aqui habia una paleta oscura para
+       esta pagina: pintaba los recuadros de ejemplo en marron muy oscuro
+       mientras el texto seguia siendo oscuro, y no se leian. Retirada. */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
     body { font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
