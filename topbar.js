@@ -3,7 +3,7 @@
 (function () {
   var LANGWORD = { es: 'Idioma', ca: 'Idioma', gl: 'Idioma', eu: 'Hizkuntza', en: 'Language', de: 'Sprache', fr: 'Langue', it: 'Lingua', pt: 'Idioma' };
   var MENUWORD = { es: 'Menú', ca: 'Menú', gl: 'Menú', eu: 'Menua', en: 'Menu', de: 'Menü', fr: 'Menu', it: 'Menu', pt: 'Menu' };
-  var WAIT = { es: 'Lista de espera', ca: 'Llista d’espera', gl: 'Lista de espera', eu: 'Itxaron-zerrenda', en: 'Waitlist', de: 'Warteliste', fr: 'Liste d’attente', it: 'Lista d’attesa', pt: 'Lista de espera' };
+  var WAIT = { es: 'Cómo funciona', ca: 'Com funciona', gl: 'Como funciona', eu: 'Nola dabilen', en: 'How it works', de: 'So geht’s', fr: 'Comment ça marche', it: 'Come funziona', pt: 'Como funciona' };
   var BAR = ['help', 'premium', 'faq', 'contact'];
   var PAGES = ['home', 'help', 'premium', 'faq', 'contact', 'privacy', 'terms'];
   var PATH = { home: '', help: 'help/', premium: 'premium/', faq: 'faq/', contact: 'contact/', privacy: 'privacy/', terms: 'terms/' };
@@ -41,10 +41,10 @@
     }).join('');
     if (brand) brand.insertAdjacentElement('afterend', links);
 
-    // Botón «Lista de espera» al final de la barra (en la portada baja al formulario).
+    // Botón «Cómo funciona» al final de la barra (lleva a «Qué hace la app» de la portada).
     var cta = document.createElement('a');
     cta.className = 'tb-cta';
-    cta.href = (root || '/') + '#avisam';
+    cta.href = (root || '/') + '#app';
     row.appendChild(cta);
 
     // Desplegables propios en lugar de los del navegador (idioma y menú de páginas).
