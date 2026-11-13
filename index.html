@@ -101,13 +101,35 @@
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='11' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center / contain no-repeat;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10.5' width='16' height='11' rx='2.5'/%3E%3Cpath d='M8 10.5V7.5a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center / contain no-repeat; }
   .fg-lead .first { display: block; margin-bottom: 6px; }
-  .fg-lead { max-width: 40ch !important; text-wrap: pretty; }
+  .fg-lead { max-width: 46ch !important; text-wrap: pretty; }
+  /* Frase de privacidad en su propio bloque «equilibrado»: si no cabe en una línea,
+     se parte en dos mitades parecidas (nunca queda «mòbil.» sola). */
+  .fg-lead .sec { display: block; text-wrap: balance; }
+  .fg-lead .nw { white-space: nowrap; }
   @keyframes fg-mark { to { background-size: 100% 100%; } }
-  .fg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 28px; }
+  .fg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 18px; }
   .play-badge { display: inline-block; line-height: 0; border-radius: 12px; transition: transform .35s var(--spring); }
   .play-badge img { height: 52px; width: auto; display: block; }
   html.home .play-badge:hover { transform: translateY(-3px) rotate(-1.5deg); filter: none; }
-  .fg-actions .soon-badge { height: 52px; }
+
+  /* Lista de espera (CTA principal) */
+  .fg-wait { margin-top: 28px; scroll-margin-top: 90px; }
+  .fg-wait form { display: flex; gap: 8px; max-width: 470px; padding: 6px; background: var(--white); border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 6px 18px -10px rgba(55, 48, 163, .18); transition: border-color .2s, box-shadow .2s; }
+  .fg-wait form:focus-within { border-color: var(--l-300); box-shadow: 0 0 0 4px var(--l-50), 0 6px 18px -10px rgba(55, 48, 163, .25); }
+  .fg-wait input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 16px; color: var(--ink-1); padding: 0 10px; }
+  .fg-wait input::placeholder { color: #9ca3af; }
+  .fg-wait button { flex: none; appearance: none; border: 0; cursor: pointer; font: inherit; font-size: 15px; font-weight: 700; color: var(--white); background: var(--l-700); padding: 12px 18px; border-radius: 11px; transition: background .2s, transform .3s var(--spring); }
+  .fg-wait button:hover { background: var(--l-900); transform: translateY(-1px); }
+  .fg-wait button:focus-visible { outline: 3px solid var(--l-300); outline-offset: 2px; }
+  .fg-wait .note { text-wrap: pretty; margin: 8px 2px 0; font-size: 13px; line-height: 1.45; color: var(--ink-3); max-width: 470px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* «▶ Veure com funciona» */
+  .fg-watch { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; }
+  .fg-watch .pl { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--l-100); transition: background .25s, transform .35s var(--spring); }
+  .fg-watch .pl svg { width: 9px; height: 9px; margin-left: 2px; fill: var(--l-900); }
+  .fg-watch:hover { color: var(--l-900); }
+  .fg-watch:hover .pl { background: var(--l-200); transform: scale(1.08); }
 
   /* Píldora de novedades */
   .fg-pill {
@@ -119,6 +141,7 @@
   .fg-pill .tag { font-size: 12.5px; font-weight: 600; color: var(--l-900); letter-spacing: .01em; }
   .fg-pill .tag i { font-style: normal; display: inline-block; transition: transform .35s var(--spring); }
   .fg-pill b { font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
+  .fg-pill { margin-top: 22px; }
   .fg-pill .peek { position: absolute; right: -14px; top: -16px; width: 52px; height: 52px; transform: rotate(12deg); transition: transform .5s var(--spring); }
   .fg-pill:hover { background: var(--l-200); transform: translateY(-2px); }
   .fg-pill:hover .tag i { transform: translate(2px, -2px); }
@@ -138,6 +161,8 @@
     --w: clamp(210px, calc((100svh - 230px) / 2.25), 290px);
     width: var(--w); border-radius: calc(var(--w) * .15); background: var(--case); padding: calc(var(--w) * .035);
     animation: fg-float-phone 7s ease-in-out infinite;
+    /* Sombra suave y difusa con un toque lila para despegarlo del fondo */
+    box-shadow: 0 34px 60px -22px rgba(55, 48, 163, .38), 0 16px 30px -18px rgba(91, 84, 232, .30), 0 2px 6px rgba(18, 17, 42, .08);
   }
   .fg-phone .screens { border-radius: calc(var(--w) * .118) !important; }
   .fg-phone .scr { display: block; }
@@ -148,11 +173,11 @@
   .deco.front { z-index: 3; }
   @keyframes fg-float { 0%, 100% { transform: translateY(0) rotate(var(--r0, 0deg)); } 50% { transform: translateY(var(--dy, -9px)) rotate(var(--r1, 4deg)); } }
 
-  .d-row   { width: clamp(118px, 13vw, 168px); right: -24%; top: 3%;  --d: 18; --t: 6.5s; --r0: 8deg; --r1: 3deg; }
+  .d-row   { width: clamp(118px, 13vw, 168px); right: -34%; top: -4%;  --d: 18; --t: 6.5s; --r0: 8deg; --r1: 3deg; }
   .d-check { width: clamp(64px, 6.5vw, 86px);  left: -16%; top: 47%;  --d: 26; --t: 5.2s; --dl: -1s; --r0: -10deg; --r1: -2deg; --dy: -12px; }
   .d-pencil{ width: clamp(70px, 7.5vw, 100px); left: -22%; top: 9%;   --d: 10; --t: 7.4s; --dl: -2s; --r0: -24deg; --r1: -16deg; }
   .d-sheet { width: clamp(80px, 8.5vw, 112px); right: -18%; bottom: 14%; --d: 14; --t: 8s; --dl: -3s; --r0: 10deg; --r1: 16deg; }
-  .d-star  { width: 30px; right: -4%; top: 1%; --d: 34; --t: 4.6s; --r0: 0deg; --r1: 40deg; }
+  .d-star  { width: 30px; right: -16%; top: 19%; --d: 34; --t: 4.6s; --r0: 0deg; --r1: 40deg; }
   .dot { position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; transform: translate(calc(var(--mx) * var(--d) * 1px), calc(var(--my) * var(--d) * 1px)); transition: transform .9s var(--ease-out); }
   .dot.a { width: 16px; height: 16px; background: var(--l-200); left: -8%; top: 30%; --d: 40; }
   .dot.b { width: 11px; height: 11px; background: var(--l-400); right: -9%; top: 44%; --d: 30; }
@@ -169,8 +194,12 @@
   }
   .stage .grade i { display: none; }
 
+  /* Línea de escaneo: barrido vertical suave y continuo en el paso «Escaneja» */
+  .stage[data-step="0"] .demo .scanline { animation: fg-sweep 1.5s ease-in-out .15s infinite alternate !important; }
+  @keyframes fg-sweep { 0% { top: 14%; opacity: .25; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: 76%; opacity: .25; } }
+
   /* Botones de pasos de la demo */
-  .demo-steps { margin-top: 26px !important; background: var(--white) !important; border: 1.5px solid var(--l-100) !important; box-shadow: none !important; z-index: 3; }
+  .demo-steps { margin-top: 30px !important; background: var(--white) !important; border: 1px solid #e5e7eb !important; box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 2px 6px -2px rgba(16, 24, 40, .08) !important; z-index: 3; }
   .demo-steps button { color: var(--ink-3) !important; font-size: 12.5px !important; transition: background .25s, color .25s, transform .3s var(--spring) !important; }
   .demo-steps button:hover { color: var(--l-900) !important; }
   .demo-steps button[aria-pressed="true"] { background: var(--l-700) !important; color: var(--white) !important; }
@@ -187,36 +216,45 @@
   @keyframes fg-pop { from { opacity: 0; transform: translateY(24px) scale(.96); } to { opacity: 1; transform: none; } }
 
   /* ---------- Debajo de la primera pantalla ---------- */
-  .fg-h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(24px, 2.6vw, 34px) !important; line-height: 1.12; letter-spacing: -.03em !important; color: var(--ink-1) !important; margin: 0 0 40px !important; }
+  .fg-h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(24px, 2.6vw, 34px) !important; line-height: 1.12; letter-spacing: -.03em !important; color: var(--ink-1) !important; margin: 0 0 32px !important; }
   .feats { margin-top: 64px; }
-  .feat-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; counter-reset: f; }
-  .feat-list li { counter-increment: f; }
-  .feat-list .shot { position: relative; height: 230px; overflow: hidden; margin-bottom: 18px; border-radius: 22px 22px 0 0; }
-  .feat-list .shot img { display: block; width: 100%; height: auto; border: 6px solid var(--case); border-bottom: 0; border-radius: 22px 22px 0 0; transition: transform .5s var(--spring); }
-  .feat-list .shot::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--l-100); }
-  .feat-list li:hover .shot img { transform: translateY(-8px); }
-  .feat-list p { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+
+  /* Los 5 pasos: tarjetas limpias (carrusel deslizable en tableta y móvil) */
+  .feat-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: f; }
+  .feat-list li {
+    counter-increment: f; display: flex; flex-direction: column; padding: 16px 16px 20px;
+    background: rgba(248, 250, 252, .8); border: 1px solid rgba(226, 232, 240, .7); border-radius: 16px;
+    transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s var(--ease-out);
+  }
+  .feat-list li:hover { transform: translateY(-4px); border-color: #c7d2fe; box-shadow: 0 4px 10px -2px rgba(16, 24, 40, .08), 0 2px 4px -2px rgba(16, 24, 40, .05); }
+  .feat-list .shot { position: relative; height: 210px; overflow: hidden; margin: 0 0 16px; border-radius: 18px 18px 0 0; }
+  .feat-list .shot img { display: block; width: 100%; height: auto; border: 5px solid var(--case); border-bottom: 0; border-radius: 18px 18px 0 0; transform-origin: 50% 0; transition: transform .45s var(--ease-out); }
+  .feat-list .shot::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #e2e8f0; }
+  .feat-list li:hover .shot img { transform: scale(1.03); }
+  .feat-list p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); display: flex; flex-direction: column; align-items: flex-start; }
   .feat-list p::before { content: counter(f); display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--l-700); color: var(--white); font-weight: 700; font-size: 13.5px; margin: 0 0 10px; }
   .feat-list li:nth-child(n+4) p::before { background: var(--l-100); color: var(--l-900); }
-  .feat-list p { display: flex; flex-direction: column; align-items: flex-start; }
 
-  .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 104px; }
-  .trust .lock { width: 56px; height: 56px; border-radius: 18px; background: var(--l-700); display: grid; place-items: center; margin-bottom: 22px; transform: rotate(-6deg); }
-  .trust h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(22px, 2.2vw, 28px) !important; letter-spacing: -.03em !important; line-height: 1.15; color: var(--ink-1) !important; margin: 0 0 14px !important; }
-  .trust .data p { font-size: 17.5px; color: var(--ink-2); margin: 0; }
-  .trust .gc { padding-top: 78px; }
-  .trust .gc h2 { font-size: clamp(18px, 1.7vw, 21px) !important; }
-  .trust .gc p { font-size: 15px; color: var(--ink-3); margin: 0 0 12px; }
+  /* Datos + Classroom: dos tarjetas «bento» de la misma altura */
+  .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 96px; align-items: stretch; }
+  .trust > div { background: rgba(248, 250, 252, .7); border: 1px solid rgba(226, 232, 240, .8); border-radius: 16px; padding: 28px; }
+  .trust .ico { width: 52px; height: 52px; border-radius: 16px; background: var(--l-700); display: grid; place-items: center; margin-bottom: 20px; transform: rotate(-6deg); box-shadow: 0 8px 18px -8px rgba(91, 84, 232, .6); }
+  .trust .gc .ico { background: var(--l-500); transform: rotate(6deg); box-shadow: 0 8px 18px -8px rgba(139, 92, 246, .6); }
+  .trust h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700 !important; font-size: clamp(20px, 2vw, 25px) !important; letter-spacing: -.03em !important; line-height: 1.2; color: var(--ink-1) !important; margin: 0 0 12px !important; }
+  .trust p { font-size: 16px; line-height: 1.65; color: var(--ink-2); margin: 0; }
+  .trust .gc .fine { margin-top: 16px; padding: 16px; background: #fff; border: 1px solid rgba(226, 232, 240, .7); border-radius: 12px; font-size: 12.5px; line-height: 1.6; color: #64748b; }
 
-  .closing { text-align: center; padding: 72px 0 16px; }
-  .closing .fg-actions { justify-content: center; }
-  .closing .fg-links { justify-content: center; }
-
-  footer { text-align: center; color: var(--ink-3) !important; font-size: 14px; padding: 32px 20px 56px; }
-  footer p { margin: 6px 0; }
-  footer a { color: var(--ink-2); text-decoration: none; }
-  footer a:hover { color: var(--l-900); }
-  .legal { font-size: 12px; opacity: .85; }
+  /* Cierre: bloque destacado con las tiendas */
+  .closing { padding: 88px 0 0; }
+  .cta-box { max-width: 880px; margin: 0 auto; text-align: center; padding: 48px 40px 40px; border-radius: 24px; border: 1px solid #e0e7ff; background: linear-gradient(to bottom, rgba(238, 242, 255, .6), #fff); }
+  .cta-box h2 { font-family: "Unbounded", "Geist", sans-serif; font-weight: 700; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -.03em; color: var(--ink-1); margin: 0 auto; max-width: 20ch; text-wrap: balance; }
+  .cta-box .fg-actions { justify-content: center; margin-top: 26px; }
+  .cta-box .avail { margin: 30px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 640px; }
+  .cta-box .avail span { padding: 4px 11px; border-radius: 999px; background: #fff; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 600; color: #334155; }
+  .cta-box .avail .lbl { background: transparent; border-color: transparent; color: #64748b; font-weight: 500; padding-left: 0; }
+  .cta-box .dev { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 6px 14px; border-radius: 999px; background: var(--l-100); color: var(--l-900); font-size: 13.5px; font-weight: 600; }
+  .cta-box .dev svg { width: 16px; height: 16px; fill: currentColor; }
+  .cta-box .legal { margin: 22px 0 0; font-size: 11.5px; color: #94a3b8; }
 
   a:focus-visible, .play-badge:focus-visible { outline: 3px solid var(--l-700) !important; outline-offset: 3px; border-radius: 8px; }
 
@@ -225,27 +263,36 @@
     .fg-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 32px; gap: 56px; text-align: left; }
     .fg-copy { max-width: 600px; }
     .fg-phone { --w: min(250px, 62vw); }
-    .stage { margin: 0 auto 8px; }
-    .feat-list { grid-template-columns: 1fr; gap: 26px; max-width: 520px; }
-    .feat-list li { display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: center; }
-    .feat-list .shot { height: 150px; margin: 0; border-radius: 16px 16px 0 0; }
-    .feat-list .shot img { border-width: 4px; border-radius: 16px 16px 0 0; }
-    .trust { grid-template-columns: 1fr; gap: 40px; }
-    .trust .gc { padding-top: 0; }
+    .stage { margin: 0 auto 8px; padding-top: 18px; }
+    /* Carrusel horizontal con imán (snap) */
+    .feat-list { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+      margin: 0 -24px; padding: 6px 24px 18px; scroll-padding: 0 24px; scrollbar-width: none; }
+    .feat-list::-webkit-scrollbar { display: none; }
+    .feat-list li { flex: 0 0 min(260px, 72vw); scroll-snap-align: start; }
+    .feat-list li:hover { transform: none; }
+    .trust { grid-template-columns: 1fr; gap: 16px; margin-top: 72px; }
+    .trust > div { padding: 24px; }
+    .cta-box { padding: 36px 20px 30px; }
   }
   @media (max-width: 480px) {
     html.home body { font-size: 16px; }
     .fg-hero h1 { font-size: clamp(27px, 7.6vw, 34px); }
-    .d-row { right: -12%; top: 0; width: 104px; } .d-pencil { left: -8%; width: 64px; } .d-check { left: -6%; width: 58px; } .d-sheet { right: -6%; width: 72px; }
+    .d-row { right: -4%; top: -3%; width: 100px; } .d-star { right: -6%; top: 16%; }
+    .fg-wait form { flex-direction: column; padding: 6px; }
+    .fg-wait input { padding: 12px 10px; }
+    .fg-wait button { width: 100%; }
+ .d-pencil { left: -8%; width: 64px; } .d-check { left: -6%; width: 58px; } .d-sheet { right: -6%; width: 72px; }
     .stage .grade { right: -4%; font-size: 18px; }
     .fg-pill { padding-right: 52px; }
     .play-badge img, .fg-actions .soon-badge { height: 48px; }
   }
+  @media (max-width: 1180px) and (min-width: 901px) { .d-row { right: -20%; } }
 
   /* Quien pide «reducir movimiento»: todo quieto */
   @media (prefers-reduced-motion: reduce) {
     .fg-phone { animation: none; transform: rotate(5deg); }
-    .deco > *, .rise, .stage-in { animation: none !important; }
+    .deco > *, .rise, .stage-in, .demo .scanline { animation: none !important; }
+    .feat-list li, .feat-list .shot img { transition: none; }
     .fg-lead .data { animation: none; background-size: 100% 100%; }
     .deco, .dot, .fg-phone-wrap { transform: none !important; }
   }
@@ -253,6 +300,7 @@
 <link rel="stylesheet" href="topbar.css">
 <link rel="stylesheet" href="ds.css?v=20261023e">
 <link rel="stylesheet" href="fg2026.css?v=20261025a">
+<link rel="stylesheet" href="ui.css?v=20261113a">
 </head>
 <body data-page="home" data-root="">
 <div class="topbar">
@@ -267,17 +315,23 @@
     <div class="fg-copy">
       <h1 class="rise" data-i="tagline">Corrige exámenes tipo test con la cámara del móvil, en segundos y sin servidores.</h1>
       <p class="fg-lead rise" data-i="lead"></p>
-      <div class="fg-actions rise"><!--play-soon--><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
+      <div class="fg-wait rise" id="avisam">
+        <form id="waitForm" novalidate>
+          <label class="sr-only" for="waitEmail" data-i="waitPh">Tu correo electrónico</label>
+          <input id="waitEmail" type="email" inputmode="email" autocomplete="email" required data-ph="waitPh" placeholder="Tu correo electrónico">
+          <button type="submit" data-i="waitBtn">Avísame cuando salga</button>
+        </form>
+        <p class="note" data-i="waitNote">Se abrirá tu correo para enviarnos el aviso. Solo te escribiremos cuando la app esté disponible.</p>
+      </div>
+      <div class="rise">
+        <div class="fg-actions"><!--play-soon--><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span></span><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></span></div>
+        <a class="fg-watch" href="help/"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M0 0l10 5-10 5z"/></svg></span><span data-i="watch">Ver cómo funciona</span></a>
+      </div>
       <div class="rise"><a class="fg-pill" href="premium/">
         <span class="tag"><span data-i="pillTag">Novedad</span> <i aria-hidden="true">↗</i></span>
         <b data-i="pill">FullGrader Premium llegará con la app</b>
-        <svg class="peek" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#c4b5fd"/><circle cx="26" cy="26" r="19" fill="#5b54e8"/><path d="M17.5 26.5l6 6 11-12" fill="none" stroke="#fffffe" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="peek" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#c4b5fd"/><circle cx="26" cy="26" r="19" fill="#5b54e8"/><path d="M26 13.5c1 6.6 5.9 11.5 12.5 12.5-6.6 1-11.5 5.9-12.5 12.5-1-6.6-5.9-11.5-12.5-12.5 6.6-1 11.5-5.9 12.5-12.5z" fill="#fffffe"/></svg>
       </a></div>
-      <nav class="fg-links rise">
-        <a href="help/" data-i="help">Tutorial</a>
-        <a href="premium/" data-nav="premium">Premium</a>
-        <a href="faq/" data-nav="faq">Preguntas frecuentes</a>
-      </nav>
     </div>
 
     <div class="stage stage-in" id="stage">
@@ -322,37 +376,40 @@
 
   <section class="wrap trust">
     <div class="data">
-      <div class="lock" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fffffe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fffffe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="11" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></div>
       <h2 data-i="dataTitle">Tus datos son tuyos</h2>
       <p data-i="data1">Alumnos, notas y fotos se guardan únicamente en tu dispositivo. FullGrader no tiene cuentas de usuario ni publicidad. Puedes guardar copias de seguridad cifradas con contraseña y bloquear la app con huella, reconocimiento facial o PIN.</p>
     </div>
     <div class="gc">
+      <div class="ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fffffe" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="9.5" r="2.2"/><path d="M8.5 14.5a3.8 3.8 0 0 1 7 0"/></svg></div>
       <h2 data-i="gcTitle">Conexión opcional con Google Classroom</h2>
       <p data-i="gc1">Si tú lo pides, FullGrader puede importar la lista de alumnos de un grupo de Classroom y enviar las notas de un examen como borrador. Para ello pide a Google estos permisos: ver tus cursos, ver las listas de alumnos y crear una tarea con notas.</p>
-      <p data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
+      <p class="fine" data-i="gc2">Solo se usan para esas dos acciones. Los datos que llegan de Google no salen de tu móvil, no se guardan en ningún servidor ni se comparten con nadie. El uso que hace FullGrader de la información recibida de las API de Google cumple la Política de datos de usuario de los servicios de API de Google, incluidos los requisitos de uso limitado.</p>
     </div>
   </section>
 
-  <section class="closing">
-    <div class="fg-actions"><!--play-soon--><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span><span class="soon-badge"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></div>
-    <nav class="fg-links">
-      <a href="contact/" data-nav="contact">Contacto</a>
-      <a href="privacy/" data-nav="privacy">Privacidad</a>
-      <a href="terms/" data-nav="terms">Condiciones</a>
-    </nav>
+  <section class="wrap closing">
+    <div class="cta-box">
+      <h2 data-i="closeTitle">Empieza a corregir en segundos</h2>
+      <div class="fg-actions"><!--play-soon--><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span></span><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></span></div>
+      <div class="avail"><span class="lbl" data-i="availLbl">Disponible en 9 idiomas</span><span lang="es">Castellano</span><span lang="ca">Català</span><span lang="gl">Galego</span><span lang="eu">Euskara</span><span lang="en">English</span><span lang="de">Deutsch</span><span lang="fr">Français</span><span lang="it">Italiano</span><span lang="pt">Português</span></div>
+      <span class="dev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22A11.4 11.4 0 0 0 12 8.08c-1.78 0-3.46.38-4.92 1.06L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg><span data-i="devices">Móviles y tabletas Android</span></span>
+      <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
+    </div>
   </section>
 </main>
-<footer>
-  <p data-i="langs">Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português.</p>
-  <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
-  <p class="soc"><a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener" aria-label="Instagram @FullGrader"><svg class="soc-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@FullGrader</span></a> <a href="https://x.com/FullGrader" target="_blank" rel="noopener" aria-label="X @FullGrader"><svg class="soc-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>@FullGrader</span></a></p>
-</footer>
+<footer class="fg-foot"><div class="fg-foot-in"><a class="ff-brand" href="/"><img src="icon.png" alt="" width="24" height="24"><span>FullGrader</span></a><nav class="ff-links" aria-label="Legal"><a href="privacy/" data-nav="privacy">Privacidad</a><span aria-hidden="true">·</span><a href="terms/" data-nav="terms">Condiciones</a><span aria-hidden="true">·</span><a href="contact/" data-nav="contact">Contacto</a></nav><div class="ff-soc"><a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener" aria-label="Instagram @FullGrader"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a href="https://x.com/FullGrader" target="_blank" rel="noopener" aria-label="X @FullGrader"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a></div></div></footer>
 
-<script src="topbar.js?v=20261023d"></script>
+
+<script src="topbar.js?v=20261113a"></script>
 <script>
 (function () {
   var T = {
     es: {
+      closeTitle: 'Empieza a corregir en segundos', availLbl: 'Disponible en 9 idiomas', devices: 'Móviles y tabletas Android',
+      waitNav: 'Lista de espera', waitPh: 'Tu correo electrónico', waitBtn: 'Avísame cuando salga',
+      waitNote: 'Se abrirá tu correo para enviarnos el aviso. Solo te escribiremos cuando la app esté disponible.',
+      watch: 'Ver cómo funciona', waitSubj: 'Lista de espera FullGrader', waitBody: 'Quiero que me aviséis cuando salga FullGrader. Mi correo: ',
       pillTag: 'Novedad', pill: 'FullGrader Premium llegará con la app',
       lead: 'Hecha por docentes, para docentes. Los datos de tu alumnado nunca salen de tu móvil.',
       gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
@@ -377,6 +434,10 @@
       langs: 'Disponible en castellano, català, galego, euskara, English, Deutsch, français, italiano y português. Funciona en móviles y tabletas Android.'
     },
     ca: {
+      closeTitle: 'Comença a corregir en segons', availLbl: 'Disponible en 9 idiomes', devices: 'Mòbils i tauletes Android',
+      waitNav: 'Llista d’espera', waitPh: 'El teu correu electrònic', waitBtn: 'Avisa’m quan surti',
+      waitNote: 'S’obrirà el teu correu per enviar-nos l’avís. Només t’escriurem quan l’app estigui disponible.',
+      watch: 'Veure com funciona', waitSubj: 'Llista d’espera FullGrader', waitBody: 'Vull que m’aviseu quan surti FullGrader. El meu correu: ',
       pillTag: 'Novetat', pill: 'FullGrader Premium arribarà amb l’app',
       lead: 'Feta per docents, per a docents. Les dades del teu alumnat no surten mai del teu mòbil.',
       gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
@@ -401,6 +462,10 @@
       langs: 'Disponible en castellà, català, gallec, basc, anglès, alemany, francès, italià i portuguès. Funciona en mòbils i tauletes Android.'
     },
     gl: {
+      closeTitle: 'Comeza a corrixir en segundos', availLbl: 'Dispoñible en 9 idiomas', devices: 'Móbiles e tabletas Android',
+      waitNav: 'Lista de espera', waitPh: 'O teu correo electrónico', waitBtn: 'Avísame cando saia',
+      waitNote: 'Abrirase o teu correo para enviarnos o aviso. Só che escribiremos cando a app estea dispoñible.',
+      watch: 'Ver como funciona', waitSubj: 'Lista de espera FullGrader', waitBody: 'Quero que me avisedes cando saia FullGrader. O meu correo: ',
       pillTag: 'Novidade', pill: 'FullGrader Premium chegará coa app',
       lead: 'Feita por docentes, para docentes. Os datos do teu alumnado nunca saen do teu móbil.',
       gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
@@ -425,6 +490,10 @@
       langs: 'Dispoñible en castelán, catalán, galego, éuscaro, inglés, alemán, francés, italiano e portugués. Funciona en móbiles e tabletas Android.'
     },
     eu: {
+      closeTitle: 'Hasi segundotan zuzentzen', availLbl: '9 hizkuntzatan eskuragarri', devices: 'Android mugikor eta tabletak',
+      waitNav: 'Itxaron-zerrenda', waitPh: 'Zure helbide elektronikoa', waitBtn: 'Abisatu ateratzean',
+      waitNote: 'Zure posta irekiko da abisua bidaltzeko. Aplikazioa eskuragarri dagoenean bakarrik idatziko dizugu.',
+      watch: 'Ikusi nola dabilen', waitSubj: 'FullGrader itxaron-zerrenda', waitBody: 'Abisatu FullGrader ateratzen denean, mesedez. Nire helbidea: ',
       pillTag: 'Berria', pill: 'FullGrader Premium aplikazioarekin iritsiko da',
       lead: 'Irakasleek irakasleentzat egina. Zure ikasleen datuak ez dira inoiz zure mugikorretik ateratzen.',
       gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
@@ -449,6 +518,10 @@
       langs: 'Eskuragarri gaztelaniaz, katalanez, galizieraz, euskaraz, ingelesez, alemanez, frantsesez, italieraz eta portugesez. Android mugikor eta tabletetan funtzionatzen du.'
     },
     en: {
+      closeTitle: 'Start grading in seconds', availLbl: 'Available in 9 languages', devices: 'Android phones and tablets',
+      waitNav: 'Waitlist', waitPh: 'Your email address', waitBtn: 'Notify me at launch',
+      waitNote: 'Your email app will open to send us the request. We’ll only write to you when the app is available.',
+      watch: 'See how it works', waitSubj: 'FullGrader waitlist', waitBody: 'Please let me know when FullGrader launches. My email: ',
       pillTag: 'What’s new', pill: 'FullGrader Premium is coming with the app',
       lead: 'Made by teachers, for teachers. Your students’ data never leaves your phone.',
       gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
@@ -473,6 +546,10 @@
       langs: 'Available in Spanish, Catalan, Galician, Basque, English, German, French, Italian and Portuguese. Works on Android phones and tablets.'
     },
     de: {
+      closeTitle: 'Korrigiere in Sekunden', availLbl: 'In 9 Sprachen verfügbar', devices: 'Android-Handys und -Tablets',
+      waitNav: 'Warteliste', waitPh: 'Deine E-Mail-Adresse', waitBtn: 'Benachrichtige mich',
+      waitNote: 'Dein E-Mail-Programm öffnet sich, um uns die Anfrage zu senden. Wir schreiben dir nur, wenn die App verfügbar ist.',
+      watch: 'So funktioniert’s', waitSubj: 'FullGrader-Warteliste', waitBody: 'Bitte gebt mir Bescheid, wenn FullGrader erscheint. Meine E-Mail: ',
       pillTag: 'Neu', pill: 'FullGrader Premium kommt mit der App',
       lead: 'Von Lehrkräften für Lehrkräfte gemacht. Die Daten deiner Schüler/innen verlassen nie dein Handy.',
       gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
@@ -498,6 +575,10 @@
       langs: 'Verfügbar auf Spanisch, Katalanisch, Galicisch, Baskisch, Englisch, Deutsch, Französisch, Italienisch und Portugiesisch. Läuft auf Android-Handys und -Tablets.'
     },
     fr: {
+      closeTitle: 'Corrigez en quelques secondes', availLbl: 'Disponible en 9 langues', devices: 'Téléphones et tablettes Android',
+      waitNav: 'Liste d’attente', waitPh: 'Votre adresse e-mail', waitBtn: 'Prévenez-moi à la sortie',
+      waitNote: 'Votre messagerie s’ouvrira pour nous envoyer la demande. Nous vous écrirons uniquement quand l’app sera disponible.',
+      watch: 'Voir comment ça marche', waitSubj: 'Liste d’attente FullGrader', waitBody: 'Merci de me prévenir à la sortie de FullGrader. Mon e-mail : ',
       pillTag: 'Nouveau', pill: 'FullGrader Premium arrive avec l’app',
       lead: 'Conçue par des enseignants, pour les enseignants. Les données de vos élèves ne quittent jamais votre téléphone.',
       gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
@@ -523,6 +604,10 @@
       langs: 'Disponible en espagnol, catalan, galicien, basque, anglais, allemand, français, italien et portugais. Fonctionne sur téléphones et tablettes Android.'
     },
     it: {
+      closeTitle: 'Inizia a correggere in pochi secondi', availLbl: 'Disponibile in 9 lingue', devices: 'Telefoni e tablet Android',
+      waitNav: 'Lista d’attesa', waitPh: 'Il tuo indirizzo email', waitBtn: 'Avvisami all’uscita',
+      waitNote: 'Si aprirà la tua email per inviarci la richiesta. Ti scriveremo solo quando l’app sarà disponibile.',
+      watch: 'Guarda come funziona', waitSubj: 'Lista d’attesa FullGrader', waitBody: 'Avvisatemi quando esce FullGrader. La mia email: ',
       pillTag: 'Novità', pill: 'FullGrader Premium arriva con l’app',
       lead: 'Creata da docenti, per i docenti. I dati dei tuoi studenti non lasciano mai il tuo telefono.',
       gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
@@ -548,6 +633,10 @@
       langs: 'Disponibile in spagnolo, catalano, galiziano, basco, inglese, tedesco, francese, italiano e portoghese. Funziona su telefoni e tablet Android.'
     },
     pt: {
+      closeTitle: 'Comece a corrigir em segundos', availLbl: 'Disponível em 9 idiomas', devices: 'Telemóveis e tablets Android',
+      waitNav: 'Lista de espera', waitPh: 'O seu e-mail', waitBtn: 'Avise-me quando sair',
+      waitNote: 'O seu e-mail vai abrir para nos enviar o pedido. Só lhe escreveremos quando a app estiver disponível.',
+      watch: 'Ver como funciona', waitSubj: 'Lista de espera FullGrader', waitBody: 'Quero ser avisado quando o FullGrader sair. O meu e-mail: ',
       pillTag: 'Novidade', pill: 'O FullGrader Premium chega com a app',
       lead: 'Feita por professores, para professores. Os dados dos seus alunos nunca saem do seu telemóvel.',
       gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
@@ -573,7 +662,23 @@
       langs: 'Disponível em espanhol, catalão, galego, basco, inglês, alemão, francês, italiano e português. Funciona em telemóveis e tablets Android.'
     }
   };
-  var KEY = 'fullgrader-home-lang';
+  var KEY = 'fullgrader-home-lang', CUR = T.es;
+  /* Lista de espera: la web no tiene servidor, así que el botón abre el correo
+     del docente con el aviso ya escrito (no se guarda nada en ninguna parte). */
+  var MAIL = 'regixstudio.dev@gmail.com';
+  var wf = document.getElementById('waitForm'), we = document.getElementById('waitEmail');
+  if (wf && we) wf.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!we.checkValidity()) { we.reportValidity(); we.focus(); return; }
+    location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(CUR.waitSubj) + '&body=' + encodeURIComponent(CUR.waitBody + we.value.trim());
+  });
+  /* El botón de la barra lleva al formulario y deja el cursor en el campo */
+  var cta = document.querySelector('.tb-cta');
+  if (cta && we) cta.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('avisam').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () { we.focus({ preventScroll: true }); }, 350);
+  });
   function pick() {
     try { var s = localStorage.getItem(KEY); if (s && T[s]) return s; } catch (e) {}
     var l = (navigator.language || 'es').slice(0, 2).toLowerCase();
@@ -600,9 +705,18 @@
         a.className = 'first'; a.textContent = v.slice(0, p + 1);
         b.className = 'data'; b.textContent = v.slice(p + 2);
         var k = document.createElement('span'); k.className = 'lk'; k.setAttribute('aria-hidden', 'true');
-        el.appendChild(a); el.appendChild(k); el.appendChild(b);
+        /* Las dos últimas palabras van juntas para que nunca quede una sola en la 2.ª línea */
+        var t = b.textContent, cut2 = t.lastIndexOf(' ');
+        if (cut2 > 0) { b.textContent = t.slice(0, cut2 + 1); var nw = document.createElement('span'); nw.className = 'nw'; nw.textContent = t.slice(cut2 + 1); b.appendChild(nw); }
+        var sec = document.createElement('span'); sec.className = 'sec';
+        sec.appendChild(k); sec.appendChild(b);
+        el.appendChild(a); el.appendChild(sec);
       } else el.textContent = v;
     });
+    document.querySelectorAll('[data-ph]').forEach(function (el) {
+      var v = d[el.getAttribute('data-ph')]; if (v) el.setAttribute('placeholder', v);
+    });
+    CUR = d;
     var BADGE = { es: 'Spanish', ca: 'Catalan', gl: 'Galician', eu: 'Basque', en: 'English', de: 'German', fr: 'French', it: 'Italian', pt: 'Portuguese-Portugal' };
     document.querySelectorAll('img[data-shot]').forEach(function (img) {
       img.src = 'help/img/' + lang + '/' + img.getAttribute('data-shot') + '.jpg';
@@ -658,6 +772,7 @@
   document.addEventListener('mouseleave', function () { stage.style.setProperty('--mx', 0); stage.style.setProperty('--my', 0); });
 })();
 </script>
+<script src="ui.js?v=20261113a"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecd0814faef9474b99f98e1efa2c1651"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
