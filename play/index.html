@@ -118,7 +118,14 @@
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
   /* «▶ Veure com funciona» */
-  .fg-watch { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; }
+  /* Lista de espera: abre el formulario de Brevo en una pestaña nueva */
+  .fg-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 22px; }
+  .fg-wait-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; background: #5850ec; color: #fff !important; font-size: 15.5px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 20px -10px rgba(88, 80, 236, .7); transition: background .2s, transform .3s var(--spring), box-shadow .2s; }
+  .fg-wait-btn:hover { background: #3730a3; transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(55, 48, 163, .7); }
+  .fg-wait-btn:focus-visible { outline: 3px solid var(--l-300); outline-offset: 3px; }
+  .fg-wait-btn svg { width: 15px; height: 15px; }
+  .cta-box .fg-wait-btn { margin-top: 22px; }
+  .fg-watch { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; }
   .fg-watch .pl { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--l-100); transition: background .25s, transform .35s var(--spring); }
   .fg-watch .pl svg { width: 9px; height: 9px; margin-left: 2px; fill: var(--l-900); }
   .fg-watch:hover { color: var(--l-900); }
@@ -134,7 +141,7 @@
   .fg-pill .tag { font-size: 12.5px; font-weight: 600; color: var(--l-900); letter-spacing: .01em; }
   .fg-pill .tag i { font-style: normal; display: inline-block; transition: transform .35s var(--spring); }
   .fg-pill b { font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
-  .fg-pill { margin-top: 36px; }
+  .fg-pill { margin-top: 34px; }
   .fg-pill .peek { position: absolute; right: -14px; top: -16px; width: 52px; height: 52px; transform: rotate(12deg); transition: transform .5s var(--spring); }
   .fg-pill:hover { background: var(--l-200); transform: translateY(-2px); }
   .fg-pill:hover .tag i { transform: translate(2px, -2px); }
@@ -307,7 +314,7 @@
       <p class="fg-lead rise" data-i="lead"></p>
       <div class="rise">
         <div class="fg-actions"><!--play-soon--><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span></span><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></span></div>
-        <a class="fg-watch" href="#app"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M0 0l10 5-10 5z"/></svg></span><span data-i="watch">Ver cómo funciona</span></a>
+        <div class="fg-cta-row"><a class="fg-wait-btn" href="https://f85ce99d.sibforms.com/serve/MUIFAGdONvu2Or3XUvZkQLkkwq7JVQWtMUESx0iELLF1ciH_cfYDXjxbQzK_j2yA-rfPDTi43lahtZKG3pTLS0mUB4jx42o1EiM5l70N1m1qs5Wk8_yIlKx9g9DCIgZogxpYuLfpQgJLM4h25E736nrnQ5ArJioUJAKXexv7ISx71DiRBJ3XB0UPxp_9wsU-9IS1Tt2uOEIvA0ygoA==" target="_blank" rel="noopener"><span data-i="waitBtn">Avísame cuando salga</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="fg-watch" href="#app"><span class="pl" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M0 0l10 5-10 5z"/></svg></span><span data-i="watch">Ver cómo funciona</span></a></div>
       </div>
       <div class="rise"><a class="fg-pill" href="premium/">
         <span class="tag"><span data-i="pillTag">Novedad</span> <i aria-hidden="true">↗</i></span>
@@ -374,6 +381,7 @@
     <div class="cta-box">
       <h2 data-i="closeTitle">Empieza a corregir en segundos</h2>
       <div class="fg-actions"><!--play-soon--><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">Google Play</span></span></span><span class="soon-badge"><svg class="sb-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="sb-txt"><span class="sb-top" data-i="soon">Próximamente</span><span class="sb-name">App Store</span></span></span></div>
+      <a class="fg-wait-btn" href="https://f85ce99d.sibforms.com/serve/MUIFAGdONvu2Or3XUvZkQLkkwq7JVQWtMUESx0iELLF1ciH_cfYDXjxbQzK_j2yA-rfPDTi43lahtZKG3pTLS0mUB4jx42o1EiM5l70N1m1qs5Wk8_yIlKx9g9DCIgZogxpYuLfpQgJLM4h25E736nrnQ5ArJioUJAKXexv7ISx71DiRBJ3XB0UPxp_9wsU-9IS1Tt2uOEIvA0ygoA==" target="_blank" rel="noopener"><span data-i="waitBtn">Avísame cuando salga</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <div class="avail"><span class="lbl" data-i="availLbl">Disponible en 9 idiomas</span><span lang="es">Castellano</span><span lang="ca">Català</span><span lang="gl">Galego</span><span lang="eu">Euskara</span><span lang="en">English</span><span lang="de">Deutsch</span><span lang="fr">Français</span><span lang="it">Italiano</span><span lang="pt">Português</span></div>
       <span class="dev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22A11.4 11.4 0 0 0 12 8.08c-1.78 0-3.46.38-4.92 1.06L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg><span data-i="devices">Móviles y tabletas Android</span></span>
       <p class="legal" data-i="gpLegal">Google Play y el logotipo de Google Play son marcas de Google LLC.</p>
@@ -383,13 +391,13 @@
 <footer class="fg-foot"><div class="fg-foot-in"><a class="ff-brand" href="/"><img src="icon.png" alt="" width="24" height="24"><span>FullGrader</span></a><nav class="ff-links" aria-label="Legal"><a href="privacy/" data-nav="privacy">Privacidad</a><span aria-hidden="true">·</span><a href="terms/" data-nav="terms">Condiciones</a><span aria-hidden="true">·</span><a href="contact/" data-nav="contact">Contacto</a></nav><div class="ff-soc"><a href="https://www.instagram.com/FullGrader/" target="_blank" rel="noopener" aria-label="Instagram @FullGrader"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a href="https://x.com/FullGrader" target="_blank" rel="noopener" aria-label="X @FullGrader"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a></div></div></footer>
 
 
-<script src="topbar.js?v=20261113b"></script>
+<script src="topbar.js?v=20261113c"></script>
 <script>
 (function () {
   var T = {
     es: {
       closeTitle: 'Empieza a corregir en segundos', availLbl: 'Disponible en 9 idiomas', devices: 'Móviles y tabletas Android',
-      watch: 'Ver cómo funciona',
+      watch: 'Ver cómo funciona', waitBtn: 'Avísame cuando salga',
       pillTag: 'Novedad', pill: 'FullGrader Premium llegará con la app',
       lead: 'Hecha por docentes, para docentes. Los datos de tu alumnado nunca salen de tu móvil.',
       gpLegal: 'Google Play y el logotipo de Google Play son marcas de Google LLC.',
@@ -415,7 +423,7 @@
     },
     ca: {
       closeTitle: 'Comença a corregir en segons', availLbl: 'Disponible en 9 idiomes', devices: 'Mòbils i tauletes Android',
-      watch: 'Veure com funciona',
+      watch: 'Veure com funciona', waitBtn: 'Avisa’m quan surti',
       pillTag: 'Novetat', pill: 'FullGrader Premium arribarà amb l’app',
       lead: 'Feta per docents, per a docents. Les dades del teu alumnat no surten mai del teu mòbil.',
       gpLegal: 'Google Play i el logotip de Google Play són marques de Google LLC.',
@@ -441,7 +449,7 @@
     },
     gl: {
       closeTitle: 'Comeza a corrixir en segundos', availLbl: 'Dispoñible en 9 idiomas', devices: 'Móbiles e tabletas Android',
-      watch: 'Ver como funciona',
+      watch: 'Ver como funciona', waitBtn: 'Avísame cando saia',
       pillTag: 'Novidade', pill: 'FullGrader Premium chegará coa app',
       lead: 'Feita por docentes, para docentes. Os datos do teu alumnado nunca saen do teu móbil.',
       gpLegal: 'Google Play e o logotipo de Google Play son marcas de Google LLC.',
@@ -467,7 +475,7 @@
     },
     eu: {
       closeTitle: 'Hasi segundotan zuzentzen', availLbl: '9 hizkuntzatan eskuragarri', devices: 'Android mugikor eta tabletak',
-      watch: 'Ikusi nola dabilen',
+      watch: 'Ikusi nola dabilen', waitBtn: 'Abisatu ateratzean',
       pillTag: 'Berria', pill: 'FullGrader Premium aplikazioarekin iritsiko da',
       lead: 'Irakasleek irakasleentzat egina. Zure ikasleen datuak ez dira inoiz zure mugikorretik ateratzen.',
       gpLegal: 'Google Play eta Google Play logotipoa Google LLC-ren markak dira.',
@@ -493,7 +501,7 @@
     },
     en: {
       closeTitle: 'Start grading in seconds', availLbl: 'Available in 9 languages', devices: 'Android phones and tablets',
-      watch: 'See how it works',
+      watch: 'See how it works', waitBtn: 'Notify me at launch',
       pillTag: 'What’s new', pill: 'FullGrader Premium is coming with the app',
       lead: 'Made by teachers, for teachers. Your students’ data never leaves your phone.',
       gpLegal: 'Google Play and the Google Play logo are trademarks of Google LLC.',
@@ -519,7 +527,7 @@
     },
     de: {
       closeTitle: 'Korrigiere in Sekunden', availLbl: 'In 9 Sprachen verfügbar', devices: 'Android-Handys und -Tablets',
-      watch: 'So funktioniert’s',
+      watch: 'So funktioniert’s', waitBtn: 'Benachrichtige mich',
       pillTag: 'Neu', pill: 'FullGrader Premium kommt mit der App',
       lead: 'Von Lehrkräften für Lehrkräfte gemacht. Die Daten deiner Schüler/innen verlassen nie dein Handy.',
       gpLegal: 'Google Play und das Google Play-Logo sind Marken von Google LLC.',
@@ -546,7 +554,7 @@
     },
     fr: {
       closeTitle: 'Corrigez en quelques secondes', availLbl: 'Disponible en 9 langues', devices: 'Téléphones et tablettes Android',
-      watch: 'Voir comment ça marche',
+      watch: 'Voir comment ça marche', waitBtn: 'Prévenez-moi à la sortie',
       pillTag: 'Nouveau', pill: 'FullGrader Premium arrive avec l’app',
       lead: 'Conçue par des enseignants, pour les enseignants. Les données de vos élèves ne quittent jamais votre téléphone.',
       gpLegal: 'Google Play et le logo Google Play sont des marques de Google LLC.',
@@ -573,7 +581,7 @@
     },
     it: {
       closeTitle: 'Inizia a correggere in pochi secondi', availLbl: 'Disponibile in 9 lingue', devices: 'Telefoni e tablet Android',
-      watch: 'Guarda come funziona',
+      watch: 'Guarda come funziona', waitBtn: 'Avvisami all’uscita',
       pillTag: 'Novità', pill: 'FullGrader Premium arriva con l’app',
       lead: 'Creata da docenti, per i docenti. I dati dei tuoi studenti non lasciano mai il tuo telefono.',
       gpLegal: 'Google Play e il logo Google Play sono marchi di Google LLC.',
@@ -600,7 +608,7 @@
     },
     pt: {
       closeTitle: 'Comece a corrigir em segundos', availLbl: 'Disponível em 9 idiomas', devices: 'Telemóveis e tablets Android',
-      watch: 'Ver como funciona',
+      watch: 'Ver como funciona', waitBtn: 'Avise-me quando sair',
       pillTag: 'Novidade', pill: 'O FullGrader Premium chega com a app',
       lead: 'Feita por professores, para professores. Os dados dos seus alunos nunca saem do seu telemóvel.',
       gpLegal: 'Google Play e o logótipo do Google Play são marcas da Google LLC.',
@@ -635,7 +643,7 @@
     t.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
     if (history.replaceState) history.replaceState(null, '', '#app');
   }
-  document.querySelectorAll('.fg-watch, .tb-cta').forEach(function (a) { a.addEventListener('click', toApp); });
+  document.querySelectorAll('.fg-watch').forEach(function (a) { a.addEventListener('click', toApp); });
   function pick() {
     try { var s = localStorage.getItem(KEY); if (s && T[s]) return s; } catch (e) {}
     var l = (navigator.language || 'es').slice(0, 2).toLowerCase();

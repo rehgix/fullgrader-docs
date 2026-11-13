@@ -3,7 +3,8 @@
 (function () {
   var LANGWORD = { es: 'Idioma', ca: 'Idioma', gl: 'Idioma', eu: 'Hizkuntza', en: 'Language', de: 'Sprache', fr: 'Langue', it: 'Lingua', pt: 'Idioma' };
   var MENUWORD = { es: 'Menú', ca: 'Menú', gl: 'Menú', eu: 'Menua', en: 'Menu', de: 'Menü', fr: 'Menu', it: 'Menu', pt: 'Menu' };
-  var WAIT = { es: 'Cómo funciona', ca: 'Com funciona', gl: 'Como funciona', eu: 'Nola dabilen', en: 'How it works', de: 'So geht’s', fr: 'Comment ça marche', it: 'Come funziona', pt: 'Como funciona' };
+  var WAIT = {"es": "Lista de espera", "ca": "Llista d’espera", "gl": "Lista de espera", "eu": "Itxaron-zerrenda", "en": "Waitlist", "de": "Warteliste", "fr": "Liste d’attente", "it": "Lista d’attesa", "pt": "Lista de espera"};
+  var WAIT_URL = 'https://f85ce99d.sibforms.com/serve/MUIFAGdONvu2Or3XUvZkQLkkwq7JVQWtMUESx0iELLF1ciH_cfYDXjxbQzK_j2yA-rfPDTi43lahtZKG3pTLS0mUB4jx42o1EiM5l70N1m1qs5Wk8_yIlKx9g9DCIgZogxpYuLfpQgJLM4h25E736nrnQ5ArJioUJAKXexv7ISx71DiRBJ3XB0UPxp_9wsU-9IS1Tt2uOEIvA0ygoA==';
   var BAR = ['help', 'premium', 'faq', 'contact'];
   var PAGES = ['home', 'help', 'premium', 'faq', 'contact', 'privacy', 'terms'];
   var PATH = { home: '', help: 'help/', premium: 'premium/', faq: 'faq/', contact: 'contact/', privacy: 'privacy/', terms: 'terms/' };
@@ -41,10 +42,12 @@
     }).join('');
     if (brand) brand.insertAdjacentElement('afterend', links);
 
-    // Botón «Cómo funciona» al final de la barra (lleva a «Qué hace la app» de la portada).
+    // Botón «Lista de espera» al final de la barra: abre el formulario de Brevo en otra pestaña.
     var cta = document.createElement('a');
     cta.className = 'tb-cta';
-    cta.href = (root || '/') + '#app';
+    cta.href = WAIT_URL;
+    cta.target = '_blank';
+    cta.rel = 'noopener';
     row.appendChild(cta);
 
     // Desplegables propios en lugar de los del navegador (idioma y menú de páginas).
